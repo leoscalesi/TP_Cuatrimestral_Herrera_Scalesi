@@ -8,5 +8,10 @@ namespace Dominio
 {
     public class Persona
     {
+       
+
+    
+    
+    
     }
 }
