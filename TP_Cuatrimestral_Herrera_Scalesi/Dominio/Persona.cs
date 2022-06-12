@@ -8,13 +8,6 @@ namespace Dominio
 {
     public class Persona
     {
-<<<<<<< HEAD
-       
-
-    
-    
-    
-=======
         public int id { get; set; }
 
         public int idCiudad { get; set; }
@@ -38,6 +31,5 @@ namespace Dominio
         public string email { get; set; }
 
         public string clave { get; set; }
->>>>>>> 75b1b4efa6ad4e4fa0f724b1789c4db17d1b9e7f
     }
 }

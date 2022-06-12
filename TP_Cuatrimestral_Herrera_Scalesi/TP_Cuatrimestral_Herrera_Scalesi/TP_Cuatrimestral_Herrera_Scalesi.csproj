@@ -67,65 +67,74 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AdministrarMedicos.aspx" />
-    <Content Include="AdministrarPacientes.aspx" />
-    <Content Include="AdministrarTurnos.aspx" />
-    <Content Include="FormPrincipalRecepcionista.aspx" />
-    <Content Include="Login.aspx" />
-    <Content Include="Turnos.aspx" />
-    <Content Include="VistaAdministrador.aspx" />
+    <Content Include="estilos\estilos.css" />
+    <Content Include="LOGIN.aspx" />
+    <Content Include="MEDICOAgregarModificarDiagnostico.aspx" />
+    <Content Include="MEDICOListadoTurnos.aspx" />
+    <Content Include="RECEPCIONISTABrindarTurnos.aspx" />
+    <Content Include="RECEPCIONISTAFormularioEspecialidades.aspx" />
+    <Content Include="RECEPCIONISTAFormularioNuevoPaciente.aspx" />
+    <Content Include="RECEPCIONISTAFormularioPrincipal.aspx" />
+    <Content Include="RECEPCIONISTAListadoPacientes.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdministrarMedicos.aspx.cs">
-      <DependentUpon>AdministrarMedicos.aspx</DependentUpon>
+    <Compile Include="LOGIN.aspx.cs">
+      <DependentUpon>LOGIN.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="AdministrarMedicos.aspx.designer.cs">
-      <DependentUpon>AdministrarMedicos.aspx</DependentUpon>
+    <Compile Include="LOGIN.aspx.designer.cs">
+      <DependentUpon>LOGIN.aspx</DependentUpon>
     </Compile>
-    <Compile Include="AdministrarPacientes.aspx.cs">
-      <DependentUpon>AdministrarPacientes.aspx</DependentUpon>
+    <Compile Include="MEDICOAgregarModificarDiagnostico.aspx.cs">
+      <DependentUpon>MEDICOAgregarModificarDiagnostico.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="AdministrarPacientes.aspx.designer.cs">
-      <DependentUpon>AdministrarPacientes.aspx</DependentUpon>
+    <Compile Include="MEDICOAgregarModificarDiagnostico.aspx.designer.cs">
+      <DependentUpon>MEDICOAgregarModificarDiagnostico.aspx</DependentUpon>
     </Compile>
-    <Compile Include="AdministrarTurnos.aspx.cs">
-      <DependentUpon>AdministrarTurnos.aspx</DependentUpon>
+    <Compile Include="MEDICOListadoTurnos.aspx.cs">
+      <DependentUpon>MEDICOListadoTurnos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="AdministrarTurnos.aspx.designer.cs">
-      <DependentUpon>AdministrarTurnos.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="FormPrincipalRecepcionista.aspx.cs">
-      <DependentUpon>FormPrincipalRecepcionista.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="FormPrincipalRecepcionista.aspx.designer.cs">
-      <DependentUpon>FormPrincipalRecepcionista.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Login.aspx.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Login.aspx.designer.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
+    <Compile Include="MEDICOListadoTurnos.aspx.designer.cs">
+      <DependentUpon>MEDICOListadoTurnos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Turnos.aspx.cs">
-      <DependentUpon>Turnos.aspx</DependentUpon>
+    <Compile Include="RECEPCIONISTABrindarTurnos.aspx.cs">
+      <DependentUpon>RECEPCIONISTABrindarTurnos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Turnos.aspx.designer.cs">
-      <DependentUpon>Turnos.aspx</DependentUpon>
+    <Compile Include="RECEPCIONISTABrindarTurnos.aspx.designer.cs">
+      <DependentUpon>RECEPCIONISTABrindarTurnos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="VistaAdministrador.aspx.cs">
-      <DependentUpon>VistaAdministrador.aspx</DependentUpon>
+    <Compile Include="RECEPCIONISTAFormularioEspecialidades.aspx.cs">
+      <DependentUpon>RECEPCIONISTAFormularioEspecialidades.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="VistaAdministrador.aspx.designer.cs">
-      <DependentUpon>VistaAdministrador.aspx</DependentUpon>
+    <Compile Include="RECEPCIONISTAFormularioEspecialidades.aspx.designer.cs">
+      <DependentUpon>RECEPCIONISTAFormularioEspecialidades.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RECEPCIONISTAFormularioNuevoPaciente.aspx.cs">
+      <DependentUpon>RECEPCIONISTAFormularioNuevoPaciente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RECEPCIONISTAFormularioNuevoPaciente.aspx.designer.cs">
+      <DependentUpon>RECEPCIONISTAFormularioNuevoPaciente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RECEPCIONISTAFormularioPrincipal.aspx.cs">
+      <DependentUpon>RECEPCIONISTAFormularioPrincipal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RECEPCIONISTAFormularioPrincipal.aspx.designer.cs">
+      <DependentUpon>RECEPCIONISTAFormularioPrincipal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RECEPCIONISTAListadoPacientes.aspx.cs">
+      <DependentUpon>RECEPCIONISTAListadoPacientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RECEPCIONISTAListadoPacientes.aspx.designer.cs">
+      <DependentUpon>RECEPCIONISTAListadoPacientes.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

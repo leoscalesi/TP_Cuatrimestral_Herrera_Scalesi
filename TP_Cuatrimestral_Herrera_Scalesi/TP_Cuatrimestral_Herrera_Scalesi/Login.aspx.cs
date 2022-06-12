@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace TP_Cuatrimestral_Herrera_Scalesi
 {
-    public partial class Login : System.Web.UI.Page
+    public partial class LOGIN : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
