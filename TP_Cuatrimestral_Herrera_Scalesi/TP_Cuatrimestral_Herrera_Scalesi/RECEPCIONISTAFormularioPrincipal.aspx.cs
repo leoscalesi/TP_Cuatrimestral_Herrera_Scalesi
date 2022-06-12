@@ -13,5 +13,15 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
         {
 
         }
+
+        protected void btnNuevoPaciente_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("RecepcionistaFormularioNuevoPaciente.aspx", false);
+        }
+
+        protected void btnBrindarTurnos_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("RECEPCIONISTABrindarTurnos.aspx", false);
+        }
     }
 }

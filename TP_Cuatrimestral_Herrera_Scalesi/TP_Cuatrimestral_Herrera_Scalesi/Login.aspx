@@ -6,6 +6,8 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous"/>
     <link rel="stylesheet" href="estilos/estilos.css"/>
 </head>
 <body class="estiloBody">
@@ -29,7 +31,7 @@
           </div> 
     
           <div class="card-footer">
-             <asp:Button ID="btnIngresar" runat="server" Text="INGRESAR"  />
+             <asp:Button ID="btnIngresar" runat="server" Text="INGRESAR" style="background-color: lightgreen;" />
           </div>
      </div>
     

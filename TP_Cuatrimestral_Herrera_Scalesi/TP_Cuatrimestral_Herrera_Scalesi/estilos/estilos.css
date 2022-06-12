@@ -4,7 +4,20 @@
     margin-right: 25%;
 }
 
-.estiloBody {
+.estiloBody{
 
     background-color:lightgray;
+}
+
+#estiloModificarDiagnostico {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 7%;
+}
+
+#estiloCardRecepcionistaPrincipal {
+    
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 7%;
 }

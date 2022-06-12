@@ -13,5 +13,10 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
         {
 
         }
+
+        protected void btnVolverATurnos_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("MEDICOListadoTurnos.aspx",false);
+        }
     }
 }
