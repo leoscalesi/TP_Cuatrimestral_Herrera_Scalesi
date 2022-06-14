@@ -19,7 +19,12 @@
             </div>
             <div class="card-body">
                 <div>
-                      <asp:GridView ID="dgvRoles" cssclass="table table-bordered" runat="server"></asp:GridView>
+                      <asp:GridView ID="dgvRoles" cssclass="table table-bordered d-table-cell"  AutoGenerateColumns="false" runat="server">
+                            <Columns>
+                                <asp:BoundField HeaderText="ID ROL" DataField="id"/>
+                                <asp:BoundField HeaderText="Nombre" DataField="nombre"/>
+                            </Columns>
+                      </asp:GridView>
                 </div>
             </div>
             <div class="card-footer">

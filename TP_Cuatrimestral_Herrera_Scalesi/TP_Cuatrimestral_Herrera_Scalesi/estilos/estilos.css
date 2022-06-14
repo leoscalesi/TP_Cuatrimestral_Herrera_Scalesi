@@ -16,14 +16,32 @@
 }
 
 #estiloCardRecepcionistaPrincipal {
-    
     margin-left: 10%;
     margin-right: 10%;
     margin-top: 7%;
 }
 
 #estiloCardRoles {
-    height: 100vh;
-    display: flex;
+    background-color: darkcyan;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 7%;
+}
 
+#estiloCardRecepcionistaEsp {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 7%;
+}
+
+#estiloRecepcionistaNuevoPaciente {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 7%;
+}
+
+#estiloRecepcionistaBrindarTurno {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 7%;
 }
