@@ -76,6 +76,7 @@
     <Content Include="RECEPCIONISTAFormularioNuevoPaciente.aspx" />
     <Content Include="RECEPCIONISTAFormularioPrincipal.aspx" />
     <Content Include="RECEPCIONISTAListadoPacientes.aspx" />
+    <Content Include="VerRoles.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -135,6 +136,13 @@
     </Compile>
     <Compile Include="RECEPCIONISTAListadoPacientes.aspx.designer.cs">
       <DependentUpon>RECEPCIONISTAListadoPacientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VerRoles.aspx.cs">
+      <DependentUpon>VerRoles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VerRoles.aspx.designer.cs">
+      <DependentUpon>VerRoles.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
