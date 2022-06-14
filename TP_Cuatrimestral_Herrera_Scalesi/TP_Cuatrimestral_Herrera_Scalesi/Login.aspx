@@ -24,13 +24,13 @@
                   <asp:TextBox ID="txtUsuario" runat="server"></asp:TextBox>
                </div>
 
-               <div>
+               <div style="padding-top:20px;">
                   <asp:TextBox ID="txtContraseña" runat="server"></asp:TextBox>
                </div>
 
           </div> 
     
-          <div class="card-footer">
+          <div class="card-footer" style="padding-top:20px;">
              <asp:Button ID="btnIngresar" runat="server" Text="INGRESAR" style="background-color: lightgreen;" />
           </div>
      </div>

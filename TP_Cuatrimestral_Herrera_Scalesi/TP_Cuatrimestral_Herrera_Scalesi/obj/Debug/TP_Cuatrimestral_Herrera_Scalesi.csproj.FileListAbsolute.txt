@@ -126,3 +126,5 @@ C:\Users\R\Desktop\IT\Practicas C#\TPCuatrimestral1106\TP_Cuatrimestral_Herrera_
 C:\Users\R\Desktop\IT\Practicas C#\TPCuatrimestral1106\TP_Cuatrimestral_Herrera_Scalesi\TP_Cuatrimestral_Herrera_Scalesi\bin\Negocio.pdb
 C:\Users\R\Desktop\IT\Practicas C#\TPCuatrimestral1106\TP_Cuatrimestral_Herrera_Scalesi\TP_Cuatrimestral_Herrera_Scalesi\bin\AccesoDatos.dll
 C:\Users\R\Desktop\IT\Practicas C#\TPCuatrimestral1106\TP_Cuatrimestral_Herrera_Scalesi\TP_Cuatrimestral_Herrera_Scalesi\bin\AccesoDatos.pdb
+C:\Users\user\Desktop\TP_Cuatrimestral\TP_Cuatrimestral_Herrera_Scalesi\TP_Cuatrimestral_Herrera_Scalesi\bin\AccesoDatos.dll
+C:\Users\user\Desktop\TP_Cuatrimestral\TP_Cuatrimestral_Herrera_Scalesi\TP_Cuatrimestral_Herrera_Scalesi\bin\AccesoDatos.pdb
