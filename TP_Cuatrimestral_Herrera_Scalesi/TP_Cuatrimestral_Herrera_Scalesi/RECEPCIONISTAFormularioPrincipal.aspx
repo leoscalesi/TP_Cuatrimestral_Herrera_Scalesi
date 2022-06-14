@@ -12,20 +12,26 @@
 <body class="estiloBody">
     <form id="form1" runat="server">
         
+        <h2 style="padding:40px;">
+            <asp:Label ID="lblHolaRecepcionista" runat="server" Text="Hola "></asp:Label>
+        </h2>
+
+        <h4 style="text-align:center">Que desea hacer?</h4>
+        
         <div class="card" id="estiloCardRecepcionistaPrincipal">
             
             <div class="card-body">
                 
-                <div>
+                <div style="padding-top:30px">
                     <asp:Button ID="btnNuevoPaciente" runat="server" Text="Nuevo Paciente" style="background-color:lightgreen;" OnClick="btnNuevoPaciente_Click"/>
                 </div>
     
-                <div>
+                <div style="padding-top:30px;">
                     <asp:Button ID="btnBrindarTurnos" runat="server" Text="Brindar Turnos" style="background-color: lightblue;" OnClick="btnBrindarTurnos_Click"/>
                 </div>
             </div>
             
-            <div class="card-footer">
+            <div class="card-footer" style="padding-top:30px;">
                 <asp:Button ID="btnSalir" runat="server" Text="Salir" style="background-color:lightcoral;" />
             </div>
         </div>
