@@ -16,6 +16,7 @@
                 <h2>Generar turno</h2>
             </div>
             <div class="card-body">
+                <asp:GridView ID="dgvListarPacientes" runat="server"></asp:GridView>
                 <asp:Button ID="btnNuevoTurno" runat="server" Text="Nuevo turno" OnClick="btnNuevoTurno_Click"/>
             </div>
             <div class="card-footer">
