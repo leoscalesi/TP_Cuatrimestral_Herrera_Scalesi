@@ -16,23 +16,34 @@
       <div class="card" id="estiloCardLogin">
             <div class="card-header">
                <h2>LOGIN</h2>
+                <div>
+                <img src="img/login.png" cssclass="img-fluid" width="70" alt="img login" />
+                </div>
             </div>
     
           <div class="card-body">
 
                <div>
-                  <asp:TextBox ID="txtUsuario" runat="server"></asp:TextBox>
+                  <h6>Usuario</h6>
+                  <asp:TextBox ID="txtUsuario" CssClass="text-center" runat="server"></asp:TextBox>
                </div>
 
                <div style="padding-top:20px;">
-                  <asp:TextBox ID="txtContraseña" runat="server"></asp:TextBox>
+                  <h6>Contraseña</h6>
+                  <asp:TextBox ID="txtContraseña" CssClass="text-center" runat="server"></asp:TextBox>
                </div>
 
           </div> 
     
           <div class="card-footer" style="padding-top:20px;">
-             <asp:Button ID="btnIngresar" runat="server" Text="INGRESAR" style="background-color: lightgreen;" />
-          </div>
+              <div>
+                  <asp:Button ID="btnIngresar" runat="server" Text="INGRESAR" style="background-color: lightgreen;" />
+              </div>
+              <div>
+                  <br />
+                  <asp:Button ID="btnRecPassword" cssclass="btn btn-outline-dark" runat="server" Text="Si olvidó su contraseña contáctese con el administrador" />
+              </div>
+         </div>
      </div>
     
     

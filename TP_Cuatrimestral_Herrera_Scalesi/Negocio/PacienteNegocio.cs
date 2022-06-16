@@ -27,7 +27,7 @@ namespace Negocio
 
                     Paciente aux = new Paciente();
 
-                    aux.nombre = (string)datos.Lector["nombre"];
+                    aux.Nombre = (string)datos.Lector["nombre"];
 
 
                     lista.Add(aux);

@@ -26,8 +26,8 @@ namespace Negocio
 
                     Rol aux = new Rol();
 
-                    aux.id = (int)datos.Lector["id"];
-                    aux.nombre = (string)datos.Lector["nombre"];
+                    aux.Id = (int)datos.Lector["id"];
+                    aux.Nombre = (string)datos.Lector["nombre"];
                   
 
                     lista.Add(aux);
