@@ -9,7 +9,7 @@ namespace Dominio
     public class Administrador : Persona
     {
 
-        public int idPersona { get; set; }
+        //public int IdPersona { get; set; }
 
 
     }

@@ -8,11 +8,11 @@ namespace Dominio
 {
     public class Medico : Persona
     {
-        public int idPersona { get; set; }
+        //public int IdPersona { get; set; }
 
-        public int idMedico { get; set; }
+        public int IdMedico { get; set; }
 
-        public int numMatricula { get; set; }
+        public int NumMatricula { get; set; }
 
     }
 }

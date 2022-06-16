@@ -8,22 +8,22 @@ namespace Dominio
 {
     public class Turno
     {
-        public int id { get; set; }
+        public int Id { get; set; }
 
-        public int idMedico { get; set; }
+        public int IdMedico { get; set; }
 
-        public int idPaciente { get; set; }
+        public int IdPaciente { get; set; }
 
-        public int idEstado { get; set; }
+        public int IdEstado { get; set; }
 
-        public DateTime fechaTurno { get; set; }
+        public DateTime FechaTurno { get; set; }
 
-        public int horaTurno { get; set; }
+        public int HoraTurno { get; set; }
 
-        public string observaciones { get; set; }
+        public string Observaciones { get; set; }
 
-        public string diagnostico { get; set; }
+        public string Diagnostico { get; set; }
 
-        public bool activo { get; set; }
+        public bool Activo { get; set; }
     }
 }

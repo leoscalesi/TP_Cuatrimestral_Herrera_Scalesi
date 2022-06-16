@@ -9,13 +9,13 @@ namespace Dominio
     public class Agenda
     {
 
-        public int id { get; set; }
+        public int Id { get; set; }
 
-        public int idMedico { get; set; }
+        public int IdMedico { get; set; }
 
-        public int horaAtencion{ get; set; }
+        public int HoraAtencion{ get; set; }
 
-        public string diasAtencion { get; set; }
+        public string DiasAtencion { get; set; }
 
     }
 }
