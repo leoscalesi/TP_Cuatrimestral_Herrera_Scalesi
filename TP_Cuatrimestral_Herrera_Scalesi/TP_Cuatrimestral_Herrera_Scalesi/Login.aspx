@@ -33,11 +33,15 @@
                   <asp:TextBox ID="txtContraseña" CssClass="text-center" runat="server"></asp:TextBox>
                </div>
 
+              <div style="color:red;">
+                   <asp:Label ID="lblUsuarioContInvalido" runat="server" Text=""></asp:Label>
+              </div>
+
           </div> 
     
           <div class="card-footer" style="padding-top:20px;">
               <div>
-                  <asp:Button ID="btnIngresar" runat="server" Text="INGRESAR" style="background-color: lightgreen;" />
+                  <asp:Button ID="btnIngresar" runat="server" Text="INGRESAR" style="background-color: lightgreen;" OnClick="btnIngresar_Click" />
               </div>
               <div>
                   <br />
