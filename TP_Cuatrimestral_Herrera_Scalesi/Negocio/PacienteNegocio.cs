@@ -19,7 +19,7 @@ namespace Negocio
             try
             {
 
-                datos.setearConsulta("select p.nombre, p.apellido, p.dni, p.cuit, p.telefono, p.fecha_nacimiento, p.direccion, p.email, pa.id_turno from personas as p inner join pacientes as pa on p.id = pa.id_persona where id_rol = 4");
+                datos.setearConsulta("select nombre,apellido, dni, cuit, telefono, fecha_nacimiento, direccion, email from personas where id_rol=4");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
@@ -27,7 +27,14 @@ namespace Negocio
 
                     Paciente aux = new Paciente();
 
-                    aux.Nombre = (string)datos.Lector["nombre"];
+                    aux.Nombre = (string)datos.Lector["nombre"].ToString();
+                    aux.Apellido = (string)datos.Lector["apellido"].ToString();
+                    aux.Dni = (short)datos.Lector["dni"]; // modificar en db a int
+                    aux.Cuit = (string)datos.Lector["cuit"];
+                    aux.Telefono = (string)datos.Lector["telefono"].ToString();
+                    aux.FechaNac = (DateTime)datos.Lector["fecha_nacimiento"];
+                    aux.Direccion = (string)datos.Lector["direccion"].ToString();
+                    aux.Email = (string)datos.Lector["email"];
 
 
                     lista.Add(aux);

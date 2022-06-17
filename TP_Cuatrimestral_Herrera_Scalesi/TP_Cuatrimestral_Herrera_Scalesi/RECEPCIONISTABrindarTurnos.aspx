@@ -14,13 +14,29 @@
         <div class="card" id="estiloRecepcionistaBrindarTurno">
             <div class="card-header">
                 <h2>Generar turno</h2>
+                <div>
+                    <img src="img/turno.png" cssclass="img-fluid" margin="5" width="70" alt="img turno" />
+                </div>
             </div>
             <div class="card-body">
-                <asp:GridView ID="dgvListarPacientes" runat="server"></asp:GridView>
+                <asp:GridView ID="dgvListarPacientes" cssclass="table table-bordered" AutoGenerateColumns="false" runat="server">
+                    <columns>
+                        <asp:BoundField HeaderText="ID" DataField="Id"/>
+                        <asp:BoundField HeaderText="Nombre" DataField="Nombre"/>
+                        <asp:BoundField HeaderText="Apellido" DataField="Apellido"/>
+                        <asp:BoundField HeaderText="DNI" DataField="Dni"/>
+                        <asp:BoundField HeaderText="CUIT" DataField="Cuit"/>
+                        <asp:BoundField HeaderText="Telefono" DataField="Telefono"/>
+                        <asp:BoundField HeaderText="Fecha Nacimiento" DataField="FechaNac"/>
+                        <asp:BoundField HeaderText="Direccion" DataField="Direccion"/>
+                        <asp:BoundField HeaderText="Email" DataField="Email"/>
+                    </columns>
+                </asp:GridView>
+                <br />
                 <asp:Button ID="btnNuevoTurno" runat="server" Text="Nuevo turno" OnClick="btnNuevoTurno_Click"/>
             </div>
             <div class="card-footer">
-
+                <asp:Button ID="VolverAtras" runat="server" Text="Volver atrás" OnClick="VolverAtras_Click"/>
             </div>
         </div>
     </form>

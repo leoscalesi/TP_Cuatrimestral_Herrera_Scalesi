@@ -18,7 +18,7 @@ namespace Dominio
 
         public string Apellido { get; set; }
 
-        public int Dni { get; set; }
+        public short Dni { get; set; }
 
         public string Cuit { get; set; }
 
