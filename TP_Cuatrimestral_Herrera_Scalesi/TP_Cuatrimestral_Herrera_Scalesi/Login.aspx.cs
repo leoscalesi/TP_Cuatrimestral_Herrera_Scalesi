@@ -41,6 +41,9 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
 
                         //Debo llevar datos hacia otro Formulario (usaria
                         //una variable de tipo Session)
+
+                        Session.Add("nombre", persona.Nombre);
+                        Session.Add("apellido", persona.Apellido);
                         Response.Redirect("RecepcionistaFormularioPrincipal.aspx", false);
                         break;
 
