@@ -11,14 +11,29 @@
 </head>
 <body class="estiloBody">
     <form id="form1" runat="server">
+    <asp:ScriptManager id="ScriptManager1" runat="server"></asp:ScriptManager>
+
         <div class="card" id="estiloRecepcionistaBrindarTurno">
+
             <div class="card-header">
                 <h2>Generar turno</h2>
                 <div>
                     <img src="img/turno.png" cssclass="img-fluid" margin="5" width="70" alt="img turno" />
                 </div>
             </div>
+
             <div class="card-body">
+                <div>
+                    <!--<asp:UpdatePanel runat="server">
+                        <ContentTemplate>-->
+                    <asp:Label ID="lblFiltrar" runat="server" Text="Filtro: "></asp:Label>
+                    <asp:TextBox ID="txtFiltro" runat="server"></asp:TextBox>
+                    <asp:Button ID="btnFiltrar" runat="server" Text="Buscar" OnClick="btnFiltrar_Click"  />
+                    <br />
+                    <br />
+                    <!--</ContentTemplate>
+                    </asp:UpdatePanel>-->
+                </div>
                 <asp:GridView ID="dgvListarPacientes" cssclass="table table-bordered" AutoGenerateColumns="false" runat="server">
                     <columns>
                         <asp:BoundField HeaderText="ID" DataField="Id"/>
@@ -27,7 +42,6 @@
                         <asp:BoundField HeaderText="DNI" DataField="Dni"/>
                         <asp:BoundField HeaderText="CUIT" DataField="Cuit"/>
                         <asp:BoundField HeaderText="Telefono" DataField="Telefono"/>
-                        <asp:BoundField HeaderText="Fecha Nacimiento" DataField="FechaNac"/>
                         <asp:BoundField HeaderText="Direccion" DataField="Direccion"/>
                         <asp:BoundField HeaderText="Email" DataField="Email"/>
                     </columns>

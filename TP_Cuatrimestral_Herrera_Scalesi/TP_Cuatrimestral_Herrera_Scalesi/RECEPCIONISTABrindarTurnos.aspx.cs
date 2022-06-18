@@ -11,12 +11,15 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
 {
     public partial class RECEPCIONISTABrindarTurnos : System.Web.UI.Page
     {
+        private List<Paciente> listaPacientes;
+
+        private List<Paciente> listaFiltrada;
         protected void Page_Load(object sender, EventArgs e)
         {
             PacienteNegocio pacienteNegocio = new PacienteNegocio();
             dgvListarPacientes.DataSource = pacienteNegocio.listar();
             dgvListarPacientes.DataBind();
-
+            listaPacientes = pacienteNegocio.listar();
 
         }
 
@@ -27,7 +30,29 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
 
         protected void VolverAtras_Click(object sender, EventArgs e)
         {
-            Response.Redirect("RECEPCIONISTAFormularioPrincipal.aspx", false);
+            //Response.Redirect("RECEPCIONISTAFormularioPrincipal.aspx", false);
         }
+
+        protected void btnFiltrar_Click(object sender, EventArgs e)
+        {
+            listaFiltrada = null;
+            string filtro = txtFiltro.Text;
+            if (filtro != "")
+            {
+                listaFiltrada = listaPacientes.FindAll(x => x.Nombre == filtro);
+            }
+            else
+            {
+                listaFiltrada = listaPacientes;
+            }
+
+            dgvListarPacientes.DataSource = null;
+            dgvListarPacientes.DataSource = listaFiltrada;
+        }
+
+        /*protected void VolverAtras_Click1(object sender, EventArgs e)
+        {
+            //Response.Redirect("RECEPCIONISTAFormularioPrincipal.aspx", false);
+        }*/
     }
 }
