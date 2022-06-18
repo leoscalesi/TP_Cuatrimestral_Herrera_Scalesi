@@ -11,71 +11,63 @@
 </head>
 <body class="estiloBody">
     <form id="form1" runat="server">
-        
-        <!--VA UN FORMULARIO-->
-        
-        <div class="card" id="estiloRecepcionistaNuevoPaciente">
-            <div class="card-body">
-                <h2 style="text-align:center;">Alta de pacientes</h2>
-            </div>
-            
-            <form action="/action_page.php" class="was-validated">
-               
-                <div class="form-group">
-                   <label for="firstname">Nombre:</label>
-                   <input type="text" class="form-control" id="uname" placeholder="Ingrese nombre" name="firstname" required />
-                   <div class="valid-feedback">Valid.</div>
-                   <!--<div class="invalid-feedback">Por favor ingrese un nombre</div>-->
-               </div>
-               
-               <div class="form-group">
-                   <label for="lastname">Apellido:</label>
-                   <input type="text" class="form-control" id="pwd" placeholder="Ingrese apellido" name="lastname" required />
-                   <div class="valid-feedback">Valid.</div>
-                   <!--<div class="invalid-feedback">Please fill out this field.</div>-->
-               </div>
-               
-               <div class="form-group">
-                   <label for="street">Dirección:</label>
-                   <input type="text" class="form-control" id="uname" placeholder="Ingrese direccion" name="street" required />
-                   <div class="valid-feedback">Valid.</div>
-                   <!--<div class="invalid-feedback">Please fill out this field.</div>-->
-               </div>
-                          
-               <div class="form-group">
-                   <label for="dni">DNI:</label>
-                   <input type="text" class="form-control" id="uname" placeholder="Ingrese DNI" name="DNI" required />
-                   <div class="valid-feedback">Valid.</div>
-                   <!--<div class="invalid-feedback">Please fill out this field.</div>-->
-               </div>
-                          
-               <div class="form-group">
-                   <label for="cuit">CUIT:</label>
-                   <input type="text" class="form-control" id="uname" placeholder="Ingrese CUIT" name="CUIT" required />
-                   <div class="valid-feedback">Valid.</div>
-                   <!--<div class="invalid-feedback">Please fill out this field.</div>-->
-               </div>
-                          
-               <div class="form-group">
-                   <label for="Birthdate">Fecha de nacimiento (mm/dd/yyyy):</label>
-                   <input type="text" class="form-control" id="uname" placeholder="Ingrese fecha de nacimiento" name="Birthdate" required />
-                   <div class="valid-feedback">Valid.</div>
-                   <!--<div class="invalid-feedback">Please fill out this field.</div>-->
-               </div>
-                        
-               <!--<button type="submit" class="btn btn-success">Submit</button>-->
-                   
-                <div>
-                    <asp:Button ID="btnGuardarNuevoPaciente" CssClass="btn btn-success" runat="server" Text="GUARDAR" />
-                </div>
 
-           </form>
-            
-            
-            <div class="card-footer">
-                <asp:Button ID="btnSalir" runat="server" Text="Salir" />
+
+        <div class="row">
+            <div class="col-9">
+                <div class="card" id="estiloRecepcionistaNuevoPaciente">
+                    <div class="card-header">
+                        <h2 style="text-align: center;">Alta de pacientes</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label for="txtNombre" class="form-label">Nombre</label>
+                            <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control"></asp:TextBox>
+                        </div>
+                        <div class="mb-3">
+                            <label for="txtApellido" class="form-label">Apellido</label>
+                            <asp:TextBox ID="txtApellido" runat="server" CssClass="form-control"></asp:TextBox>
+                        </div>
+                        <div class="mb-3">
+                            <label for="txtDni" class="form-label">Dni</label>
+                            <asp:TextBox ID="txtDni" runat="server" CssClass="form-control"></asp:TextBox>
+                        </div>
+                        <div class="mb-3">
+                            <label for="txtCuit" class="form-label">Cuit</label>
+                            <asp:TextBox ID="txtCuit" runat="server" CssClass="form-control"></asp:TextBox>
+                        </div>
+                        <div class="mb-3">
+                            <label for="txtTelefono" class="form-label">Telefono</label>
+                            <asp:TextBox ID="txtTelefono" runat="server" CssClass="form-control"></asp:TextBox>
+                        </div>
+                        <div class="mb-3">
+                            <label for="txtFechaNacimiento" class="form-label">Fecha de nacimiento</label>
+                            <asp:TextBox ID="txtFechaNacimiento" TextMode="Date" runat="server" CssClass="form-control"></asp:TextBox>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="txtDireccion" class="form-label">Direccion</label>
+                            <asp:TextBox ID="txtDireccion" runat="server" CssClass="form-control"></asp:TextBox>
+                        </div>
+                        <div class="mb-3">
+                            <label for="txtEmail" class="form-label">Email</label>
+                            <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control"></asp:TextBox>
+                        </div>
+                        <div class="mb-3">
+                            <label for="txtClave" class="form-label">Clave</label>
+                            <asp:TextBox ID="txtClave" runat="server" CssClass="form-control"></asp:TextBox>
+                        </div>
+                    </div>
+
+
+                    <div class="card-footer">
+                        <asp:Button ID="btnGuardar" runat="server" style="background-color:lightgreen;" Text="Guardar" OnClick="btnGuardar_Click" />
+                        <asp:Label ID="lblGuardadoExitoso" runat="server" Text=""></asp:Label>
+                    </div>
+                </div>
             </div>
         </div>
+
     </form>
 </body>
 </html>

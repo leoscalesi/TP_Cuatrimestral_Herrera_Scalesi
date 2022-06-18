@@ -70,5 +70,38 @@ namespace Negocio
 
             return null;
         }
+
+        public bool agregar(Persona persona)
+        {
+            AccesoaDatos accesoaDatos = new AccesoaDatos();
+
+
+            try
+            {
+                //ARREGLAR LO DE LA FECHA DE NACIMIENTO
+
+                accesoaDatos.setearConsulta("insert into PERSONAS (nombre,apellido,dni,cuit,telefono,direccion,email,clave,id_rol) values('" + persona.Nombre + "','" + persona.Apellido + "','" + persona.Dni + "', '" + persona.Cuit + "', '" + persona.Telefono + "' , '" + persona.Direccion + "', '" + persona.Email + "', '" + persona.Clave + "', '" + persona.Rol.Id + "'" + ")");
+                //accesoaDatos.setearParametro("@IdMarca", articulo.Marca.Id);
+                //accesoaDatos.setearParametro("@IdCategoria", articulo.Categoria.Id);
+
+                accesoaDatos.ejecutarAccion();
+
+                return true;
+
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+            finally
+            {
+                accesoaDatos.cerrarConexion();
+            }
+        }
+
     }
 }
