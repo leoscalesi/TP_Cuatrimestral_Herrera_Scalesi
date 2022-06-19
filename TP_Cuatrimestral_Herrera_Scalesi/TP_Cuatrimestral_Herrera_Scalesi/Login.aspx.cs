@@ -47,12 +47,19 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
                         Response.Redirect("RecepcionistaFormularioPrincipal.aspx", false);
                         break;
 
-                    case 4:
 
-                        //Paciente
-                        Response.Redirect("RecepcionistaListadoPacientes.aspx", false);
+                    case 2:
 
+                        Medico medico = new Medico();
+                        MedicoNegocio medicoNegocio = new MedicoNegocio();
+
+                        medico = medicoNegocio.buscarMedico(persona.Id);
+
+                        Session.Add("nombre", persona.Nombre);
+                        Session.Add("apellido", persona.Apellido);
+                        Response.Redirect("MedicoListadoTurnos.aspx", false);
                         break;
+
                 }
             }
             else
