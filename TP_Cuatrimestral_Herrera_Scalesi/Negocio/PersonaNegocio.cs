@@ -103,5 +103,34 @@ namespace Negocio
             }
         }
 
+        public bool modificar(Persona persona)
+        {
+            AccesoaDatos accesoaDatos = new AccesoaDatos();
+
+
+            try
+            {
+                //ARREGLAR LO DE LA FECHA DE NACIMIENTO
+
+                accesoaDatos.setearConsulta("update PERSONAS set nombre = '" + persona.Nombre + "', apellido = '" + persona.Apellido + "', dni = '" + persona.Dni + "', cuit = '" + persona.Cuit + "', telefono = '" + persona.Telefono + "', direccion = '" + persona.Direccion + "', email = '" + persona.Email + "', clave = '" + persona.Clave + "' where id = 14 ");
+                accesoaDatos.ejecutarAccion();
+
+                return true;
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+            finally
+            {
+                accesoaDatos.cerrarConexion();
+            }
+
+
+        }
+
     }
 }

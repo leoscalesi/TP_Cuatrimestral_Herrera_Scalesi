@@ -13,11 +13,109 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                if (Request.QueryString["id"] != null)
+                {
+                    int id = int.Parse(Request.QueryString["id"].ToString());
+                    List<Paciente> temporal = (List<Paciente>)Session["listaPacientes"];
+                    Paciente seleccionado = temporal.Find(x => x.Id == id);
 
+
+                    txtNombre.Text = seleccionado.Nombre;
+                    txtApellido.Text = seleccionado.Apellido;
+                    txtDni.Text = seleccionado.Dni.ToString();
+                    txtCuit.Text = seleccionado.Cuit;
+                    txtTelefono.Text = seleccionado.Telefono;
+                    //fecha nac
+                    txtDireccion.Text = seleccionado.Direccion;
+                    txtEmail.Text = seleccionado.Email;
+                    txtClave.Text = seleccionado.Clave;
+                }
+            }
         }
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
+            Persona persona = new Persona();
+
+            if (Request.QueryString["id"] != null)
+            {
+                Rol rol = new Rol();
+                rol.Id = 4;
+
+                persona.Rol = rol;
+                persona.Nombre = txtNombre.Text;
+                persona.Apellido = txtApellido.Text;
+                persona.Dni = short.Parse(txtDni.Text);
+                persona.Cuit = txtCuit.Text;
+                persona.Telefono = txtTelefono.Text;
+                //persona.FechaNac = DateTime.Parse(txtFechaNacimiento.Text);
+                //persona.FechaNac = DateTime.Now.Date.ToString("yyyy-mm-dd");
+
+                persona.Direccion = txtDireccion.Text;
+                persona.Email = txtEmail.Text;
+                persona.Clave = txtClave.Text;
+
+                PersonaNegocio personaNegocio = new PersonaNegocio();
+                if (personaNegocio.modificar(persona))
+                {
+                    lblGuardadoExitoso.Text += "Guardado exitoso";
+                    txtNombre.Text = "";
+                    txtApellido.Text = "";
+                    txtDni.Text = "";
+                    txtCuit.Text = "";
+                    txtTelefono.Text = "";
+                    txtDireccion.Text = "";
+                    txtEmail.Text = "";
+                    txtClave.Text = "";
+                }
+
+            }
+            else
+            {
+
+                //Persona persona = new Persona();
+
+                //SIEMPRE ES PACIENTE (id_rol = 4)
+
+                Rol rol = new Rol();
+                rol.Id = 4;
+
+                persona.Rol = rol;
+                persona.Nombre = txtNombre.Text;
+                persona.Apellido = txtApellido.Text;
+                persona.Dni = short.Parse(txtDni.Text);
+                persona.Cuit = txtCuit.Text;
+                persona.Telefono = txtTelefono.Text;
+
+                //persona.FechaNac = DateTime.Parse(txtFechaNacimiento.Text);
+
+                //persona.FechaNac = DateTime.Now.Date.ToString("yyyy-mm-dd");
+
+
+                persona.Direccion = txtDireccion.Text;
+                persona.Email = txtEmail.Text;
+                persona.Clave = txtClave.Text;
+
+                //Puedo llamar al metodo agregar de PersonaNegocio
+
+                PersonaNegocio personaNegocio = new PersonaNegocio();
+                if (personaNegocio.agregar(persona))
+                {
+                    lblGuardadoExitoso.Text += "Guardado exitoso";
+                    txtNombre.Text = "";
+                    txtApellido.Text = "";
+                    txtDni.Text = "";
+                    txtCuit.Text = "";
+                    txtTelefono.Text = "";
+                    txtDireccion.Text = "";
+                    txtEmail.Text = "";
+                    txtClave.Text = "";
+                }
+
+            }
+            /*
             Persona persona = new Persona();
 
             //SIEMPRE ES PACIENTE (id_rol = 4)
@@ -58,7 +156,7 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
                 txtEmail.Text = "";
                 txtClave.Text = "";
             }
-
+            */
         }
     
     }

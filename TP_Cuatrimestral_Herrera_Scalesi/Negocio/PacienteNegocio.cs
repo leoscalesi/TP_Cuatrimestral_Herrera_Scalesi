@@ -19,7 +19,7 @@ namespace Negocio
             try
             {
 
-                datos.setearConsulta("select nombre,apellido, dni, cuit, telefono, direccion, email from personas where id_rol=4");
+                datos.setearConsulta("select id, nombre,apellido, dni, cuit, telefono, direccion, email from personas where id_rol=4");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
@@ -27,6 +27,8 @@ namespace Negocio
 
                     Paciente aux = new Paciente();
 
+                    aux.Id = (int)datos.Lector["id"];
+                    aux.IdPaciente = (int)datos.Lector["id"];
                     aux.Nombre = (string)datos.Lector["nombre"].ToString();
                     aux.Apellido = (string)datos.Lector["apellido"].ToString();
                     aux.Dni = (short)datos.Lector["dni"]; // modificar en db a int
