@@ -21,6 +21,9 @@
                     </div>
                     <div class="card-body">
                         <div class="mb-3">
+                            <asp:Label ID="lblId" Visible="false" runat="server" Text=""></asp:Label>
+                        </div>
+                        <div class="mb-3">
                             <label for="txtNombre" class="form-label">Nombre</label>
                             <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control"></asp:TextBox>
                         </div>

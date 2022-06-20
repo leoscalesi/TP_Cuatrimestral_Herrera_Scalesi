@@ -19,14 +19,14 @@ namespace Negocio
             try
             {
 
-                datos.setearConsulta("select nombre,apellido, dni, cuit, email, clave, id_rol from personas");
+                datos.setearConsulta("select id, nombre,apellido, dni, cuit, email, clave, id_rol from personas");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
                 {
 
                     Persona aux = new Persona();
-
+                    aux.Id = (int)datos.Lector["id"];
                     aux.Nombre = (string)datos.Lector["nombre"];
                     aux.Apellido = (string)datos.Lector["apellido"];
 
@@ -111,8 +111,8 @@ namespace Negocio
             try
             {
                 //ARREGLAR LO DE LA FECHA DE NACIMIENTO
-
-                accesoaDatos.setearConsulta("update PERSONAS set nombre = '" + persona.Nombre + "', apellido = '" + persona.Apellido + "', dni = '" + persona.Dni + "', cuit = '" + persona.Cuit + "', telefono = '" + persona.Telefono + "', direccion = '" + persona.Direccion + "', email = '" + persona.Email + "', clave = '" + persona.Clave + "' where id = 14 ");
+                
+                accesoaDatos.setearConsulta("update PERSONAS set nombre = '" + persona.Nombre + "', apellido = '" + persona.Apellido + "', dni = '" + persona.Dni + "', cuit = '" + persona.Cuit + "', telefono = '" + persona.Telefono + "', direccion = '" + persona.Direccion + "', email = '" + persona.Email + "', clave = '" + persona.Clave + "' where id = "+ persona.Id +" ");
                 accesoaDatos.ejecutarAccion();
 
                 return true;

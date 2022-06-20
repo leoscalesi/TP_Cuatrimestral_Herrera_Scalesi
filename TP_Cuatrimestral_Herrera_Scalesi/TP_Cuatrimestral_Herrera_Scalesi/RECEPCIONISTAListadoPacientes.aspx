@@ -14,7 +14,7 @@
         
     <div class="card" id="estiloRecepcionistaListadoPacientes">
 
-        <div class="card-header">
+        <div class="card-header" style="text-align:center">
             <h2>Listado de pacientes</h2>
             <div>
                 <img src="img/paciente.png" cssclass="img-fluid" width="70" alt="img paciente" />
@@ -25,10 +25,10 @@
             <div>
                 <asp:Label ID="lblFiltro" runat="server" Text="Filtro"></asp:Label>
                 <asp:TextBox ID="txtFiltro" runat="server"></asp:TextBox>
-                <asp:Button ID="btbFiltro" runat="server" Text="Buscar" />
+                <asp:Button ID="btbFiltro" runat="server" Text="Buscar" OnClick="btbFiltro_Click" />
                 <br />
                 <br />
-                <asp:GridView ID="dgvListadoPacientes" OnSelectedIndexChanged="dgvListadoPacientes_SelectedIndexChanged" OnRowDeleting="dgvListadoPacientes_RowDeleting" AutoGenerateColumns="false" cssclass="table table-bordered d-sm-table-cell table-info"  runat="server">
+                <asp:GridView ID="dgvListadoPacientes" OnSelectedIndexChanged="dgvListadoPacientes_SelectedIndexChanged" OnRowDeleting="dgvListadoPacientes_RowDeleting" AutoGenerateColumns="false" cssclass="table table-bordered d-sm-table-cell table-info align-middle text-center align-center"  runat="server">
                     <columns>
                         <asp:BoundField HeaderText="ID" DataField="Id"/>
                         <asp:BoundField HeaderText="Nombre" DataField="Nombre"/>
@@ -39,8 +39,8 @@
                         <asp:BoundField HeaderText="Direccion" DataField="Direccion"/>
                         <asp:BoundField HeaderText="Email" DataField="Email"/>
                         <asp:BoundField HeaderText="Clave" DataField="Clave" />
-                        <asp:CommandField ShowSelectButton="true" SelectText="Seleccionar" HeaderText="Modificar" />
-                        <asp:CommandField ShowDeleteButton="true" ButtonType="Button" HeaderText="Eliminar paciente" />
+                        <asp:CommandField ShowSelectButton="true" SelectText="Seleccionar" ControlStyle-CssClass="btn btn-info" HeaderText="Modificar" />
+                        <asp:CommandField ShowDeleteButton="true" ButtonType="Button" ControlStyle-CssClass="btn btn-danger" HeaderText="Eliminar" />
                     </columns>
                  </asp:GridView>
             </div>

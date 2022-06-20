@@ -21,8 +21,11 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
                 //dgvListadoPacientes.DataBind();
                 // listaPacientes = pacienteNegocio.listar();
             }
-            dgvListadoPacientes.DataSource = Session["listaPacientes"];
-            dgvListadoPacientes.DataBind();
+            if (!IsPostBack)
+            {
+                dgvListadoPacientes.DataSource = Session["listaPacientes"];
+                dgvListadoPacientes.DataBind();
+            }
         }
 
         protected void dgvListadoPacientes_SelectedIndexChanged(object sender, EventArgs e)
@@ -44,6 +47,18 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
                 //mostrar un "eliminado con exito"
                 //recargar pagina para tener nuevo listado
             }
+        }
+
+        protected void btbFiltro_Click(object sender, EventArgs e)
+        {
+            List<Paciente> listaFiltrada = (List<Paciente>)Session["listaPacientes"];
+            if (txtFiltro.Text != "")
+            {
+                listaFiltrada = listaFiltrada.FindAll(x => x.Nombre == txtFiltro.Text);
+            }
+
+            dgvListadoPacientes.DataSource = null;
+            dgvListadoPacientes.DataSource = listaFiltrada;
         }
     }
 }
