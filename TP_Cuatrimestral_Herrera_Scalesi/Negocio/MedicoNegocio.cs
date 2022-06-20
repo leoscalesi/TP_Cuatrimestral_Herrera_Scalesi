@@ -45,5 +45,38 @@ namespace Negocio
 
         }
 
+        public bool agregarMedico(Medico medico)
+        {
+            AccesoaDatos accesoaDatos = new AccesoaDatos();
+
+
+
+            try
+            {
+
+                //FALTARIA EL idEspecialidad
+
+                accesoaDatos.setearConsulta("insert into medicos (id_persona,nro_matricula) values('" + medico.IdPersona + "', '" + medico.NumMatricula + "'" + ")");
+                accesoaDatos.ejecutarAccion();
+
+                return true;
+
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+            finally
+            {
+                accesoaDatos.cerrarConexion();
+            }
+
+            return false;
+        }
+
     }
 }

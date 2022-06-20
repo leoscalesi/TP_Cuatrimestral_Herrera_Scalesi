@@ -160,5 +160,46 @@ namespace Negocio
 
 
         }
+
+        public int recuperarId(string email)
+        {
+
+            AccesoaDatos accesoaDatos = new AccesoaDatos();
+
+
+            try
+            {
+
+                accesoaDatos.setearConsulta("select id from personas where email = " + "'" + email + "'");
+                accesoaDatos.ejecutarLectura();
+
+
+                if (accesoaDatos.Lector.Read())
+                {
+                    int id;
+                    id = (int)accesoaDatos.Lector["id"];
+                    return id;
+
+                }
+
+
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+            finally
+            {
+                accesoaDatos.cerrarConexion();
+            }
+
+            return 0;
+
+        }
+
     }
 }

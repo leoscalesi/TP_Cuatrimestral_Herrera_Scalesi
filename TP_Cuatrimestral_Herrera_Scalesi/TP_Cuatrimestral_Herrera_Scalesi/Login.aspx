@@ -25,12 +25,12 @@
 
                <div>
                   <h6>Usuario</h6>
-                  <asp:TextBox ID="txtUsuario" CssClass="text-center" runat="server"></asp:TextBox>
+                  <asp:TextBox ID="txtUsuario" type="email" CssClass="text-center" runat="server"></asp:TextBox>
                </div>
 
                <div style="padding-top:20px;">
                   <h6>Contraseña</h6>
-                  <asp:TextBox ID="txtContraseña" CssClass="text-center" runat="server"></asp:TextBox>
+                  <asp:TextBox ID="txtContraseña" type="password" CssClass="text-center" runat="server"></asp:TextBox>
                </div>
 
               <div style="color:red;">
