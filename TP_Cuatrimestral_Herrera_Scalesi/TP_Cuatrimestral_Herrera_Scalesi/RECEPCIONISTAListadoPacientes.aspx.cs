@@ -45,7 +45,10 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
             if (personaNegocio.eliminar(id))
             {
                 //mostrar un "eliminado con exito"
-                //recargar pagina para tener nuevo listado
+                PacienteNegocio pacienteNegocio = new PacienteNegocio();
+                Session.Add("listaPacientes", pacienteNegocio.listar());
+                dgvListadoPacientes.DataSource = Session["listaPacientes"];
+                dgvListadoPacientes.DataBind();
             }
         }
 
