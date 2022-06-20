@@ -11,23 +11,32 @@
 </head>
 <body class="estiloBody">
     <form id="form1" runat="server">
-        
+        <div align="center">
+            <img src="img/gestiondeturnos.png" alt="gestion turno"/>
+        </div>
+        <div>
         <h2 style="padding:40px;">
             <asp:Label ID="lblHolaRecepcionista" runat="server" Text="Hola "></asp:Label>
         </h2>
-
-        <h4 style="text-align:center">Que desea hacer?</h4>
-        
+        </div>
         <div class="card" id="estiloCardRecepcionistaPrincipal">
             
+            <div class="card-header">
+                <img src="img/principal.png" width="70" alt="logo" />
+                <h4 style="text-align:center">Que desea hacer?</h4>
+            </div>
+
             <div class="card-body">
-                
+                <div style="padding-top:30px">
+                    <asp:Button ID="btnListadoPacientes" runat="server" Text=" Lista Pacientes " style="background-color: darkcyan" OnClick="btnListadoPacientes_Click" />
+                </div>
+
                 <div style="padding-top:30px">
                     <asp:Button ID="btnNuevoPaciente" runat="server" Text="Nuevo Paciente" style="background-color:lightgreen;" OnClick="btnNuevoPaciente_Click"/>
                 </div>
     
                 <div style="padding-top:30px;">
-                    <asp:Button ID="btnBrindarTurnos" runat="server" Text="Brindar Turnos" style="background-color: lightblue;" OnClick="btnBrindarTurnos_Click"/>
+                    <asp:Button ID="btnBrindarTurnos" runat="server" Text=" Brindar Turnos " style="background-color: lightblue;" OnClick="btnBrindarTurnos_Click"/>
                 </div>
             </div>
             

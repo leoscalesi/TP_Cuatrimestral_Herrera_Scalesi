@@ -30,5 +30,20 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
             var id = dgvListadoPacientes.SelectedRow.Cells[0].Text;
             Response.Redirect("RecepcionistaFormularioNuevoPaciente.aspx?id=" + id);
         }
+
+        protected void dgvListadoPacientes_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            var id = dgvListadoPacientes.Rows[e.RowIndex].Cells[0].Text;
+            Persona persona = new Persona();
+            PersonaNegocio personaNegocio = new PersonaNegocio();
+
+            //preguntar si desea eliminar
+
+            if (personaNegocio.eliminar(id))
+            {
+                //mostrar un "eliminado con exito"
+                //recargar pagina para tener nuevo listado
+            }
+        }
     }
 }

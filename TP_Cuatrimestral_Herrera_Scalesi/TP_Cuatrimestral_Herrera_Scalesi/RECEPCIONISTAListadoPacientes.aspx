@@ -28,7 +28,7 @@
                 <asp:Button ID="btbFiltro" runat="server" Text="Buscar" />
                 <br />
                 <br />
-                <asp:GridView ID="dgvListadoPacientes" OnSelectedIndexChanged="dgvListadoPacientes_SelectedIndexChanged" AutoGenerateColumns="false" cssclass="table table-bordered d-sm-table-cell table-info"  runat="server">
+                <asp:GridView ID="dgvListadoPacientes" OnSelectedIndexChanged="dgvListadoPacientes_SelectedIndexChanged" OnRowDeleting="dgvListadoPacientes_RowDeleting" AutoGenerateColumns="false" cssclass="table table-bordered d-sm-table-cell table-info"  runat="server">
                     <columns>
                         <asp:BoundField HeaderText="ID" DataField="Id"/>
                         <asp:BoundField HeaderText="Nombre" DataField="Nombre"/>
@@ -40,6 +40,7 @@
                         <asp:BoundField HeaderText="Email" DataField="Email"/>
                         <asp:BoundField HeaderText="Clave" DataField="Clave" />
                         <asp:CommandField ShowSelectButton="true" SelectText="Seleccionar" HeaderText="Modificar" />
+                        <asp:CommandField ShowDeleteButton="true" ButtonType="Button" HeaderText="Eliminar paciente" />
                     </columns>
                  </asp:GridView>
             </div>

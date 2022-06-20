@@ -132,5 +132,33 @@ namespace Negocio
 
         }
 
+        public bool eliminar(string id)
+        {
+            AccesoaDatos accesoaDatos = new AccesoaDatos();
+
+
+            try
+            {
+                //ARREGLAR LO DE LA FECHA DE NACIMIENTO
+
+                accesoaDatos.setearConsulta("delete from personas where id = " + id + "");
+                accesoaDatos.ejecutarAccion();
+
+                return true;
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+            finally
+            {
+                accesoaDatos.cerrarConexion();
+            }
+
+
+        }
     }
 }
