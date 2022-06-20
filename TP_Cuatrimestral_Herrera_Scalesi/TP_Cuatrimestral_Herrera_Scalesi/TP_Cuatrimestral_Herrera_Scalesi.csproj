@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AdministradorPrincipal.aspx" />
     <Content Include="estilos\estilos.css" />
     <Content Include="LOGIN.aspx" />
     <Content Include="MEDICOAgregarModificarDiagnostico.aspx" />
@@ -80,6 +81,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdministradorPrincipal.aspx.cs">
+      <DependentUpon>AdministradorPrincipal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdministradorPrincipal.aspx.designer.cs">
+      <DependentUpon>AdministradorPrincipal.aspx</DependentUpon>
+    </Compile>
     <Compile Include="LOGIN.aspx.cs">
       <DependentUpon>LOGIN.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

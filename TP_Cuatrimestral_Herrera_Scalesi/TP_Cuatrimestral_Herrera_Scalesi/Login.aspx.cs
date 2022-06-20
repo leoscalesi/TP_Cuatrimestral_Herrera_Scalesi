@@ -60,6 +60,14 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
                         Response.Redirect("MedicoListadoTurnos.aspx", false);
                         break;
 
+                    case 3:
+
+                        //ADMINISTRADOR
+
+                        Response.Redirect("AdministradorPrincipal.aspx", false);
+
+                        break;
+
                 }
             }
             else
