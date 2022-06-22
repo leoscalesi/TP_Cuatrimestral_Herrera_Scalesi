@@ -49,7 +49,7 @@
         
         <div class="card-footer">
             <div>
-                <asp:Button ID="btnContinuarAEspecialidades" runat="server" Text="Continuar" />
+                <asp:Button ID="btnVolverAFormularioPrincipal" runat="server" Text="Regresar" OnClick="btnVolverAFormularioPrincipal_Click" />
             </div>
         </div>
     </div>

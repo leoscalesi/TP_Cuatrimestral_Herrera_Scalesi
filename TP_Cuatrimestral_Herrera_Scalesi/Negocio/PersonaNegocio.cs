@@ -19,7 +19,7 @@ namespace Negocio
             try
             {
 
-                datos.setearConsulta("select id, nombre,apellido, dni, cuit, email, clave, id_rol from personas");
+                datos.setearConsulta("select id, nombre,apellido, dni, cuit, email, clave, estado, id_rol from personas");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
@@ -33,6 +33,7 @@ namespace Negocio
                     aux.Cuit = (string)datos.Lector["cuit"];
                     aux.Email = (string)datos.Lector["email"];
                     aux.Clave = (string)datos.Lector["clave"];
+                    aux.Estado = (bool)datos.Lector["estado"];
                     aux.Rol = new Rol();
                     aux.Rol.Id = (int)datos.Lector["id_rol"];
 
@@ -80,7 +81,7 @@ namespace Negocio
             {
                 //ARREGLAR LO DE LA FECHA DE NACIMIENTO
 
-                accesoaDatos.setearConsulta("insert into PERSONAS (nombre,apellido,dni,cuit,telefono,direccion,email,clave,id_rol) values('" + persona.Nombre + "','" + persona.Apellido + "','" + persona.Dni + "', '" + persona.Cuit + "', '" + persona.Telefono + "' , '" + persona.Direccion + "', '" + persona.Email + "', '" + persona.Clave + "', '" + persona.Rol.Id + "'" + ")");
+                accesoaDatos.setearConsulta("insert into PERSONAS (nombre,apellido,dni,cuit,telefono,direccion,email,clave,estado, id_rol) values('" + persona.Nombre + "','" + persona.Apellido + "','" + persona.Dni + "', '" + persona.Cuit + "', '" + persona.Telefono + "' , '" + persona.Direccion + "', '" + persona.Email + "', '" + persona.Clave + "', '" + persona.Estado + "', '" + persona.Rol.Id + "'" + ")");
                 //accesoaDatos.setearParametro("@IdMarca", articulo.Marca.Id);
                 //accesoaDatos.setearParametro("@IdCategoria", articulo.Categoria.Id);
 
@@ -112,7 +113,7 @@ namespace Negocio
             {
                 //ARREGLAR LO DE LA FECHA DE NACIMIENTO
                 
-                accesoaDatos.setearConsulta("update PERSONAS set nombre = '" + persona.Nombre + "', apellido = '" + persona.Apellido + "', dni = '" + persona.Dni + "', cuit = '" + persona.Cuit + "', telefono = '" + persona.Telefono + "', direccion = '" + persona.Direccion + "', email = '" + persona.Email + "', clave = '" + persona.Clave + "' where id = "+ persona.Id +" ");
+                accesoaDatos.setearConsulta("update PERSONAS set nombre = '" + persona.Nombre + "', apellido = '" + persona.Apellido + "', dni = '" + persona.Dni + "', cuit = '" + persona.Cuit + "', telefono = '" + persona.Telefono + "', direccion = '" + persona.Direccion + "', email = '" + persona.Email + "', clave = '" + persona.Clave + "', estado= '" + persona.Estado + "' where id = " + persona.Id +" ");
                 accesoaDatos.ejecutarAccion();
 
                 return true;
@@ -141,7 +142,7 @@ namespace Negocio
             {
                 //ARREGLAR LO DE LA FECHA DE NACIMIENTO
 
-                accesoaDatos.setearConsulta("delete from personas where id = " + id + "");
+                accesoaDatos.setearConsulta("update PERSONAS set estado = 0 where id = " + id + "");
                 accesoaDatos.ejecutarAccion();
 
                 return true;

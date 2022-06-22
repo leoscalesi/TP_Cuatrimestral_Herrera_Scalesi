@@ -60,12 +60,12 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
         protected global::System.Web.UI.WebControls.GridView dgvListadoPacientes;
 
         /// <summary>
-        /// Control btnContinuarAEspecialidades.
+        /// Control btnVolverAFormularioPrincipal.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnContinuarAEspecialidades;
+        protected global::System.Web.UI.WebControls.Button btnVolverAFormularioPrincipal;
     }
 }

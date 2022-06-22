@@ -63,5 +63,10 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
             dgvListadoPacientes.DataSource = null;
             dgvListadoPacientes.DataSource = listaFiltrada;
         }
+
+        protected void btnVolverAFormularioPrincipal_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("RecepcionistaFormularioPrincipal.aspx", false);
+        }
     }
 }

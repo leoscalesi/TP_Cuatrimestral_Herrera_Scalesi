@@ -98,6 +98,7 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
                 persona.Direccion = txtDireccion.Text;
                 persona.Email = txtEmail.Text;
                 persona.Clave = txtClave.Text;
+                persona.Estado = true;
 
                 //Puedo llamar al metodo agregar de PersonaNegocio
 

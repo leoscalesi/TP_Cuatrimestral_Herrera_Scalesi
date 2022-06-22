@@ -31,5 +31,8 @@ namespace Dominio
         public string Email { get; set; }
 
         public string Clave { get; set; }
+
+        public bool Estado { get; set; }
+
     }
 }
