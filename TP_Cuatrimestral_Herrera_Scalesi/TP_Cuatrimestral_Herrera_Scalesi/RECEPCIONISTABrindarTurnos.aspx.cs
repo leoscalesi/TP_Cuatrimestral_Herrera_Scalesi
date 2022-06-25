@@ -30,7 +30,7 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
 
         protected void VolverAtras_Click(object sender, EventArgs e)
         {
-            //Response.Redirect("RECEPCIONISTAFormularioPrincipal.aspx", false);
+            Response.Redirect("RECEPCIONISTAFormularioPrincipal.aspx", false);
         }
 
         protected void btnFiltrar_Click(object sender, EventArgs e)

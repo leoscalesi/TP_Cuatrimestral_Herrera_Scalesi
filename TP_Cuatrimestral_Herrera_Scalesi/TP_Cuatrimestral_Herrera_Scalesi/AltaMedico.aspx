@@ -70,8 +70,15 @@
 
 
                     <div class="card-footer">
-                        <asp:Button ID="btnGuardar" runat="server" style="background-color:lightgreen;" Text="Guardar" OnClick="btnGuardar_Click" />
-                        <asp:Label ID="lblGuardadoExitoso" runat="server" Text=""></asp:Label>
+                        <div>
+                            <asp:Button ID="btnGuardar" CssClass="btn" runat="server" style="background-color:lightgreen;" Text="Guardar" OnClick="btnGuardar_Click" />
+                            <asp:Label ID="lblGuardadoExitoso" runat="server" Text=""></asp:Label>
+                        </div>
+                        <div>
+                            <br />
+                            <asp:Button ID="btnFormularioPrincipal" CssClass="btn btn-success border-secondary" runat="server" Text="Volver" OnClick="btnFormularioPrincipal_Click" />
+                        </div>
+
                     </div>
                 </div>
             </div>

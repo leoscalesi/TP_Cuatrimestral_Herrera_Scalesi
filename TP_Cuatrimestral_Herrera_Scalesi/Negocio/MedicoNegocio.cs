@@ -78,5 +78,52 @@ namespace Negocio
             return false;
         }
 
+        public List<Medico> listar()
+        {
+            List<Medico> lista = new List<Medico>();
+            AccesoaDatos datos = new AccesoaDatos();
+            try
+            {
+
+                datos.setearConsulta("select p.id, p.nombre, p.apellido, p.dni, m.nro_matricula, m.id_especialidad, p.telefono, p.email, p.clave, p.estado, p.id_rol from personas as p Inner Join MEDICOS as m On m.id_persona = p.id where p.estado=1");
+                datos.ejecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+
+                    Medico aux = new Medico();
+                    aux.Id = (int)datos.Lector["id"];
+                    aux.Nombre = (string)datos.Lector["nombre"];
+                    aux.Apellido = (string)datos.Lector["apellido"];
+                    aux.Dni = (short)datos.Lector["dni"];
+                    aux.NumMatricula = (short)datos.Lector["nro_matricula"];
+                    aux.Especialidad = new Especialidad();
+                    aux.Especialidad.Id = (int)datos.Lector["id_especialidad"];
+                    aux.Email = (string)datos.Lector["email"];
+                    aux.Clave = (string)datos.Lector["clave"];
+                    aux.Estado = (bool)datos.Lector["estado"];
+                    aux.Rol = new Rol();
+                    aux.Rol.Id = (int)datos.Lector["id_rol"];
+
+
+                    lista.Add(aux);
+
+                }
+
+                return lista;
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+        }
+
     }
 }

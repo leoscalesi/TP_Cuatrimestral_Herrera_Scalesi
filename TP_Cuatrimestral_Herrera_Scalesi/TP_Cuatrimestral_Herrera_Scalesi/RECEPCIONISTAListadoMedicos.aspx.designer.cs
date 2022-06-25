@@ -11,7 +11,7 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
 {
 
 
-    public partial class RecepcionistaFormularioPrincipal
+    public partial class RECEPCIONISTAListadoMedicos
     {
 
         /// <summary>
@@ -24,66 +24,48 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Control lblHolaRecepcionista.
+        /// Control lblFiltro.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblHolaRecepcionista;
+        protected global::System.Web.UI.WebControls.Label lblFiltro;
 
         /// <summary>
-        /// Control btnBrindarTurnos.
+        /// Control txtFiltro.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnBrindarTurnos;
+        protected global::System.Web.UI.WebControls.TextBox txtFiltro;
 
         /// <summary>
-        /// Control btnListadoPacientes.
+        /// Control btnFiltro.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnListadoPacientes;
+        protected global::System.Web.UI.WebControls.Button btnFiltro;
 
         /// <summary>
-        /// Control btnNuevoPaciente.
+        /// Control dgvListadoMedicos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnNuevoPaciente;
+        protected global::System.Web.UI.WebControls.GridView dgvListadoMedicos;
 
         /// <summary>
-        /// Control btnListadoMedicos.
+        /// Control btnVolver.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnListadoMedicos;
-
-        /// <summary>
-        /// Control btnNuevoMedico.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnNuevoMedico;
-
-        /// <summary>
-        /// Control btnSalir.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSalir;
+        protected global::System.Web.UI.WebControls.Button btnVolver;
     }
 }

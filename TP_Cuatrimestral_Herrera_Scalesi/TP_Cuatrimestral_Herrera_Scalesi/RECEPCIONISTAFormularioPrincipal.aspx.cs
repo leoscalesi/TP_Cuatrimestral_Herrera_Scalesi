@@ -16,8 +16,8 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
         {
             //Recupero las variables guardadas en Session
 
-            nombre = Session["nombre"].ToString();
-            apellido = Session["apellido"].ToString();
+            //nombre = Session["nombre"].ToString();
+            //apellido = Session["apellido"].ToString();
 
             lblHolaRecepcionista.Text += nombre + " " + apellido;
         }
@@ -35,6 +35,16 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
         protected void btnListadoPacientes_Click(object sender, EventArgs e)
         {
             Response.Redirect("RECEPCIONISTAListadoPacientes.aspx", false);
+        }
+
+        protected void btnListadoMedicos_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("RecepcionistaListadoMedicos.aspx", false);
+        }
+
+        protected void btnNuevoMedico_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AltaMedico.aspx", false);
         }
     }
 }
