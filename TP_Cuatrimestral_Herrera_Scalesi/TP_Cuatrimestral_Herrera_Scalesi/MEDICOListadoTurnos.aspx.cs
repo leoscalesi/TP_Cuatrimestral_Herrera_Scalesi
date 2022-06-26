@@ -14,11 +14,22 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            /*
             nombre = Session["nombre"].ToString();
             apellido = Session["apellido"].ToString();
 
             lblHolaMedico.Text += nombre + " " + apellido;
-            
+            */
+            if (Session["nombre"] == null || Session["apellido"] == null)
+            {
+                Response.Redirect("Error.aspx", false);
+            }
+            else
+            {
+                nombre = Session["nombre"].ToString();
+                apellido = Session["apellido"].ToString();
+                lblHolaMedico.Text += nombre + " " + apellido;
+            }
         }
 
         protected void btnModAgrDiagnostico_Click(object sender, EventArgs e)

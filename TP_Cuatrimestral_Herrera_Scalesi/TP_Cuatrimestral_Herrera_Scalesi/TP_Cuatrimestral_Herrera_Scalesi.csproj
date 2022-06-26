@@ -69,6 +69,7 @@
   <ItemGroup>
     <Content Include="AdministradorPrincipal.aspx" />
     <Content Include="AltaMedico.aspx" />
+    <Content Include="Error.aspx" />
     <Content Include="estilos\estilos.css" />
     <Content Include="LOGIN.aspx" />
     <Content Include="MEDICOAgregarModificarDiagnostico.aspx" />
@@ -96,6 +97,13 @@
     </Compile>
     <Compile Include="AltaMedico.aspx.designer.cs">
       <DependentUpon>AltaMedico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
     </Compile>
     <Compile Include="LOGIN.aspx.cs">
       <DependentUpon>LOGIN.aspx</DependentUpon>
