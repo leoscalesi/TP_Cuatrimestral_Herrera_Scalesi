@@ -25,7 +25,7 @@
                 <div>
                     <asp:Label ID="lblFiltro" runat="server" Text="Filtro"></asp:Label>
                     <asp:TextBox ID="txtFiltro" runat="server"></asp:TextBox>
-                    <asp:Button ID="btnFiltro" runat="server" Text="Buscar" />
+                    <asp:Button ID="btnFiltro" runat="server" Text="Buscar" OnClick="btnFiltro_Click" />
                     <br />
                     <br />
                     <asp:GridView ID="dgvListadoMedicos" OnSelectedIndexChanged="dgvListadoMedicos_SelectedIndexChanged" OnRowDeleting="dgvListadoMedicos_RowDeleting" AutoGenerateColumns="false" CssClass="table table-hover d-sm-table-cell alig-middle text-center" runat="server">

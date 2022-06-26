@@ -85,7 +85,7 @@ namespace Negocio
             try
             {
 
-                datos.setearConsulta("select p.id, p.nombre, p.apellido, p.dni, m.nro_matricula, m.id_especialidad, p.telefono, p.email, p.clave, p.estado, p.id_rol from personas as p Inner Join MEDICOS as m On m.id_persona = p.id where p.estado=1");
+                datos.setearConsulta("select p.id, p.nombre, p.apellido, p.dni, m.nro_matricula, m.id_especialidad, p.telefono, p.email, p.cuit, p.direccion, p.clave, p.estado, p.id_rol from personas as p Inner Join MEDICOS as m On m.id_persona = p.id where p.estado=1");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
@@ -93,12 +93,15 @@ namespace Negocio
 
                     Medico aux = new Medico();
                     aux.Id = (int)datos.Lector["id"];
-                    aux.Nombre = (string)datos.Lector["nombre"];
-                    aux.Apellido = (string)datos.Lector["apellido"];
+                    aux.Nombre = (string)datos.Lector["nombre"].ToString();
+                    aux.Apellido = (string)datos.Lector["apellido"].ToString();
                     aux.Dni = (short)datos.Lector["dni"];
                     aux.NumMatricula = (short)datos.Lector["nro_matricula"];
                     aux.Especialidad = new Especialidad();
                     aux.Especialidad.Id = (int)datos.Lector["id_especialidad"];
+                    aux.Cuit = (string)datos.Lector["cuit"];
+                    aux.Telefono = (string)datos.Lector["telefono"].ToString();
+                    aux.Direccion = (string)datos.Lector["direccion"].ToString();
                     aux.Email = (string)datos.Lector["email"];
                     aux.Clave = (string)datos.Lector["clave"];
                     aux.Estado = (bool)datos.Lector["estado"];
@@ -122,6 +125,37 @@ namespace Negocio
             {
                 datos.cerrarConexion();
             }
+
+        }
+
+        public bool modificarMedico(Medico medico, int idPersona)
+        {
+            AccesoaDatos accesoaDatos = new AccesoaDatos();
+
+            medico.IdPersona = idPersona;
+
+            try
+            {
+                //ARREGLAR LO DE LA FECHA DE NACIMIENTO
+
+                //accesoaDatos.setearConsulta("update PERSONAS set nombre = '" + persona.Nombre + "', apellido = '" + persona.Apellido + "', dni = '" + persona.Dni + "', cuit = '" + persona.Cuit + "', telefono = '" + persona.Telefono + "', direccion = '" + persona.Direccion + "', email = '" + persona.Email + "', clave = '" + persona.Clave + "', estado= '" + persona.Estado + "' where id = " + persona.Id + " ");
+                accesoaDatos.setearConsulta("update MEDICOS set id_especialidad = '" + medico.Especialidad.Id + "', nro_matricula = '" + medico.NumMatricula + "' where id_persona ='" + medico.IdPersona + "'");
+                accesoaDatos.ejecutarAccion();
+
+                return true;
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+            finally
+            {
+                accesoaDatos.cerrarConexion();
+            }
+
 
         }
 

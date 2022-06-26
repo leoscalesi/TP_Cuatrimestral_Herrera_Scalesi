@@ -55,5 +55,19 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
         {
             Response.Redirect("RecepcionistaFormularioPrincipal.aspx", false);
         }
+
+        protected void btnFiltro_Click(object sender, EventArgs e)
+        {
+            List<Medico> listaFiltrada = (List<Medico>)Session["listaMedicos"];
+            if (txtFiltro.Text != "")
+            {
+                //faltaria agregar un filtro por especialidad
+                listaFiltrada = listaFiltrada.FindAll(x => x.Nombre.ToUpper().Contains(txtFiltro.Text.ToUpper()) || x.Apellido.ToUpper().Contains(txtFiltro.Text.ToUpper()));
+            }
+
+            dgvListadoMedicos.DataSource = null;
+            dgvListadoMedicos.DataSource = listaFiltrada;
+            dgvListadoMedicos.DataBind();
+        }
     }
 }

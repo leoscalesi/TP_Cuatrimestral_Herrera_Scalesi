@@ -57,11 +57,12 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
             List<Paciente> listaFiltrada = (List<Paciente>)Session["listaPacientes"];
             if (txtFiltro.Text != "")
             {
-                listaFiltrada = listaFiltrada.FindAll(x => x.Nombre == txtFiltro.Text);
+                listaFiltrada = listaFiltrada.FindAll(x => x.Nombre.ToUpper().Contains(txtFiltro.Text.ToUpper()) || x.Apellido.ToUpper().Contains(txtFiltro.Text.ToUpper()));
             }
 
             dgvListadoPacientes.DataSource = null;
             dgvListadoPacientes.DataSource = listaFiltrada;
+            dgvListadoPacientes.DataBind();
         }
 
         protected void btnVolverAFormularioPrincipal_Click(object sender, EventArgs e)

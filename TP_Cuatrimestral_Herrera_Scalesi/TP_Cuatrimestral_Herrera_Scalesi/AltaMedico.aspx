@@ -20,6 +20,9 @@
                         <h2 style="text-align: center;">Alta de medicos</h2>
                     </div>
                     <div class="card-body">
+                        <div>
+                            <asp:Label ID="lblId" runat="server" Visible="false" Text=""></asp:Label>
+                        </div>
                         <div class="mb-3">
                             <label for="txtNombre" class="form-label">Nombre</label>
                             <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control"></asp:TextBox>
