@@ -13,6 +13,9 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Page.UnobtrusiveValidationMode = System.Web.UI.UnobtrusiveValidationMode.None;
+
+
             if (!IsPostBack)
             {
                 if (Request.QueryString["id"] != null)
