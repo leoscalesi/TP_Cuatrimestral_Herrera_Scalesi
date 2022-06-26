@@ -64,6 +64,8 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
                 PersonaNegocio personaNegocio = new PersonaNegocio();
                 if (personaNegocio.modificar(persona))
                 {
+                    /*
+                    
                     lblGuardadoExitoso.Text += "Guardado exitoso";
                     txtNombre.Text = "";
                     txtApellido.Text = "";
@@ -73,6 +75,8 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
                     txtDireccion.Text = "";
                     txtEmail.Text = "";
                     txtClave.Text = "";
+
+                    */
                 }
 
             }
@@ -108,6 +112,7 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
                 PersonaNegocio personaNegocio = new PersonaNegocio();
                 if (personaNegocio.agregar(persona))
                 {
+                    /*
                     lblGuardadoExitoso.Text += "Guardado exitoso";
                     txtNombre.Text = "";
                     txtApellido.Text = "";
@@ -117,6 +122,8 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
                     txtDireccion.Text = "";
                     txtEmail.Text = "";
                     txtClave.Text = "";
+                    */
+                    
                 }
 
             }

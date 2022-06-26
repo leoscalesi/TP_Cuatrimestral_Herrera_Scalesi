@@ -156,7 +156,6 @@ namespace Negocio
                 accesoaDatos.cerrarConexion();
             }
 
-
         }
 
     }

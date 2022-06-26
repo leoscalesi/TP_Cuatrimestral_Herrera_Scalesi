@@ -50,5 +50,10 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
         {
             Response.Redirect("AltaMedico.aspx", false);
         }
+
+        protected void btnSalir_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Login.aspx", false);
+        }
     }
 }

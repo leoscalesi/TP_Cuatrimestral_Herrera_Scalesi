@@ -38,7 +38,7 @@
                         <asp:BoundField HeaderText="Telefono" DataField="Telefono"/>
                         <asp:BoundField HeaderText="Direccion" DataField="Direccion"/>
                         <asp:BoundField HeaderText="Email" DataField="Email"/>
-                        <asp:BoundField HeaderText="Clave" DataField="Clave" />
+                        
                         <asp:CommandField ShowSelectButton="true" SelectText="Seleccionar" ControlStyle-CssClass="btn btn-info" HeaderText="Modificar" />
                         <asp:CommandField ShowDeleteButton="true" ButtonType="Button" ControlStyle-CssClass="btn btn-danger" HeaderText="Eliminar" />
                     </columns>

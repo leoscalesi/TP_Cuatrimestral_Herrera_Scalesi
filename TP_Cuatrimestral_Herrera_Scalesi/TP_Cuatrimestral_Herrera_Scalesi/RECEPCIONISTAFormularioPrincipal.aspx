@@ -44,7 +44,7 @@
             
             <div class="card-footer" style="padding-top:30px;">
                  <div style="padding-bottom:10px">
-                <asp:Button ID="btnSalir" CssClass=" btn" runat="server" Text="Salir" style="background-color: coral;" />
+                <asp:Button ID="btnSalir" CssClass=" btn" runat="server" Text="Salir" style="background-color: coral;" OnClick="btnSalir_Click" />
                 </div>
             </div>
         </div>
