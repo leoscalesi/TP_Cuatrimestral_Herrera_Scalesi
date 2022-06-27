@@ -64,6 +64,13 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
                 PersonaNegocio personaNegocio = new PersonaNegocio();
                 if (personaNegocio.modificar(persona))
                 {
+
+                    
+
+
+
+
+
                     /*
                     
                     lblGuardadoExitoso.Text += "Guardado exitoso";
@@ -112,7 +119,7 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
                 PersonaNegocio personaNegocio = new PersonaNegocio();
                 if (personaNegocio.agregar(persona))
                 {
-                    /*
+                    
                     lblGuardadoExitoso.Text += "Guardado exitoso";
                     txtNombre.Text = "";
                     txtApellido.Text = "";
@@ -122,17 +129,21 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
                     txtDireccion.Text = "";
                     txtEmail.Text = "";
                     txtClave.Text = "";
-                    */
+                    
                     
                 }
 
             }
+
+            Response.Redirect("GuardadoExitoso.aspx",false);
             
         }
 
         protected void btnFormularioPrincipal_Click(object sender, EventArgs e)
         {
+            
             Response.Redirect("RecepcionistaFormularioPrincipal.aspx", false);
+            
         }
     }
 }

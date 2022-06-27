@@ -71,6 +71,7 @@
     <Content Include="AltaMedico.aspx" />
     <Content Include="Error.aspx" />
     <Content Include="estilos\estilos.css" />
+    <Content Include="GuardadoExitoso.aspx" />
     <Content Include="LOGIN.aspx" />
     <Content Include="MEDICOAgregarModificarDiagnostico.aspx" />
     <Content Include="MEDICOListadoTurnos.aspx" />
@@ -104,6 +105,13 @@
     </Compile>
     <Compile Include="Error.aspx.designer.cs">
       <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GuardadoExitoso.aspx.cs">
+      <DependentUpon>GuardadoExitoso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GuardadoExitoso.aspx.designer.cs">
+      <DependentUpon>GuardadoExitoso.aspx</DependentUpon>
     </Compile>
     <Compile Include="LOGIN.aspx.cs">
       <DependentUpon>LOGIN.aspx</DependentUpon>
