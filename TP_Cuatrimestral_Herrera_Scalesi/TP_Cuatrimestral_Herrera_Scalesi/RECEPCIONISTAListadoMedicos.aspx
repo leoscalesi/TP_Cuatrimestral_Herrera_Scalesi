@@ -37,7 +37,7 @@
                         <asp:BoundField HeaderText="Matricula" DataField="NumMatricula"/>
                         <asp:BoundField HeaderText="Especialidad" DataField="Especialidad.Id"/>
                         <asp:BoundField HeaderText="Telefono" DataField="Telefono"/>
-                        <asp:BoundField HeaderText="Direccion" DataField="Direccion"/>
+                       
                         <asp:BoundField HeaderText="Email" DataField="Email"/>
                         <asp:CommandField ShowSelectButton="true" SelectText="Seleccionar" ControlStyle-CssClass="btn btn-info" HeaderText="Modificar" />
                         <asp:CommandField ShowDeleteButton="true" ButtonType="Button" ControlStyle-CssClass="btn btn-danger" HeaderText="Eliminar" />

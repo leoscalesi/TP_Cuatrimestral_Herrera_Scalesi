@@ -174,11 +174,14 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
                     }
                     else
                     {
+                        Response.Redirect("Error.aspx", false);
                         //No se agrego
                     }
                 }
             }
 
+            Response.Redirect("GuardadoExitoso.aspx", false);
+        
         }
 
         protected void btnFormularioPrincipal_Click(object sender, EventArgs e)

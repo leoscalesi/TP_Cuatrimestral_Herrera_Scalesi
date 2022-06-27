@@ -35,6 +35,7 @@ namespace Negocio
 
             catch (Exception ex)
             {
+                
                 throw ex;
             }
 
@@ -56,7 +57,7 @@ namespace Negocio
 
                 //FALTARIA EL idEspecialidad
 
-                accesoaDatos.setearConsulta("insert into medicos (id_persona,nro_matricula) values('" + medico.IdPersona + "', '" + medico.NumMatricula + "'" + ")");
+                accesoaDatos.setearConsulta("insert into medicos (id_persona,nro_matricula,id_especialidad) values('" + medico.IdPersona + "', '" + medico.NumMatricula + "' , '" + medico.Especialidad.Id + "'" + ")");
                 accesoaDatos.ejecutarAccion();
 
                 return true;
@@ -67,6 +68,7 @@ namespace Negocio
             catch (Exception ex)
             {
 
+                
                 throw ex;
             }
 
@@ -85,7 +87,7 @@ namespace Negocio
             try
             {
 
-                datos.setearConsulta("select p.id, p.nombre, p.apellido, p.dni, m.nro_matricula, m.id_especialidad, p.telefono, p.email, p.cuit, p.direccion, p.clave, p.estado, p.id_rol from personas as p Inner Join MEDICOS as m On m.id_persona = p.id where p.estado=1");
+                datos.setearConsulta("select p.id, p.nombre, p.apellido, p.dni, m.nro_matricula, m.id_especialidad, p.telefono, p.email, p.cuit, p.clave, p.estado, p.id_rol from personas as p Inner Join MEDICOS as m On m.id_persona = p.id where p.estado=1");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
@@ -101,7 +103,7 @@ namespace Negocio
                     aux.Especialidad.Id = (int)datos.Lector["id_especialidad"];
                     aux.Cuit = (string)datos.Lector["cuit"];
                     aux.Telefono = (string)datos.Lector["telefono"].ToString();
-                    aux.Direccion = (string)datos.Lector["direccion"].ToString();
+                    //aux.Direccion = (string)datos.Lector["direccion"].ToString();
                     aux.Email = (string)datos.Lector["email"];
                     aux.Clave = (string)datos.Lector["clave"];
                     aux.Estado = (bool)datos.Lector["estado"];
