@@ -13,9 +13,11 @@ namespace Dominio
 
         public int IdMedico { get; set; }
 
-        public int HoraAtencion{ get; set; }
+        public int HoraInicio { get; set; }
 
-        public string DiasAtencion { get; set; }
+        public int HoraFin { get; set; }
 
+        public int DiaInicio { get; set; }
+        
     }
 }

@@ -13,6 +13,9 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            Page.UnobtrusiveValidationMode = System.Web.UI.UnobtrusiveValidationMode.None;
+            
             EspecialidadNegocio especialidadNegocio = new EspecialidadNegocio();
 
             try
@@ -174,7 +177,7 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
                     }
                     else
                     {
-                        Response.Redirect("Error.aspx", false);
+                        
                         //No se agrego
                     }
                 }

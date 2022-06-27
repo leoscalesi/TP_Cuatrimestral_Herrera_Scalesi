@@ -26,14 +26,17 @@
                         <div class="mb-3">
                             <label for="txtNombre" class="form-label">Nombre</label>
                             <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="rfvNombre" runat="server" ErrorMessage="Ingrese nombre" ControlToValidate="txtNombre" style="color:darkred;"></asp:RequiredFieldValidator>
                         </div>
                         <div class="mb-3">
                             <label for="txtApellido" class="form-label">Apellido</label>
                             <asp:TextBox ID="txtApellido" runat="server" CssClass="form-control"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="rfvApellido" runat="server" ErrorMessage="Ingrese apellido" ControlToValidate="txtApellido" style="color:darkred;"></asp:RequiredFieldValidator>
                         </div>
                         <div class="mb-3">
                             <label for="txtDni" class="form-label">Dni</label>
                             <asp:TextBox ID="txtDni" runat="server" CssClass="form-control"></asp:TextBox>
+                            <asp:RegularExpressionValidator ID="revDni" runat="server" ErrorMessage="Ingrese solo numeros" ControlToValidate="txtDni" style="color:darkred;" ValidationExpression="^\d+$"></asp:RegularExpressionValidator>
                         </div>
                         <div class="mb-3">
                             <label for="txtCuit" class="form-label">Cuit</label>
@@ -59,6 +62,7 @@
                         <div class="mb-3">
                             <label for="txtEmail" class="form-label">Email</label>
                             <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control"></asp:TextBox>
+                            <asp:RegularExpressionValidator ID="revEmail" runat="server" ErrorMessage="Ingrese email" ControlToValidate="txtEmail" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" style="color:darkred;"></asp:RegularExpressionValidator>
                         </div>
                         <div class="mb-3">
                             <label for="txtClave" class="form-label">Clave</label>
