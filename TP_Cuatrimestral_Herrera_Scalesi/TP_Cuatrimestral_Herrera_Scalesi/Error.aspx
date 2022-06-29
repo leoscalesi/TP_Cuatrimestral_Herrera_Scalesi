@@ -11,13 +11,24 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-            <asp:Label ID="lblError" runat="server" Text=""></asp:Label>
-        </div>
-        <div>
-            <asp:Button ID="btnVolver" runat="server" Text="Volver" OnClick="btnVolver_Click" />
-        </div>
-       
+        <div class="card text-center m-auto mt-5" style="width: 18rem;" >
+            <div class="card-header">
+                <div>
+                    <img src="img/loginlock.png" margin="5" width="80" alt="log" />
+                    <h5 class="card-title">Error de perfil</h5>
+                </div>
+            </div>
+            <div class="card-body">
+                <div>
+                    <a><asp:Label ID="lblError" runat="server" Text=""></asp:Label></a>
+                </div>
+           </div>
+            <div class="card-footer">
+                <div>
+                    <asp:Button ID="btnVolver" CssClass="btn btn-primary" runat="server" Text="Volver" OnClick="btnVolver_Click" />
+                </div>
+            </div>
+       </div>
     </form>
 </body>
 </html>
