@@ -33,13 +33,31 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
         protected global::System.Web.UI.WebControls.Label lblHolaRecepcionista;
 
         /// <summary>
-        /// Control btnNuevoPaciente.
+        /// Control btnListaRecepcionistas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnNuevoPaciente;
+        protected global::System.Web.UI.WebControls.Button btnListaRecepcionistas;
+
+        /// <summary>
+        /// Control btnAltaRecepcionista.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAltaRecepcionista;
+
+        /// <summary>
+        /// Control btnListaTurnos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnListaTurnos;
 
         /// <summary>
         /// Control btnBrindarTurnos.
@@ -51,6 +69,33 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
         protected global::System.Web.UI.WebControls.Button btnBrindarTurnos;
 
         /// <summary>
+        /// Control btnListaPacientes.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnListaPacientes;
+
+        /// <summary>
+        /// Control btnNuevoPaciente.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnNuevoPaciente;
+
+        /// <summary>
+        /// Control btnListaMedicos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnListaMedicos;
+
+        /// <summary>
         /// Control btnNuevoMedico.
         /// </summary>
         /// <remarks>
@@ -58,6 +103,24 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnNuevoMedico;
+
+        /// <summary>
+        /// Control btnAgenda.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAgenda;
+
+        /// <summary>
+        /// Control btnRecuperarRegistro.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnRecuperarRegistro;
 
         /// <summary>
         /// Control btnSalir.

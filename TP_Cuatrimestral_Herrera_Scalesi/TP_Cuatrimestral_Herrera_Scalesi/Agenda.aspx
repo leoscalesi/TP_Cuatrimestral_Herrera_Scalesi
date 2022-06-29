@@ -9,11 +9,17 @@
     <link rel="stylesheet" href="estilos/estilos.css"/>
     <title></title>
 </head>
-<body>
+<body class="estiloBody">
     <form id="form1" runat="server">
-        <div>
+     <div class="card text-center m-auto">
+            <div class="card-header">
+                <img src="img/agenda.png" margin="5" width="70" alt="agenda" />
+                <h5 class="card-title">Agenda</h5>
+            </div>
 
-            <table class="table">
+
+        <div class="card-body">
+            <table class="table table-info container-sm">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
@@ -239,30 +245,25 @@
 
                 </tbody>
             </table>
-
         </div>
-
-        <div class="mb-3" style="margin-top: 50px;">
+        <div class="card-footer mb-md-3 w-50 list-group-item-info m-auto">
+            <div class="mb-3" style="margin-top: 50px;">
+                <h4>Cargar horario</h4>
+                <label for="ddlDiaInicio" class="form-label">Dia Inicio</label>
+                <asp:DropDownList ID="ddlDiaInicio" CssClass="form-select" runat="server">
+                </asp:DropDownList>
             
-            <label for="ddlDiaInicio" class="form-label">Dia Inicio</label>
-            <asp:DropDownList ID="ddlDiaInicio" CssClass="form-select" runat="server">
-            </asp:DropDownList>
+                <label for="ddlHoraInicio" class="form-label">Hora Inicio</label>
+                <asp:DropDownList ID="ddlHoraInicio" CssClass="form-select" runat="server">
+                </asp:DropDownList>
             
-            <label for="ddlHoraInicio" class="form-label">Hora Inicio</label>
-            <asp:DropDownList ID="ddlHoraInicio" CssClass="form-select" runat="server">
-            </asp:DropDownList>
-            
-            <label for="ddlHoraFin" class="form-label">Hora Fin</label>
-            <asp:DropDownList ID="ddlHoraFin" CssClass="form-select" runat="server">
-            </asp:DropDownList>
-        
-            
-        
-            
-        
+                <label for="ddlHoraFin" class="form-label">Hora Fin</label>
+                <asp:DropDownList ID="ddlHoraFin" CssClass="form-select" runat="server">
+                </asp:DropDownList>
+            </div>
         </div>
     
-    
+    </div>
     </form>
 </body>
 </html>

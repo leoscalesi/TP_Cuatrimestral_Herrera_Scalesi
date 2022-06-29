@@ -41,7 +41,7 @@
     
           <div class="card-footer" style="padding-top:20px;">
               <div>
-                  <asp:Button ID="btnIngresar" runat="server" Text="INGRESAR" style="background-color: lightgreen;" OnClick="btnIngresar_Click" />
+                  <asp:Button ID="btnIngresar" cssclass="btn" runat="server" Text="INGRESAR" style="background-color: lightgreen;" OnClick="btnIngresar_Click" />
               </div>
               <div>
                   <br />

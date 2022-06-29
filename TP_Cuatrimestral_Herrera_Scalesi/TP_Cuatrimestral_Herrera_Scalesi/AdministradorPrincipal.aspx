@@ -12,34 +12,64 @@
 <body class="estiloBody">
     <form id="form1" runat="server">
         
-        <h2 style="padding:40px;">
-            <asp:Label ID="lblHolaRecepcionista" runat="server" Text="Hola "></asp:Label>
-        </h2>
-
-        <h4 style="text-align:center">Que desea hacer?</h4>
-        
-        <div class="card" id="estiloCardRecepcionistaPrincipal">
-            
-            <div class="card-body">
+          <div class="card card text-center m-auto" style="width: contain; background: linear-gradient(#e9e9e9, #a9a9a9);">
                 
-                <div style="padding-top:30px">
-                    <asp:Button ID="btnNuevoPaciente" runat="server" Text="Nuevo Paciente" style="background-color:lightgreen;" OnClick="btnNuevoPaciente_Click"/>
+                <div>
+                    <img src="img/gestiondeturnos.png" alt="gestion turno"/>
+                    <h2 style="padding:40px;">
+                        <asp:Label ID="lblHolaRecepcionista" runat="server" Text="Hola "></asp:Label>
+                    </h2>
                 </div>
+              <div class="card-header">
+                  <img src="img/admin.png" width="70" alt="logo" />
+                  <h4 class="card-title">Vista Administrador</h4>
+              </div>
+                
+              <div class="card-body">
+                 <div class="container">
+                     <div class="row">
+                         <div class="col" style="padding-top:10px;">
+                             <asp:Button ID="btnListaRecepcionistas" CssClass="btn btn-success" runat="server" Text="Ver Recepcionistas" />
+                             <br />
+                             <br />
+                             <asp:Button ID="btnAltaRecepcionista" CssClass="btn btn-success" runat="server" Text="Alta Recepcionista" />
+                         </div>
                  
-                
-                <div style="padding-top:30px;">
-                    <asp:Button ID="btnBrindarTurnos" runat="server" Text="Brindar Turnos" style="background-color: lightblue;" OnClick="btnBrindarTurnos_Click"/>
-                </div>
-                
-                 <div style="padding-top:30px">
-                    <asp:Button ID="btnNuevoMedico" runat="server" Text="Nuevo Medico" style="background-color:lightgreen;" OnClick="btnNuevoMedico_Click"/>
-                </div>
+                          <div class="col" style="padding-top:10px;">
+                              <asp:Button ID="btnListaTurnos" CssClass="btn" runat="server" Text="Lista de Turnos" style="background-color: lightblue;" />
+                              <br />
+                              <br />
+                              <asp:Button ID="btnBrindarTurnos" CssClass="btn" runat="server" Text="Brindar Turnos" style="background-color: lightblue;" OnClick="btnBrindarTurnos_Click"/>
+                          </div>
+                      
+                         <div class="col" style="padding-top:10px;">
+                                <asp:Button ID="btnListaPacientes" CssClass="btn" runat="server" Text="Lista pacientes" style="background-color:lightgreen;" OnClick="btnListaPacientes_Click" />
+                                <br />
+                                <br />
+                                <asp:Button ID="btnNuevoPaciente" CssClass="btn" runat="server" Text="Nuevo Paciente" style="background-color:lightgreen;" OnClick="btnNuevoPaciente_Click"/>
+                         </div>
+
+                         <div class="col" style="padding-top:10px;">
+                             <asp:Button ID="btnListaMedicos" CssClass="btn" runat="server" Text="Lista Medicos" style="background-color:dodgerblue;" OnClick="btnListaMedicos_Click" />
+                             <br />
+                             <br />
+                             <asp:Button ID="btnNuevoMedico" CssClass="btn" runat="server" Text="Nuevo Medico" style="background-color:dodgerblue;" OnClick="btnNuevoMedico_Click"/>
+                         </div>
+
+                         <div class="col" style="padding-top:10px;">
+                             <asp:Button ID="btnAgenda" CssClass="btn btn-secondary" runat="server" Text="Agenda Medica" style="background-color:indianred;" OnClick="btnAgenda_Click" />
+                             <br />
+                             <br />
+                             <asp:Button ID="btnRecuperarRegistro" CssClass="btn btn-dark" runat="server" Text="Recuperar Registro" />
+                         </div>
+                     </div>
+                       
+                 </div>
+               </div>
             
-            </div>
-            
-            <div class="card-footer" style="padding-top:30px;">
-                <asp:Button ID="btnSalir" runat="server" Text="Salir" style="background-color:lightcoral;" />
-            </div>
+             <div class="card-footer" style="padding-top:20px;">
+                    <asp:Button ID="btnSalir" CssClass="btn btn-danger" runat="server" Text="Salir" OnClick="btnSalir_Click"/>
+             </div>
         
         
         
