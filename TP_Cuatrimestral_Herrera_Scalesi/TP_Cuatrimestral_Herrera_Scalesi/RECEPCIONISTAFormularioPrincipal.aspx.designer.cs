@@ -33,6 +33,24 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
         protected global::System.Web.UI.WebControls.Label lblHolaRecepcionista;
 
         /// <summary>
+        /// Control btnAgenda.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAgenda;
+
+        /// <summary>
+        /// Control btnListaTurnos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnListaTurnos;
+
+        /// <summary>
         /// Control btnBrindarTurnos.
         /// </summary>
         /// <remarks>

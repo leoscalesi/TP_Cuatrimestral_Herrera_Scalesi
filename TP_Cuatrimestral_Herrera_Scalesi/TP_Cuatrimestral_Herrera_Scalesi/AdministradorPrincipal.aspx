@@ -12,7 +12,7 @@
 <body class="estiloBody">
     <form id="form1" runat="server">
         
-          <div class="card card text-center m-auto" style="width: contain; background: linear-gradient(#e9e9e9, #a9a9a9);">
+          <div class="card card text-center m-auto" id="estiloCardAdmin" style="width: contain; background: linear-gradient(#e9e9e9, #a9a9a9);">
                 
                 <div>
                     <img src="img/gestiondeturnos.png" alt="gestion turno"/>

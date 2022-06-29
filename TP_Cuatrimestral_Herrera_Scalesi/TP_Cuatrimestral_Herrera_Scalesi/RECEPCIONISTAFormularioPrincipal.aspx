@@ -13,38 +13,48 @@
     <form id="form1" runat="server">
         
        
-        <div class="card" id="estiloCardRecepcionistaPrincipal">
+        <div class="card" id="estiloCardRecepcionistaPrincipal" style="width: contain; background: linear-gradient(#ebfcf3, #a9f2cb);">
             
-             <div align="center">
-            <img src="img/gestiondeturnos.png" alt="gestion turno"/>
-            <h2 style="padding:40px;">
-            <asp:Label ID="lblHolaRecepcionista" runat="server" Text="Hola "></asp:Label>
-            </h2>
+            <div align="center">
+                <img src="img/gestiondeturnos.png" alt="gestion turno"/>
+                <h2 style="padding:40px;">
+                <asp:Label ID="lblHolaRecepcionista" runat="server" Text="Hola "></asp:Label>
+                </h2>
             </div>
 
             <div class="card-header">
-                <img src="img/principal.png" width="70" alt="logo" />
-                <h4 style="text-align:center">Que desea hacer?</h4>
+                <img src="img/recepcion.png" width="70" alt="logo" />
+                <h4 class="card-title">Vista Recepcionista</h4>
             </div>
             <div class="card-body">
-                <div style="padding-top:10px;">
-                    <asp:Button ID="btnBrindarTurnos" CssClass=" btn" runat="server" Text=" Brindar Turnos " style="background-color: lightblue;" OnClick="btnBrindarTurnos_Click"/>
-                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col" style="padding-top:10px;">
+                            <asp:Button ID="btnAgenda" CssClass=" btn"  runat="server" Text="Agenda Medica" style="background-color:indianred;" OnClick="btnAgenda_Click" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col" style="padding-top:10px;">
+                            <asp:Button ID="btnListaTurnos" CssClass=" btn" runat="server" Text="Lista de Turnos" style="background-color: lightblue;" />
+                            <asp:Button ID="btnBrindarTurnos" CssClass=" btn" runat="server" Text=" Brindar Turnos " style="background-color: lightblue;" OnClick="btnBrindarTurnos_Click"/>
+                        </div>
 
-                <div style="padding-top:30px">
-                    <asp:Button ID="btnListadoPacientes" CssClass=" btn" runat="server" Text=" Lista Pacientes " style="background-color: darkcyan" OnClick="btnListadoPacientes_Click" />
-                    <asp:Button ID="btnNuevoPaciente" CssClass=" btn" runat="server" Text="Nuevo Paciente" style="background-color:lightgreen;" OnClick="btnNuevoPaciente_Click"/>
-                </div>
+                        <div class="col" style="padding-top:10px">
+                            <asp:Button ID="btnListadoPacientes" CssClass=" btn" runat="server" Text=" Lista Pacientes " style="background-color: lightgreen" OnClick="btnListadoPacientes_Click" />
+                            <asp:Button ID="btnNuevoPaciente" CssClass=" btn" runat="server" Text="Nuevo Paciente" style="background-color:lightgreen;" OnClick="btnNuevoPaciente_Click"/>
+                        </div>
 
-                <div style="padding-top:30px">
-                    <asp:Button ID="btnListadoMedicos" CssClass=" btn btn" runat="server" Text=" Lista Medicos " style="background-color:  indianred" OnClick="btnListadoMedicos_Click" />
-                    <asp:Button ID="btnNuevoMedico" CssClass=" btn" runat="server" Text="Nuevo Medico" style="background-color: dodgerblue" OnClick="btnNuevoMedico_Click" />
+                        <div class="col" style="padding-top:10px">
+                            <asp:Button ID="btnListadoMedicos" CssClass=" btn btn" runat="server" Text=" Lista Medicos " style="background-color:  dodgerblue" OnClick="btnListadoMedicos_Click" />
+                            <asp:Button ID="btnNuevoMedico" CssClass=" btn" runat="server" Text="Nuevo Medico" style="background-color: dodgerblue" OnClick="btnNuevoMedico_Click" />
+                        </div>
+                    </div>
                 </div>
            </div>
             
             <div class="card-footer" style="padding-top:30px;">
                  <div style="padding-bottom:10px">
-                <asp:Button ID="btnSalir" CssClass=" btn" runat="server" Text="Salir" style="background-color: coral;" OnClick="btnSalir_Click" />
+                <asp:Button ID="btnSalir" CssClass=" btn btn-danger" runat="server" Text="Salir" OnClick="btnSalir_Click" />
                 </div>
             </div>
         </div>

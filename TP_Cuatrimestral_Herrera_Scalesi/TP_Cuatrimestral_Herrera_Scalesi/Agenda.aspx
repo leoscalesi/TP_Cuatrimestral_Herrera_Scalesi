@@ -261,6 +261,9 @@
                 <asp:DropDownList ID="ddlHoraFin" CssClass="form-select" runat="server">
                 </asp:DropDownList>
             </div>
+            <div style="padding:10px">
+                <asp:Button ID="btnVolver" CssClass=" btn btn-success" runat="server" Text="Volver" OnClick="btnVolver_Click" />
+            </div>
         </div>
     
     </div>
