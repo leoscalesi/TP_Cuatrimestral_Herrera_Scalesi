@@ -9,9 +9,11 @@ using Negocio;
 
 namespace TP_Cuatrimestral_Herrera_Scalesi
 {
-    
+
     public partial class Agenda : System.Web.UI.Page
     {
+        AgendaNegocio agendaNegocio = new AgendaNegocio();
+
         public List<int> lunes = new List<int>();
         public List<int> martes = new List<int>();
         public List<int> miercoles = new List<int>();
@@ -22,14 +24,127 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            AgendaNegocio agendaNegocio = new AgendaNegocio();
+            if (!IsPostBack)
+            {
+                int idMedico = 2;
+                List<Agenda> listaAgenda = new List<Agenda>();
 
-            int idMedico = 2;
-            List<Agenda> listaAgenda = new List<Agenda>();
+                agendaNegocio.cargaListaHorario(agendaNegocio.listar(idMedico), lunes, martes, miercoles, jueves, viernes, sabado);
 
-            agendaNegocio.cargaListaHorario(agendaNegocio.listar(idMedico), lunes, martes, miercoles, jueves, viernes, sabado);
+                //ELIMINO DATOS REPETIDOS
+                lunes = lunes.Distinct().ToList();
+                martes = martes.Distinct().ToList();
+                miercoles = miercoles.Distinct().ToList();
+                jueves = jueves.Distinct().ToList();
+                viernes = viernes.Distinct().ToList();
+                sabado = sabado.Distinct().ToList();
 
+                //CARGO LA TABLA (AGENDA)
+                foreach (var item in lunes)
+                {
+                    if (item == 10) lbl10Lunes.Text = "OCUPADO";
+                    if (item == 11) lbl11Lunes.Text = "OCUPADO";
+                    if (item == 12) lbl12Lunes.Text = "OCUPADO";
+                    if (item == 13) lbl13Lunes.Text = "OCUPADO";
+                    if (item == 14) lbl14Lunes.Text = "OCUPADO";
+                    if (item == 15) lbl15Lunes.Text = "OCUPADO";
+
+                }
+
+                foreach (var item in martes)
+                {
+                    if (item == 10) lbl10Martes.Text = "OCUPADO";
+                    if (item == 11) lbl11Martes.Text = "OCUPADO";
+                    if (item == 12) lbl12Martes.Text = "OCUPADO";
+                    if (item == 13) lbl13Martes.Text = "OCUPADO";
+                    if (item == 14) lbl14Martes.Text = "OCUPADO";
+                    if (item == 15) lbl15Martes.Text = "OCUPADO";
+
+                }
+
+                foreach (var item in miercoles)
+                {
+                    if (item == 10) lbl10Miercoles.Text = "OCUPADO";
+                    if (item == 11) lbl11Miercoles.Text = "OCUPADO";
+                    if (item == 12) lbl12Miercoles.Text = "OCUPADO";
+                    if (item == 13) lbl13Miercoles.Text = "OCUPADO";
+                    if (item == 14) lbl14Miercoles.Text = "OCUPADO";
+                    if (item == 15) lbl15Miercoles.Text = "OCUPADO";
+
+                }
+
+                foreach (var item in jueves)
+                {
+                    if (item == 10) lbl10Jueves.Text = "OCUPADO";
+                    if (item == 11) lbl11Jueves.Text = "OCUPADO";
+                    if (item == 12) lbl12Jueves.Text = "OCUPADO";
+                    if (item == 13) lbl13Jueves.Text = "OCUPADO";
+                    if (item == 14) lbl14Jueves.Text = "OCUPADO";
+                    if (item == 15) lbl15Jueves.Text = "OCUPADO";
+
+                }
+
+                foreach (var item in viernes)
+                {
+                    if (item == 10) lbl10Viernes.Text = "OCUPADO";
+                    if (item == 11) lbl11Viernes.Text = "OCUPADO";
+                    if (item == 12) lbl12Viernes.Text = "OCUPADO";
+                    if (item == 13) lbl13Viernes.Text = "OCUPADO";
+                    if (item == 14) lbl14Viernes.Text = "OCUPADO";
+                    if (item == 15) lbl15Viernes.Text = "OCUPADO";
+
+                }
+
+                foreach (var item in sabado)
+                {
+                    if (item == 10) lbl10Sabado.Text = "OCUPADO";
+                    if (item == 11) lbl11Sabado.Text = "OCUPADO";
+                    if (item == 12) lbl12Sabado.Text = "OCUPADO";
+                    if (item == 13) lbl13Sabado.Text = "OCUPADO";
+                    if (item == 14) lbl14Sabado.Text = "OCUPADO";
+                    if (item == 15) lbl15Sabado.Text = "OCUPADO";
+
+                }
+
+                //CARGO EL ddl DE DIAS DISPONIBLES
+
+                ddlDiaInicio.Items.Add("Dias disponibles");
+
+                if (lunes.Count < 6) ddlDiaInicio.Items.Add("Lunes");
+                if (martes.Count < 6) ddlDiaInicio.Items.Add("Martes");
+                if (miercoles.Count < 6) ddlDiaInicio.Items.Add("Miercoles");
+                if (jueves.Count < 6) ddlDiaInicio.Items.Add("Jueves");
+                if (viernes.Count < 6) ddlDiaInicio.Items.Add("Viernes");
+                if (sabado.Count < 6) ddlDiaInicio.Items.Add("Sabado");
+
+                
+            }
+        }
+
+
+        protected void btnVolver_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("RecepcionistaFormularioPrincipal.aspx", false);
+
+        }
+
+
+        protected void ddlHoraInicio_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+
+        }
+
+        
+        protected void ddlDiaInicio_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ddlHoraInicio.Items.Clear();
             
+            string dia = ddlDiaInicio.SelectedItem.ToString();
+
+            agendaNegocio.cargaListaHorario(agendaNegocio.listar(2), lunes, martes, miercoles, jueves, viernes, sabado);
+
+            //ELIMINO DATOS REPETIDOS
             lunes = lunes.Distinct().ToList();
             martes = martes.Distinct().ToList();
             miercoles = miercoles.Distinct().ToList();
@@ -37,179 +152,69 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
             viernes = viernes.Distinct().ToList();
             sabado = sabado.Distinct().ToList();
 
-            foreach (var item in lunes)
+            //CARGO EL ddl HORARIOS
+
+            if (dia == "Lunes")
             {
-                if (item == 10)
-                {
-                    lbl10Lunes.Text = "OCUPADO";
-                }
-                if (item == 11)
-                {
-                    lbl11Lunes.Text = "OCUPADO";
-                }
-                if (item == 12)
-                {
-                    lbl12Lunes.Text = "OCUPADO";
-                }
-                if (item == 13)
-                {
-                    lbl13Lunes.Text = "OCUPADO";
-                }
-                if (item == 14)
-                {
-                    lbl14Lunes.Text = "OCUPADO";
-                }
-                if (item == 15)
-                {
-                    lbl15Lunes.Text = "OCUPADO";
-                }
+                if (!lunes.Contains(10)) ddlHoraInicio.Items.Add("10");
+                if (!lunes.Contains(11)) ddlHoraInicio.Items.Add("11");
+                if (!lunes.Contains(12)) ddlHoraInicio.Items.Add("12");
+                if (!lunes.Contains(13)) ddlHoraInicio.Items.Add("13");
+                if (!lunes.Contains(14)) ddlHoraInicio.Items.Add("14");
+                if (!lunes.Contains(15)) ddlHoraInicio.Items.Add("15");
             }
 
-            foreach (var item in martes)
+            if (dia == "Martes")
             {
-                if (item == 10)
-                {
-                    lbl10Martes.Text = "OCUPADO";
-                }
-                if (item == 11)
-                {
-                    lbl11Martes.Text = "OCUPADO";
-                }
-                if (item == 12)
-                {
-                    lbl12Martes.Text = "OCUPADO";
-                }
-                if (item == 13)
-                {
-                    lbl13Martes.Text = "OCUPADO";
-                }
-                if (item == 14)
-                {
-                    lbl14Martes.Text = "OCUPADO";
-                }
-                if (item == 15)
-                {
-                    lbl15Martes.Text = "OCUPADO";
-                }
+                if (!martes.Contains(10)) ddlHoraInicio.Items.Add("10");
+                if (!martes.Contains(11)) ddlHoraInicio.Items.Add("11");
+                if (!martes.Contains(12)) ddlHoraInicio.Items.Add("12");
+                if (!martes.Contains(13)) ddlHoraInicio.Items.Add("13");
+                if (!martes.Contains(14)) ddlHoraInicio.Items.Add("14");
+                if (!martes.Contains(15)) ddlHoraInicio.Items.Add("15");
             }
 
-            foreach (var item in miercoles)
+            if (dia == "Miercoles")
             {
-                if (item == 10)
-                {
-                    lbl10Miercoles.Text = "OCUPADO";
-                }
-                if (item == 11)
-                {
-                    lbl11Miercoles.Text = "OCUPADO";
-                }
-                if (item == 12)
-                {
-                    lbl12Miercoles.Text = "OCUPADO";
-                }
-                if (item == 13)
-                {
-                    lbl13Miercoles.Text = "OCUPADO";
-                }
-                if (item == 14)
-                {
-                    lbl14Miercoles.Text = "OCUPADO";
-                }
-                if (item == 15)
-                {
-                    lbl15Miercoles.Text = "OCUPADO";
-                }
+                if (!miercoles.Contains(10)) ddlHoraInicio.Items.Add("10");
+                if (!miercoles.Contains(11)) ddlHoraInicio.Items.Add("11");
+                if (!miercoles.Contains(12)) ddlHoraInicio.Items.Add("12");
+                if (!miercoles.Contains(13)) ddlHoraInicio.Items.Add("13");
+                if (!miercoles.Contains(14)) ddlHoraInicio.Items.Add("14");
+                if (!miercoles.Contains(15)) ddlHoraInicio.Items.Add("15");
             }
 
-            foreach (var item in jueves)
+            if (dia == "Jueves")
             {
-                if (item == 10)
-                {
-                    lbl10Jueves.Text = "OCUPADO";
-                }
-                if (item == 11)
-                {
-                    lbl11Jueves.Text = "OCUPADO";
-                }
-                if (item == 12)
-                {
-                    lbl12Jueves.Text = "OCUPADO";
-                }
-                if (item == 13)
-                {
-                    lbl13Jueves.Text = "OCUPADO";
-                }
-                if (item == 14)
-                {
-                    lbl14Jueves.Text = "OCUPADO";
-                }
-                if (item == 15)
-                {
-                    lbl15Jueves.Text = "OCUPADO";
-                }
+                if (!jueves.Contains(10)) ddlHoraInicio.Items.Add("10");
+                if (!jueves.Contains(11)) ddlHoraInicio.Items.Add("11");
+                if (!jueves.Contains(12)) ddlHoraInicio.Items.Add("12");
+                if (!jueves.Contains(13)) ddlHoraInicio.Items.Add("13");
+                if (!jueves.Contains(14)) ddlHoraInicio.Items.Add("14");
+                if (!jueves.Contains(15)) ddlHoraInicio.Items.Add("15");
             }
 
-            foreach (var item in viernes)
+            if (dia == "Viernes")
             {
-                if (item == 10)
-                {
-                    lbl10Viernes.Text = "OCUPADO";
-                }
-                if (item == 11)
-                {
-                    lbl11Viernes.Text = "OCUPADO";
-                }
-                if (item == 12)
-                {
-                    lbl12Viernes.Text = "OCUPADO";
-                }
-                if (item == 13)
-                {
-                    lbl13Viernes.Text = "OCUPADO";
-                }
-                if (item == 14)
-                {
-                    lbl14Viernes.Text = "OCUPADO";
-                }
-                if (item == 15)
-                {
-                    lbl15Viernes.Text = "OCUPADO";
-                }
+                if (!viernes.Contains(10)) ddlHoraInicio.Items.Add("10");
+                if (!viernes.Contains(11)) ddlHoraInicio.Items.Add("11");
+                if (!viernes.Contains(12)) ddlHoraInicio.Items.Add("12");
+                if (!viernes.Contains(13)) ddlHoraInicio.Items.Add("13");
+                if (!viernes.Contains(14)) ddlHoraInicio.Items.Add("14");
+                if (!viernes.Contains(15)) ddlHoraInicio.Items.Add("15");
             }
 
-            foreach (var item in sabado)
+            if (dia == "Sabado")
             {
-                if (item == 10)
-                {
-                    lbl10Sabado.Text = "OCUPADO";
-                }
-                if (item == 11)
-                {
-                    lbl11Sabado.Text = "OCUPADO";
-                }
-                if (item == 12)
-                {
-                    lbl12Sabado.Text = "OCUPADO";
-                }
-                if (item == 13)
-                {
-                    lbl13Sabado.Text = "OCUPADO";
-                }
-                if (item == 14)
-                {
-                    lbl14Sabado.Text = "OCUPADO";
-                }
-                if (item == 15)
-                {
-                    lbl15Sabado.Text = "OCUPADO";
-                }
+                if (!sabado.Contains(10)) ddlHoraInicio.Items.Add("10");
+                if (!sabado.Contains(11)) ddlHoraInicio.Items.Add("11");
+                if (!sabado.Contains(12)) ddlHoraInicio.Items.Add("12");
+                if (!sabado.Contains(13)) ddlHoraInicio.Items.Add("13");
+                if (!sabado.Contains(14)) ddlHoraInicio.Items.Add("14");
+                if (!sabado.Contains(15)) ddlHoraInicio.Items.Add("15");
             }
         }
 
-        protected void btnVolver_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("RecepcionistaFormularioPrincipal.aspx", false);
-
-        }
     }
+
 }

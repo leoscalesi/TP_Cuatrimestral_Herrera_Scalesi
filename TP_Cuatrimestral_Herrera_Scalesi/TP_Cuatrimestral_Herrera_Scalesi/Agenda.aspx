@@ -250,11 +250,11 @@
             <div class="mb-3" style="margin-top: 50px;">
                 <h4>Cargar horario</h4>
                 <label for="ddlDiaInicio" class="form-label">Dia Inicio</label>
-                <asp:DropDownList ID="ddlDiaInicio" CssClass="form-select" runat="server">
+                <asp:DropDownList ID="ddlDiaInicio" CssClass="form-select" runat="server" AutoPostback ="true" OnSelectedIndexChanged="ddlDiaInicio_SelectedIndexChanged">
                 </asp:DropDownList>
             
                 <label for="ddlHoraInicio" class="form-label">Hora Inicio</label>
-                <asp:DropDownList ID="ddlHoraInicio" CssClass="form-select" runat="server">
+                <asp:DropDownList ID="ddlHoraInicio" CssClass="form-select" runat="server" OnSelectedIndexChanged="ddlHoraInicio_SelectedIndexChanged">
                 </asp:DropDownList>
             
                 <label for="ddlHoraFin" class="form-label">Hora Fin</label>
