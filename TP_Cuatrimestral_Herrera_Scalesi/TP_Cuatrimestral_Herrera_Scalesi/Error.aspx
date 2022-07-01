@@ -25,7 +25,7 @@
            </div>
             <div class="card-footer">
                 <div>
-                    <asp:Button ID="btnVolver" CssClass="btn btn-primary" runat="server" Text="Volver" OnClick="btnVolver_Click" />
+                    <asp:Button ID="btnVolver" CssClass="btn btn-danger" runat="server" Text="Volver" OnClick="btnVolver_Click" />
                 </div>
             </div>
        </div>

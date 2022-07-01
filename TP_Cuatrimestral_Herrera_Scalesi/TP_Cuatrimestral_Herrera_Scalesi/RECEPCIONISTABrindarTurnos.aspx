@@ -13,16 +13,16 @@
     <form id="form1" runat="server">
     <asp:ScriptManager id="ScriptManager1" runat="server"></asp:ScriptManager>
 
-        <div class="card" id="estiloRecepcionistaBrindarTurno">
+        <div class="card">
 
-            <div class="card-header">
-                <h2>Generar turno</h2>
+            <div class="card-header" style="text-align:center">
+                <h2>Brindar Turno: Listado Pacientes</h2>
                 <div>
                     <img src="img/turno.png" cssclass="img-fluid" margin="5" width="70" alt="img turno" />
                 </div>
             </div>
 
-            <div class="card-body">
+            <div class="card-body m-auto">
                 <div>
                     <!--<asp:UpdatePanel runat="server">
                         <ContentTemplate>-->
@@ -34,7 +34,7 @@
                     <!--</ContentTemplate>
                     </asp:UpdatePanel>-->
                 </div>
-                <asp:GridView ID="dgvListarPacientes" cssclass="table table-bordered" AutoGenerateColumns="false" runat="server">
+                <asp:GridView ID="dgvListarPacientes" CssClass="table table-hover d-sm-table-cell alig-middle text-center" AutoGenerateColumns="false" runat="server">
                     <columns>
                         <asp:BoundField HeaderText="ID" DataField="Id"/>
                         <asp:BoundField HeaderText="Nombre" DataField="Nombre"/>
@@ -46,11 +46,14 @@
                         <asp:BoundField HeaderText="Email" DataField="Email"/>
                     </columns>
                 </asp:GridView>
-                <br />
-                <asp:Button ID="btnNuevoTurno" runat="server" Text="Nuevo turno" OnClick="btnNuevoTurno_Click"/>
+                <div class="text-center p-3 pb-0">
+                     <asp:Button ID="btnNuevoTurno" CssClass="btn" runat="server" Text="Nuevo turno" style="background-color:lightgreen;" OnClick="btnNuevoTurno_Click"/>
+                </div>
             </div>
             <div class="card-footer">
-                <asp:Button ID="VolverAtras" runat="server" Text="Volver atrás" OnClick="VolverAtras_Click"/>
+                <div class="text-center p-2">
+                    <asp:Button ID="VolverAtras" CssClass="btn btn-danger" runat="server" Text="Volver" OnClick="VolverAtras_Click"/>
+                </div>
             </div>
         </div>
     </form>

@@ -13,7 +13,7 @@
     <form id="form1" runat="server">
         
        
-        <div class="card" id="estiloCardRecepcionistaPrincipal" style="width: contain; background: linear-gradient(#ebfcf3, #a9f2cb);">
+        <div class="card" id="estiloCardRecepcionistaPrincipal" style="width: contain; background: linear-gradient(30deg,#f9f9f9, #adadad);">
             
             <div align="center">
                 <img src="img/gestiondeturnos.png" alt="gestion turno"/>
@@ -30,6 +30,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col" style="padding-top:10px;">
+                            <asp:Button ID="btnCargarAgenda" CssClass=" btn" runat="server" Text="Cargar Agenda" style="background-color:indianred;" OnClick="btnCargarAgenda_Click" />
                             <asp:Button ID="btnAgenda" CssClass=" btn"  runat="server" Text="Agenda Medica" style="background-color:indianred;" OnClick="btnAgenda_Click" />
                         </div>
                     </div>

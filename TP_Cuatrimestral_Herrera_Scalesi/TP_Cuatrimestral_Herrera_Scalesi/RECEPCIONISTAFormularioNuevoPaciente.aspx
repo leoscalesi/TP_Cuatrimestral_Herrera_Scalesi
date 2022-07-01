@@ -67,14 +67,14 @@
                     </div>
 
 
-                    <div class="card-footer">
+                    <div class="card-footer text-center">
                         <div>
                             <asp:Button ID="btnGuardar" CssClass="btn" runat="server" style="background-color:lightgreen;" Text="Guardar" OnClick="btnGuardar_Click" />
                             <asp:Label ID="lblGuardadoExitoso" runat="server" Text=""></asp:Label>
                         </div>
                         <div>
                             <br />
-                            <asp:Button ID="btnFormularioPrincipal" CssClass="btn btn-success border-secondary" runat="server" Text=" Volver " OnClick="btnFormularioPrincipal_Click" />
+                            <asp:Button ID="btnFormularioPrincipal" CssClass="btn btn-danger border-secondary" runat="server" Text=" Volver " OnClick="btnFormularioPrincipal_Click" />
                         </div>
                     </div>
                 </div>

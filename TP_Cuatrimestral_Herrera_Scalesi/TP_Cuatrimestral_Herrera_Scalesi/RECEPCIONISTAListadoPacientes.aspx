@@ -12,7 +12,7 @@
 <body class="estiloBody">
     <form id="form1" runat="server">
         
-    <div class="card" id="estiloRecepcionistaListadoPacientes">
+    <div class="card">
 
         <div class="card-header" style="text-align:center">
             <h2>Listado de pacientes</h2>
@@ -21,14 +21,14 @@
             </div>
         </div>
 
-        <div class="card-body">
+        <div class="card-body m-auto">
             <div>
                 <asp:Label ID="lblFiltro" runat="server" Text="Filtro"></asp:Label>
                 <asp:TextBox ID="txtFiltro" runat="server"></asp:TextBox>
                 <asp:Button ID="btbFiltro" runat="server" Text="Buscar" OnClick="btbFiltro_Click" />
                 <br />
                 <br />
-                <asp:GridView ID="dgvListadoPacientes" OnSelectedIndexChanged="dgvListadoPacientes_SelectedIndexChanged" OnRowDeleting="dgvListadoPacientes_RowDeleting" AutoGenerateColumns="false" cssclass="table table-bordered d-sm-table-cell table-info align-middle text-center align-center"  runat="server">
+                <asp:GridView ID="dgvListadoPacientes" OnSelectedIndexChanged="dgvListadoPacientes_SelectedIndexChanged" OnRowDeleting="dgvListadoPacientes_RowDeleting" AutoGenerateColumns="false" cssclass="table table-bordered d-sm-table-cell align-middle text-center align-center"  runat="server">
                     <columns>
                         <asp:BoundField HeaderText="ID" DataField="Id"/>
                         <asp:BoundField HeaderText="Nombre" DataField="Nombre"/>
@@ -48,8 +48,8 @@
 
         
         <div class="card-footer">
-            <div>
-                <asp:Button ID="btnVolverAFormularioPrincipal" runat="server" Text="Regresar" OnClick="btnVolverAFormularioPrincipal_Click" />
+            <div class="text-center p-2">
+                <asp:Button ID="btnVolverAFormularioPrincipal" CssClass="btn btn-danger" runat="server" Text="Volver" OnClick="btnVolverAFormularioPrincipal_Click" />
             </div>
         </div>
     </div>

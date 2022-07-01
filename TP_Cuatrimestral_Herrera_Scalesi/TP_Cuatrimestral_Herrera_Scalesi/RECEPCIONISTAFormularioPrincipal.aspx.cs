@@ -60,5 +60,11 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
         {
             Response.Redirect("Agenda.aspx", false);
         }
+
+        protected void btnCargarAgenda_Click(object sender, EventArgs e)
+        {
+            //en proceso
+            Response.Redirect("AgendaListadoMedicos.aspx", false);
+        }
     }
 }

@@ -69,6 +69,7 @@
   <ItemGroup>
     <Content Include="AdministradorPrincipal.aspx" />
     <Content Include="Agenda.aspx" />
+    <Content Include="AgendaListadoMedicos.aspx" />
     <Content Include="AltaMedico.aspx" />
     <Content Include="Error.aspx" />
     <Content Include="estilos\estilos.css" />
@@ -99,6 +100,13 @@
     </Compile>
     <Compile Include="Agenda.aspx.designer.cs">
       <DependentUpon>Agenda.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AgendaListadoMedicos.aspx.cs">
+      <DependentUpon>AgendaListadoMedicos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AgendaListadoMedicos.aspx.designer.cs">
+      <DependentUpon>AgendaListadoMedicos.aspx</DependentUpon>
     </Compile>
     <Compile Include="AltaMedico.aspx.cs">
       <DependentUpon>AltaMedico.aspx</DependentUpon>

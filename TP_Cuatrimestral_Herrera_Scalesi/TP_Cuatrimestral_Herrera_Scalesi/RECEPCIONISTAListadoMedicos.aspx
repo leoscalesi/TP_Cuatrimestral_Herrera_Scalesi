@@ -12,7 +12,7 @@
 <body class="estiloBody">
     <form id="form1" runat="server">
 
-        <div class="card" id="estiloRecepcionistaListadoMedicos">
+        <div class="card">
 
             <div class="card-header" style="text-align:center">
                 <h2>Listado de Medicos</h2>
@@ -21,7 +21,7 @@
                 </div>
             </div>
 
-            <div class="card-body">
+            <div class="card-body m-auto">
                 <div>
                     <asp:Label ID="lblFiltro" runat="server" Text="Filtro"></asp:Label>
                     <asp:TextBox ID="txtFiltro" runat="server"></asp:TextBox>
@@ -47,7 +47,9 @@
             </div>
 
             <div class="card-footer">
-                <asp:Button ID="btnVolver" runat="server" Text="Volver" OnClick="btnVolver_Click" />
+                <div class="text-center">
+                <asp:Button ID="btnVolver" CssClass="btn btn-danger" runat="server" Text="Volver" OnClick="btnVolver_Click" />
+                </div>
             </div>
         </div>
     </form>
