@@ -50,6 +50,12 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
             dgvListarPacientes.DataSource = listaFiltrada;
         }
 
+        protected void dgvListarPacientes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var id = dgvListarPacientes.SelectedRow.Cells[0].Text;
+            Response.Redirect("RecepcionistaFormularioEspecialidades.aspx?id=" + id);
+        }
+
         /*protected void VolverAtras_Click1(object sender, EventArgs e)
         {
             //Response.Redirect("RECEPCIONISTAFormularioPrincipal.aspx", false);

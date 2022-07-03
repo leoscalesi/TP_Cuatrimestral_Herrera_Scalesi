@@ -34,7 +34,7 @@
                     <!--</ContentTemplate>
                     </asp:UpdatePanel>-->
                 </div>
-                <asp:GridView ID="dgvListarPacientes" CssClass="table table-hover d-sm-table-cell alig-middle text-center" AutoGenerateColumns="false" runat="server">
+                <asp:GridView ID="dgvListarPacientes" CssClass="table table-hover d-sm-table-cell alig-middle text-center" AutoGenerateColumns="false" runat="server" OnSelectedIndexChanged="dgvListarPacientes_SelectedIndexChanged">
                     <columns>
                         <asp:BoundField HeaderText="ID" DataField="Id"/>
                         <asp:BoundField HeaderText="Nombre" DataField="Nombre"/>
@@ -42,8 +42,11 @@
                         <asp:BoundField HeaderText="DNI" DataField="Dni"/>
                         <asp:BoundField HeaderText="CUIT" DataField="Cuit"/>
                         <asp:BoundField HeaderText="Telefono" DataField="Telefono"/>
-                        <asp:BoundField HeaderText="Direccion" DataField="Direccion"/>
+                        
                         <asp:BoundField HeaderText="Email" DataField="Email"/>
+                    
+                        <asp:CommandField ShowSelectButton="true" SelectText="Seleccionar" ControlStyle-CssClass="btn btn-info" />
+                    
                     </columns>
                 </asp:GridView>
                 <div class="text-center p-3 pb-0">

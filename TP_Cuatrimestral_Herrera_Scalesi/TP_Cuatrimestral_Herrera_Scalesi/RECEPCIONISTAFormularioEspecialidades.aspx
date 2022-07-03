@@ -18,7 +18,7 @@
             <asp:Label ID="lblEspecialidad" runat="server" Text="Especialidad"></asp:Label> 
             </div>
             <div>
-            <asp:DropDownList ID="ddlEspecialidades" runat="server" ></asp:DropDownList>
+            <asp:DropDownList ID="ddlEspecialidades" runat="server" AutoPostBack="true" ></asp:DropDownList>
             </div>
         </div>
         <div class="card-footer">
