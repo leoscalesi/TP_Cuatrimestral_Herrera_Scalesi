@@ -24,11 +24,15 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            //DEBO RECUPERAR ID DESDE EL FORMULARIO ANTERIOR.
+
             if (!IsPostBack)
             {
-                int idMedico = 2;
+
                 List<Agenda> listaAgenda = new List<Agenda>();
 
+                int idMedico = int.Parse(Request.QueryString["id"].ToString());
+                
                 agendaNegocio.cargaListaHorario(agendaNegocio.listar(idMedico), lunes, martes, miercoles, jueves, viernes, sabado);
 
                 //ELIMINO DATOS REPETIDOS
@@ -117,7 +121,18 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
                 if (viernes.Count < 6) ddlDiaInicio.Items.Add("Viernes");
                 if (sabado.Count < 6) ddlDiaInicio.Items.Add("Sabado");
 
-                
+                //CARGO LAS ESPECIALIDADES DE ESE MEDICO
+                EspecialidadNegocio especialidadNegocio = new EspecialidadNegocio();
+
+                //DEBO LISTAR ESPECIALIDADES DEL MEDICO POR ID
+                List<string> lista = new List<string>();
+
+                lista = especialidadNegocio.listarPorId(idMedico);
+
+                foreach (var item in lista)
+                {
+                    ddlEspecialidades.Items.Add(item);
+                }
             }
         }
 
@@ -141,8 +156,9 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
             ddlHoraInicio.Items.Clear();
             
             string dia = ddlDiaInicio.SelectedItem.ToString();
-
-            agendaNegocio.cargaListaHorario(agendaNegocio.listar(2), lunes, martes, miercoles, jueves, viernes, sabado);
+            int idMedico = int.Parse(Request.QueryString["id"].ToString());
+            
+            agendaNegocio.cargaListaHorario(agendaNegocio.listar(idMedico), lunes, martes, miercoles, jueves, viernes, sabado);
 
             //ELIMINO DATOS REPETIDOS
             lunes = lunes.Distinct().ToList();

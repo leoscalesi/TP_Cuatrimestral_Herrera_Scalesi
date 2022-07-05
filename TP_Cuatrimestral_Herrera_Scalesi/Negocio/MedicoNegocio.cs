@@ -87,7 +87,7 @@ namespace Negocio
             try
             {
 
-                datos.setearConsulta("select p.id, p.nombre, p.apellido, p.dni, m.nro_matricula, m.id_especialidad, p.telefono, p.email, p.cuit, p.clave, p.estado, p.id_rol from personas as p Inner Join MEDICOS as m On m.id_persona = p.id where p.estado=1");
+                datos.setearConsulta("select m.id, p.nombre, p.apellido, p.dni, m.nro_matricula, p.telefono, p.email, p.cuit, p.clave, p.estado, p.id_rol from personas as p Inner Join MEDICOS as m On m.id_persona = p.id where p.estado=1");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
@@ -98,9 +98,9 @@ namespace Negocio
                     aux.Nombre = (string)datos.Lector["nombre"].ToString();
                     aux.Apellido = (string)datos.Lector["apellido"].ToString();
                     aux.Dni = (short)datos.Lector["dni"];
-                    aux.NumMatricula = (short)datos.Lector["nro_matricula"];
+                    aux.NumMatricula = (int)datos.Lector["nro_matricula"];
                     aux.Especialidad = new Especialidad();
-                    aux.Especialidad.Id = (int)datos.Lector["id_especialidad"];
+                    //aux.Especialidad.Id = (int)datos.Lector["id_especialidad"];
                     aux.Cuit = (string)datos.Lector["cuit"];
                     aux.Telefono = (string)datos.Lector["telefono"].ToString();
                     //aux.Direccion = (string)datos.Lector["direccion"].ToString();

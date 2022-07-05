@@ -49,6 +49,41 @@ namespace Negocio
 
         }
 
+        public List<string> listarPorId(int id)
+        {
+            List<string> lista = new List<string>();
+            AccesoaDatos datos = new AccesoaDatos();
 
+            try
+            {
+
+                datos.setearConsulta("select e.nombre from especialidades as e inner join medicos_x_especialidad as me on e.id = me.id_especialidad where me.id_medico = " + id);
+                datos.ejecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+
+                    string nombre;
+
+                    nombre = (string)datos.Lector["nombre"];
+
+                    lista.Add(nombre);
+
+                }
+
+                return lista;
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+        }
     }
 }

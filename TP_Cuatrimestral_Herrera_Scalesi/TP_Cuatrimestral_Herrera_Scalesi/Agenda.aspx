@@ -260,6 +260,11 @@
                 <label for="ddlHoraFin" class="form-label">Hora Fin</label>
                 <asp:DropDownList ID="ddlHoraFin" CssClass="form-select" runat="server">
                 </asp:DropDownList>
+            
+                <label for="ddlEspecialidades" class="form-label">Especialidades</label>
+                <asp:DropDownList ID="ddlEspecialidades" CssClass="form-select" runat="server">
+                </asp:DropDownList>
+            
             </div>
             <div style="padding:10px">
                 <asp:Button ID="btnVolver" CssClass=" btn btn-danger" runat="server" Text="Volver" OnClick="btnVolver_Click" />
