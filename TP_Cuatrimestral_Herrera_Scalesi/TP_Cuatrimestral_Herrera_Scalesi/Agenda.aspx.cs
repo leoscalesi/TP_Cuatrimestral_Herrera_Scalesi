@@ -178,6 +178,12 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
                 if (!lunes.Contains(13)) ddlHoraInicio.Items.Add("13");
                 if (!lunes.Contains(14)) ddlHoraInicio.Items.Add("14");
                 if (!lunes.Contains(15)) ddlHoraInicio.Items.Add("15");
+                if (!lunes.Contains(10)) ddlHoraFin.Items.Add("10");
+                if (!lunes.Contains(11)) ddlHoraFin.Items.Add("11");
+                if (!lunes.Contains(12)) ddlHoraFin.Items.Add("12");
+                if (!lunes.Contains(13)) ddlHoraFin.Items.Add("13");
+                if (!lunes.Contains(14)) ddlHoraFin.Items.Add("14");
+                if (!lunes.Contains(15)) ddlHoraFin.Items.Add("15");
             }
 
             if (dia == "Martes")
@@ -188,6 +194,13 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
                 if (!martes.Contains(13)) ddlHoraInicio.Items.Add("13");
                 if (!martes.Contains(14)) ddlHoraInicio.Items.Add("14");
                 if (!martes.Contains(15)) ddlHoraInicio.Items.Add("15");
+                if (!martes.Contains(10)) ddlHoraFin.Items.Add("10");
+                if (!martes.Contains(11)) ddlHoraFin.Items.Add("11");
+                if (!martes.Contains(12)) ddlHoraFin.Items.Add("12");
+                if (!martes.Contains(13)) ddlHoraFin.Items.Add("13");
+                if (!martes.Contains(14)) ddlHoraFin.Items.Add("14");
+                if (!martes.Contains(15)) ddlHoraFin.Items.Add("15");
+
             }
 
             if (dia == "Miercoles")
@@ -198,6 +211,12 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
                 if (!miercoles.Contains(13)) ddlHoraInicio.Items.Add("13");
                 if (!miercoles.Contains(14)) ddlHoraInicio.Items.Add("14");
                 if (!miercoles.Contains(15)) ddlHoraInicio.Items.Add("15");
+                if (!miercoles.Contains(10)) ddlHoraFin.Items.Add("10");
+                if (!miercoles.Contains(11)) ddlHoraFin.Items.Add("11");
+                if (!miercoles.Contains(12)) ddlHoraFin.Items.Add("12");
+                if (!miercoles.Contains(13)) ddlHoraFin.Items.Add("13");
+                if (!miercoles.Contains(14)) ddlHoraFin.Items.Add("14");
+                if (!miercoles.Contains(15)) ddlHoraFin.Items.Add("15");
             }
 
             if (dia == "Jueves")
@@ -208,6 +227,12 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
                 if (!jueves.Contains(13)) ddlHoraInicio.Items.Add("13");
                 if (!jueves.Contains(14)) ddlHoraInicio.Items.Add("14");
                 if (!jueves.Contains(15)) ddlHoraInicio.Items.Add("15");
+                if (!jueves.Contains(10)) ddlHoraFin.Items.Add("10");
+                if (!jueves.Contains(11)) ddlHoraFin.Items.Add("11");
+                if (!jueves.Contains(12)) ddlHoraFin.Items.Add("12");
+                if (!jueves.Contains(13)) ddlHoraFin.Items.Add("13");
+                if (!jueves.Contains(14)) ddlHoraFin.Items.Add("14");
+                if (!jueves.Contains(15)) ddlHoraFin.Items.Add("15");
             }
 
             if (dia == "Viernes")
@@ -218,6 +243,12 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
                 if (!viernes.Contains(13)) ddlHoraInicio.Items.Add("13");
                 if (!viernes.Contains(14)) ddlHoraInicio.Items.Add("14");
                 if (!viernes.Contains(15)) ddlHoraInicio.Items.Add("15");
+                if (!viernes.Contains(10)) ddlHoraFin.Items.Add("10");
+                if (!viernes.Contains(11)) ddlHoraFin.Items.Add("11");
+                if (!viernes.Contains(12)) ddlHoraFin.Items.Add("12");
+                if (!viernes.Contains(13)) ddlHoraFin.Items.Add("13");
+                if (!viernes.Contains(14)) ddlHoraFin.Items.Add("14");
+                if (!viernes.Contains(15)) ddlHoraFin.Items.Add("15");
             }
 
             if (dia == "Sabado")
@@ -228,6 +259,12 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
                 if (!sabado.Contains(13)) ddlHoraInicio.Items.Add("13");
                 if (!sabado.Contains(14)) ddlHoraInicio.Items.Add("14");
                 if (!sabado.Contains(15)) ddlHoraInicio.Items.Add("15");
+                if (!sabado.Contains(10)) ddlHoraFin.Items.Add("10");
+                if (!sabado.Contains(11)) ddlHoraFin.Items.Add("11");
+                if (!sabado.Contains(12)) ddlHoraFin.Items.Add("12");
+                if (!sabado.Contains(13)) ddlHoraFin.Items.Add("13");
+                if (!sabado.Contains(14)) ddlHoraFin.Items.Add("14");
+                if (!sabado.Contains(15)) ddlHoraFin.Items.Add("15");
             }
         }
 
