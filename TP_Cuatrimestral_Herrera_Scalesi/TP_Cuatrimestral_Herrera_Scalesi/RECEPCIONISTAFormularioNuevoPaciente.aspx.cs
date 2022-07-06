@@ -15,6 +15,10 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
         {
             Page.UnobtrusiveValidationMode = System.Web.UI.UnobtrusiveValidationMode.None;
 
+            if (Session["nombre"] == null || Session["apellido"] == null || (int)Session["id"] == 2)
+            {
+                Response.Redirect("Error.aspx", false);
+            }
 
             if (!IsPostBack)
             {

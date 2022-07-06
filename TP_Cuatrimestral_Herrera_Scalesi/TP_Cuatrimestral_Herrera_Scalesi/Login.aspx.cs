@@ -44,6 +44,7 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
 
                         Session.Add("nombre", persona.Nombre);
                         Session.Add("apellido", persona.Apellido);
+                        Session.Add("id", persona.Rol.Id);
                         Response.Redirect("RecepcionistaFormularioPrincipal.aspx", false);
                         break;
 
@@ -63,7 +64,9 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
                     case 3:
 
                         //ADMINISTRADOR
-
+                        Session.Add("nombre", persona.Nombre);
+                        Session.Add("apellido", persona.Apellido);
+                        Session.Add("id", persona.Rol.Id);
                         Response.Redirect("AdministradorPrincipal.aspx", false);
 
                         break;

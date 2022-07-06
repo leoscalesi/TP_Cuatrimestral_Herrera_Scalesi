@@ -14,7 +14,8 @@
      <div class="card text-center m-auto">
             <div class="card-header">
                 <img src="img/agenda.png" margin="5" width="70" alt="agenda" />
-                <h5 class="card-title">Agenda</h5>
+                <h2 class="card-title">Agenda</h2>
+                <asp:Label ID="lblMedicoNombreApellido" runat="server" Text=""></asp:Label>
             </div>
 
 

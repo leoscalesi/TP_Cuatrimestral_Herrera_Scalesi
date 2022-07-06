@@ -24,6 +24,11 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["nombre"] == null || Session["apellido"] == null || (int)Session["id"] == 2)
+            {
+                Response.Redirect("Error.aspx", false);
+            }
+
             //DEBO RECUPERAR ID DESDE EL FORMULARIO ANTERIOR.
 
             if (!IsPostBack)
@@ -32,7 +37,22 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
                 List<Agenda> listaAgenda = new List<Agenda>();
 
                 int idMedico = int.Parse(Request.QueryString["id"].ToString());
-                
+
+                // sumar nombre y apellido del medico a la Agenda
+                MedicoNegocio medicoNegocio = new MedicoNegocio();
+                List<Medico> listaMedico = medicoNegocio.listar();
+
+                foreach (var item in listaMedico)
+                {
+                    if (idMedico == item.Id)
+                    {
+                        lblMedicoNombreApellido.Text += item.Nombre;
+                        lblMedicoNombreApellido.Text += " ";
+                        lblMedicoNombreApellido.Text += item.Apellido;
+                    }
+                }
+                //
+
                 agendaNegocio.cargaListaHorario(agendaNegocio.listar(idMedico), lunes, martes, miercoles, jueves, viernes, sabado);
 
                 //ELIMINO DATOS REPETIDOS

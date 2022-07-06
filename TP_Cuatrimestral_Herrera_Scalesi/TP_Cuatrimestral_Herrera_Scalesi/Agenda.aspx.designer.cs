@@ -24,6 +24,15 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
+        /// Control lblMedicoNombreApellido.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMedicoNombreApellido;
+
+        /// <summary>
         /// Control lbl10Lunes.
         /// </summary>
         /// <remarks>

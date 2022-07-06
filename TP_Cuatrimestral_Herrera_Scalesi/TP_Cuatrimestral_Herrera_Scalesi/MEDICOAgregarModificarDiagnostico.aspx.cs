@@ -11,7 +11,10 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["nombre"] == null || Session["apellido"] == null || (int)Session["id"] == 1)
+            {
+                Response.Redirect("Error.aspx", false);
+            }
         }
 
         protected void btnVolverATurnos_Click(object sender, EventArgs e)

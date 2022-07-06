@@ -11,7 +11,7 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            lblError.Text += "No te has logeado";
+            lblError.Text += "No te has logeado o no posees los permisos para acceder";
         }
 
         protected void btnVolver_Click(object sender, EventArgs e)

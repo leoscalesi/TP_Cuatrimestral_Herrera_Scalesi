@@ -20,7 +20,7 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
 
             lblHolaMedico.Text += nombre + " " + apellido;
             */
-            if (Session["nombre"] == null || Session["apellido"] == null)
+            if (Session["nombre"] == null || Session["apellido"] == null || (int)Session["id"] == 1)
             {
                 Response.Redirect("Error.aspx", false);
             }

@@ -9,9 +9,20 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
 {
     public partial class AdministradorPrincipal : System.Web.UI.Page
     {
+        public string nombre { get; set; }
+        public string apellido { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["nombre"] == null || Session["apellido"] == null || (int)Session["id"] != 3)
+            {
+                Response.Redirect("Error.aspx", false);
+            }
+            else
+            {
+                nombre = Session["nombre"].ToString();
+                apellido = Session["apellido"].ToString();
+                lblHolaRecepcionista.Text += nombre + " " + apellido;
+            }
         }
 
         protected void btnNuevoPaciente_Click(object sender, EventArgs e)
