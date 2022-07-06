@@ -70,9 +70,16 @@
                         </div>
                         <div class="mb-3">
                             <label for="ddlEspecialidades" class="form-label">Seleccione Especialidad</label>
-                            <asp:DropDownList ID="ddlEspecialidades" runat="server">
+                            <asp:DropDownList ID="ddlEspecialidades" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlEspecialidades_SelectedIndexChanged">
                             </asp:DropDownList>
+                            
                         </div>
+                        <div class="mb-3">
+                            
+                            <asp:ListBox ID="lbEspecialidades" runat="server"></asp:ListBox>
+                            <asp:Button ID="btnEliminarLista" runat="server" Text="Eliminar Todo" OnClick="btnEliminarLista_Click" />
+                        </div>
+                    
                     </div>
 
 

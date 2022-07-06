@@ -35,7 +35,7 @@ namespace Negocio
 
             catch (Exception ex)
             {
-                
+
                 throw ex;
             }
 
@@ -46,19 +46,29 @@ namespace Negocio
 
         }
 
-        public bool agregarMedico(Medico medico)
+        public bool agregarMedico(Medico medico, List<int> IdEspecialidad)
         {
             AccesoaDatos accesoaDatos = new AccesoaDatos();
 
-
+            int idMedico = 0;
 
             try
             {
 
                 //FALTARIA EL idEspecialidad
 
-                accesoaDatos.setearConsulta("insert into medicos (id_persona,nro_matricula,id_especialidad) values('" + medico.IdPersona + "', '" + medico.NumMatricula + "' , '" + medico.Especialidad.Id + "'" + ")");
+                accesoaDatos.setearConsulta("insert into medicos (id_persona,nro_matricula) values('" + medico.IdPersona + "','" + medico.NumMatricula + "'" + ")");
                 accesoaDatos.ejecutarAccion();
+                accesoaDatos.cerrarConexion();
+
+                idMedico = buscaMedicoId(medico.IdPersona);
+
+                for (int i = 0; i < IdEspecialidad.Count; i++)
+                {
+                    accesoaDatos.setearConsulta("insert into medicos_x_especialidad (id_medico,id_especialidad) values('" + idMedico + "','" + IdEspecialidad[i] + "'" + ")");
+                    accesoaDatos.ejecutarAccion();
+                    accesoaDatos.cerrarConexion();
+                }
 
                 return true;
 
@@ -68,7 +78,7 @@ namespace Negocio
             catch (Exception ex)
             {
 
-                
+
                 throw ex;
             }
 
@@ -160,5 +170,42 @@ namespace Negocio
 
         }
 
+        public int buscaMedicoId(int idpersona)
+        {
+
+            AccesoaDatos datos = new AccesoaDatos();
+            int idMedico = 0;
+
+            try
+            {
+
+                datos.setearConsulta("select id from medicos where id_persona = " + idpersona);
+                datos.ejecutarLectura();
+
+                if (datos.Lector.Read())
+                {
+                    idMedico = (int)datos.Lector["id"];
+
+                }
+
+
+                return idMedico;
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
     }
 }
+    
+    
+    
+  
+

@@ -171,7 +171,43 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
 
                     MedicoNegocio medicoNegocio = new MedicoNegocio();
 
-                    if (medicoNegocio.agregarMedico(medico))
+                    EspecialidadNegocio especialidadNegocio = new EspecialidadNegocio();
+                    List<Especialidad> especialidades = new List<Especialidad>();
+                    especialidades = especialidadNegocio.listar();
+
+                    List<int> listaIdEspecialidad = new List<int>();
+
+                    //CUENTO LA CANTIDAD DE ELEMENTOS QUE TIENE EL LB
+                    int cantidadEspecialidades = lbEspecialidades.Items.Count;
+
+                    List<string> listaNombreEspecialidades = new List<string>();
+
+                    for (int i = 0; i < cantidadEspecialidades; i++)
+                    {
+                        listaNombreEspecialidades.Add(lbEspecialidades.Items[i].ToString());
+
+                    }
+
+                    listaNombreEspecialidades = listaNombreEspecialidades.Distinct().ToList();
+
+                    int cantidadEspecialidadesSinRepetir = listaNombreEspecialidades.Count;
+
+                    for (int i = 0; i < cantidadEspecialidadesSinRepetir; i++)
+                    {
+
+
+                        foreach (var item in especialidades)
+                        {
+                            if (listaNombreEspecialidades[i].Contains(item.Nombre))
+                            {
+                                listaIdEspecialidad.Add(item.Id);
+                            }
+                        }
+                    }
+
+
+
+                    if (medicoNegocio.agregarMedico(medico,listaIdEspecialidad))
                     {
                         //Se agrego el medico en bd
                     }
@@ -191,6 +227,18 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
         {
             Response.Redirect("RECEPCIONISTAFormularioPrincipal.aspx", false);
 
+        }
+
+        protected void btnEliminarLista_Click(object sender, EventArgs e)
+        {
+            lbEspecialidades.Items.Clear();
+        }
+
+        protected void ddlEspecialidades_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string especialidad = ddlEspecialidades.SelectedItem.ToString();
+
+            lbEspecialidades.Items.Add(especialidad);
         }
     }
 
