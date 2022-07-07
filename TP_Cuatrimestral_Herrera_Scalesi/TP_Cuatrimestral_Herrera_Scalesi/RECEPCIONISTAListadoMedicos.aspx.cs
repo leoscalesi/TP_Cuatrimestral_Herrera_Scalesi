@@ -11,6 +11,8 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
 {
     public partial class RECEPCIONISTAListadoMedicos : System.Web.UI.Page
     {
+        static string id2;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["nombre"] == null || Session["apellido"] == null || (int)Session["id"] == 2)
@@ -33,7 +35,11 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
 
         protected void dgvListadoMedicos_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
+            Panel1.Visible = true;
             var id = dgvListadoMedicos.Rows[e.RowIndex].Cells[0].Text;
+            id2 = id;
+
+            /*var id = dgvListadoMedicos.Rows[e.RowIndex].Cells[0].Text;
             //Persona persona = new Persona();
             PersonaNegocio personaNegocio = new PersonaNegocio();
 
@@ -47,7 +53,7 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
                 dgvListadoMedicos.DataSource = Session["listaMedicos"];
                 dgvListadoMedicos.DataBind();
 
-            }
+            }*/
         }
 
         protected void dgvListadoMedicos_SelectedIndexChanged(object sender, EventArgs e)
@@ -73,6 +79,28 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
             dgvListadoMedicos.DataSource = null;
             dgvListadoMedicos.DataSource = listaFiltrada;
             dgvListadoMedicos.DataBind();
+        }
+
+        protected void btnPanelAceptar_Click(object sender, EventArgs e)
+        {
+            PersonaNegocio personaNegocio = new PersonaNegocio();
+            ///if - aceptar- eliminar
+
+            if (personaNegocio.eliminar(id2))
+            {
+                //mostrar un "eliminado con exito"
+                MedicoNegocio medicoNegocio = new MedicoNegocio();
+                Session.Add("listaMedicos", medicoNegocio.listar());
+                dgvListadoMedicos.DataSource = Session["listaMedicos"];
+                dgvListadoMedicos.DataBind();
+                Panel1.Visible = false;
+            }
+        }
+
+        protected void btnPanelCancelar_Click(object sender, EventArgs e)
+        {
+            //si cancelo
+            Panel1.Visible = false;
         }
     }
 }

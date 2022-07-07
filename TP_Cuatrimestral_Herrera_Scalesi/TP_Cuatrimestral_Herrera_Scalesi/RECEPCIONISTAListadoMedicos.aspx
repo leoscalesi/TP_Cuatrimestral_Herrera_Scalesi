@@ -30,7 +30,7 @@
                     <br />
                     <asp:GridView ID="dgvListadoMedicos" OnSelectedIndexChanged="dgvListadoMedicos_SelectedIndexChanged" OnRowDeleting="dgvListadoMedicos_RowDeleting" AutoGenerateColumns="false" CssClass="table table-hover d-sm-table-cell alig-middle text-center" runat="server">
                     <Columns>
-                        <asp:BoundField HeaderText="ID" DataField="Id"/>
+                        <asp:BoundField HeaderText="ID" DataField="IdPersona"/>
                         <asp:BoundField HeaderText="Nombre" DataField="Nombre" />
                         <asp:BoundField HeaderText="Apellido" DataField="Apellido"/>
                         <asp:BoundField HeaderText="DNI" DataField="Dni"/>
@@ -44,6 +44,13 @@
                     </Columns>
                     </asp:GridView>
                 </div>
+                <div class="mt-5">
+                <asp:Panel ID="Panel1" visible="false" BackColor="lightgray" cssclass="modal modal-content m-auto p-3 text-center fixed-bottom position-absolute border-5 border-dark" Height="220px" Width="350px" runat="server">
+                    <h5><asp:Label ID="lblPanel"  runat="server" Text="Desea Eliminar El Registro?"></asp:Label></h5>
+                    <asp:Button ID="btnPanelAceptar" CssClass="mt-5 mb-3 btn btn-success" runat="server" Text="Aceptar" OnClick="btnPanelAceptar_Click"  />
+                    <asp:Button ID="btnPanelCancelar" CssClass="btn btn-danger" runat="server" Text="Cancelar" OnClick="btnPanelCancelar_Click"  />
+                </asp:Panel>
+            </div>
             </div>
 
             <div class="card-footer">

@@ -11,6 +11,7 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
 {
     public partial class RECEPCIONISTAListadoPacientes : System.Web.UI.Page
     {
+        static string id2;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["nombre"] == null || Session["apellido"] == null || (int)Session["id"] == 2)
@@ -41,8 +42,10 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
 
         protected void dgvListadoPacientes_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
+            Panel1.Visible = true;
             var id = dgvListadoPacientes.Rows[e.RowIndex].Cells[0].Text;
-            Persona persona = new Persona();
+            id2 = id;
+            /*Persona persona = new Persona();
             PersonaNegocio personaNegocio = new PersonaNegocio();
 
             //preguntar si desea eliminar
@@ -54,7 +57,7 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
                 Session.Add("listaPacientes", pacienteNegocio.listar());
                 dgvListadoPacientes.DataSource = Session["listaPacientes"];
                 dgvListadoPacientes.DataBind();
-            }
+            }*/
         }
 
         protected void btbFiltro_Click(object sender, EventArgs e)
@@ -73,6 +76,28 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
         protected void btnVolverAFormularioPrincipal_Click(object sender, EventArgs e)
         {
             Response.Redirect("RecepcionistaFormularioPrincipal.aspx", false);
+        }
+
+        protected void btnPanelAceptar_Click(object sender, EventArgs e)
+        {
+            PersonaNegocio personaNegocio = new PersonaNegocio();
+            ///si toco aceptar deberia eliminar
+
+            if (personaNegocio.eliminar(id2))
+            {
+                //mostrar un "eliminado con exito"
+                PacienteNegocio pacienteNegocio = new PacienteNegocio();
+                Session.Add("listaPacientes", pacienteNegocio.listar());
+                dgvListadoPacientes.DataSource = Session["listaPacientes"];
+                dgvListadoPacientes.DataBind();
+                Panel1.Visible = false;
+            }
+        }
+
+        protected void btnPanelCancelar_Click(object sender, EventArgs e)
+        {
+            //si cancelo
+            Panel1.Visible = false;
         }
     }
 }

@@ -60,6 +60,42 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
         protected global::System.Web.UI.WebControls.GridView dgvListadoPacientes;
 
         /// <summary>
+        /// Control Panel1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel Panel1;
+
+        /// <summary>
+        /// Control lblPanel.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPanel;
+
+        /// <summary>
+        /// Control btnPanelAceptar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnPanelAceptar;
+
+        /// <summary>
+        /// Control btnPanelCancelar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnPanelCancelar;
+
+        /// <summary>
         /// Control btnVolverAFormularioPrincipal.
         /// </summary>
         /// <remarks>
