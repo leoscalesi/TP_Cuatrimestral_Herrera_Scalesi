@@ -202,5 +202,30 @@ namespace Negocio
 
         }
 
+        public bool recuperarRegistroEliminado(string id)
+        {
+            AccesoaDatos accesoaDatos = new AccesoaDatos();
+
+            try
+            {
+                //ARREGLAR LO DE LA FECHA DE NACIMIENTO
+
+                accesoaDatos.setearConsulta("update PERSONAS set estado = 1 where id = " + id + "");
+                accesoaDatos.ejecutarAccion();
+
+                return true;
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+            finally
+            {
+                accesoaDatos.cerrarConexion();
+            }
+        }
     }
 }

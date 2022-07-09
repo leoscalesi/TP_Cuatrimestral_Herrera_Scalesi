@@ -21,7 +21,7 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
             {
                 nombre = Session["nombre"].ToString();
                 apellido = Session["apellido"].ToString();
-                lblHolaRecepcionista.Text += nombre + " " + apellido;
+                lblHolaRecepcionista.Text = "Hola " + nombre + " " + apellido;
             }
         }
 
@@ -63,7 +63,11 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
         protected void btnAgenda_Click(object sender, EventArgs e)
         {
             Response.Redirect("Agenda.aspx", false);
+        }
 
+        protected void btnRecuperarRegistro_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AdminRecuperarRegistro.aspx", false);
         }
     }
 }

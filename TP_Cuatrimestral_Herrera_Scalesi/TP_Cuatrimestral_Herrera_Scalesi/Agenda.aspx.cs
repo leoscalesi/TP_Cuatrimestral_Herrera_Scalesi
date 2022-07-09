@@ -46,9 +46,7 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
                 {
                     if (idMedico == item.Id)
                     {
-                        lblMedicoNombreApellido.Text += item.Nombre;
-                        lblMedicoNombreApellido.Text += " ";
-                        lblMedicoNombreApellido.Text += item.Apellido;
+                        lblMedicoNombreApellido.Text += item.Nombre + " " + item.Apellido;
                     }
                 }
                 //

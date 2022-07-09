@@ -18,7 +18,7 @@
             <div align="center">
                 <img src="img/gestiondeturnos.png" alt="gestion turno"/>
                 <h2 style="padding:40px;">
-                <asp:Label ID="lblHolaRecepcionista" runat="server" Text="Hola "></asp:Label>
+                <asp:Label ID="lblHolaRecepcionista" runat="server" Text=""></asp:Label>
                 </h2>
             </div>
 

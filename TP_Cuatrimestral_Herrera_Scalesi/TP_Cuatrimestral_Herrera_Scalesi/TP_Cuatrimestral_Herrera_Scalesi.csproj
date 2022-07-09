@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AdministradorPrincipal.aspx" />
+    <Content Include="AdminRecuperarRegistro.aspx" />
     <Content Include="Agenda.aspx" />
     <Content Include="AgendaListadoMedicos.aspx" />
     <Content Include="AltaMedico.aspx" />
@@ -93,6 +94,13 @@
     </Compile>
     <Compile Include="AdministradorPrincipal.aspx.designer.cs">
       <DependentUpon>AdministradorPrincipal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminRecuperarRegistro.aspx.cs">
+      <DependentUpon>AdminRecuperarRegistro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminRecuperarRegistro.aspx.designer.cs">
+      <DependentUpon>AdminRecuperarRegistro.aspx</DependentUpon>
     </Compile>
     <Compile Include="Agenda.aspx.cs">
       <DependentUpon>Agenda.aspx</DependentUpon>

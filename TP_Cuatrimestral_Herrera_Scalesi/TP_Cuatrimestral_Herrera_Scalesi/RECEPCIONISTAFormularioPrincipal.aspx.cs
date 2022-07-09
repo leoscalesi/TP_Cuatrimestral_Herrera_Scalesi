@@ -22,7 +22,7 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
             {
                 nombre = Session["nombre"].ToString();
                 apellido = Session["apellido"].ToString();
-                lblHolaRecepcionista.Text += nombre + " " + apellido;
+                lblHolaRecepcionista.Text = "Hola " + nombre + " " + apellido;
             }
         }
 

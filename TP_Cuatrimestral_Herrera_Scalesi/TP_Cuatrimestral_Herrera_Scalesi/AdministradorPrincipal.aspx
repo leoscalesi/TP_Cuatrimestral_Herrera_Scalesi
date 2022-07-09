@@ -17,7 +17,7 @@
                 <div>
                     <img src="img/gestiondeturnos.png" alt="gestion turno"/>
                     <h2 style="padding:40px;">
-                        <asp:Label ID="lblHolaRecepcionista" runat="server" Text="Hola "></asp:Label>
+                        <asp:Label ID="lblHolaRecepcionista" runat="server" Text=""></asp:Label>
                     </h2>
                 </div>
               <div class="card-header">
@@ -60,7 +60,7 @@
                              <asp:Button ID="btnAgenda" CssClass="btn btn-secondary" runat="server" Text="Agenda Medica" style="background-color:indianred;" OnClick="btnAgenda_Click" />
                              <br />
                              <br />
-                             <asp:Button ID="btnRecuperarRegistro" CssClass="btn btn-dark" runat="server" Text="Recuperar Registro" />
+                             <asp:Button ID="btnRecuperarRegistro" CssClass="btn btn-dark" runat="server" Text="Recuperar Registro" OnClick="btnRecuperarRegistro_Click" />
                          </div>
                      </div>
                        
