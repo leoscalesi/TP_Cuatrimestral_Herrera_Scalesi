@@ -78,6 +78,7 @@
     <Content Include="LOGIN.aspx" />
     <Content Include="MEDICOAgregarModificarDiagnostico.aspx" />
     <Content Include="MEDICOListadoTurnos.aspx" />
+    <Content Include="RECEPBrindarTurnosListadoMedicos.aspx" />
     <Content Include="RECEPCIONISTABrindarTurnos.aspx" />
     <Content Include="RECEPCIONISTAFormularioEspecialidades.aspx" />
     <Content Include="RECEPCIONISTAFormularioNuevoPaciente.aspx" />
@@ -161,6 +162,13 @@
       <DependentUpon>MEDICOListadoTurnos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RECEPBrindarTurnosListadoMedicos.aspx.cs">
+      <DependentUpon>RECEPBrindarTurnosListadoMedicos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RECEPBrindarTurnosListadoMedicos.aspx.designer.cs">
+      <DependentUpon>RECEPBrindarTurnosListadoMedicos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="RECEPCIONISTABrindarTurnos.aspx.cs">
       <DependentUpon>RECEPCIONISTABrindarTurnos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

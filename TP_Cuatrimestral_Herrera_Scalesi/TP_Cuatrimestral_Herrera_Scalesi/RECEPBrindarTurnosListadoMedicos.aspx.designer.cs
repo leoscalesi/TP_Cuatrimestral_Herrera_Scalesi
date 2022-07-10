@@ -11,7 +11,7 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
 {
 
 
-    public partial class RECEPCIONISTAListadoSugerencias
+    public partial class RECEPBrindarTurnosListadoMedicos
     {
 
         /// <summary>
@@ -24,30 +24,48 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Control lblSugerencias.
+        /// Control lblFiltro.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSugerencias;
+        protected global::System.Web.UI.WebControls.Label lblFiltro;
 
         /// <summary>
-        /// Control grvSugerencias.
+        /// Control txtFiltro.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grvSugerencias;
+        protected global::System.Web.UI.WebControls.TextBox txtFiltro;
 
         /// <summary>
-        /// Control btnListadoMedicos.
+        /// Control btnFiltro.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnListadoMedicos;
+        protected global::System.Web.UI.WebControls.Button btnFiltro;
+
+        /// <summary>
+        /// Control dgvListadoMedicos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView dgvListadoMedicos;
+
+        /// <summary>
+        /// Control btnVolver.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnVolver;
     }
 }

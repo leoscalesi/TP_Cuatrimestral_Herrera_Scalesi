@@ -96,5 +96,12 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
             Response.Redirect("RECEPCIONISTAListadoSugerenciasDiaHorario.aspx?nombre=" + nombre + "&apellido=" + apellido + "&idPersona=" + idPersona + "&idEspecialidad=" + idEspecialidad, false);
 
         }
+
+        protected void btnListadoMedicos_Click(object sender, EventArgs e)
+        {
+            int idPaciente = int.Parse(Request.QueryString["id"].ToString());
+            string especialidad = Request.QueryString["especialidad"].ToString();
+            Response.Redirect("RECEPBrindarTurnosListadoMedicos.aspx?id="+ idPaciente +"&especialidad=" + especialidad, false);
+        }
     }
 }

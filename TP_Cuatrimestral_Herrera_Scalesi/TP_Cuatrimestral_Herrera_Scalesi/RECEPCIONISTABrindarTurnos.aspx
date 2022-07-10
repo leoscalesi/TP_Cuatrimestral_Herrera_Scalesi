@@ -50,7 +50,7 @@
                     </columns>
                 </asp:GridView>
                 <div class="text-center p-3 pb-0">
-                     <asp:Button ID="btnNuevoTurno" CssClass="btn" runat="server" Text="Nuevo turno" style="background-color:lightgreen;" OnClick="btnNuevoTurno_Click"/>
+                     <asp:Button ID="btnNuevoTurno" Visible="false" CssClass="btn" runat="server" Text="Nuevo turno" style="background-color:lightgreen;" OnClick="btnNuevoTurno_Click"/>
                 </div>
             </div>
             <div class="card-footer">

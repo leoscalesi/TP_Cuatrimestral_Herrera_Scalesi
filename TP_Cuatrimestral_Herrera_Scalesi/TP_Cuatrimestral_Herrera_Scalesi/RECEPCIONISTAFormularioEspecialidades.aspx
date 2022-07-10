@@ -13,17 +13,23 @@
     <form id="form1" runat="server">
      <div class="card" id="estiloCardRecepcionistaEsp">
 
-        <div class="card-body">
+        <div class="card-header" style="text-align:center">
+            <h2>Brindar Turno: Especialidades</h2>
+        </div>
+        <div class="card-body m-auto">
             <div>
-            <asp:Label ID="lblEspecialidad" runat="server" Text="Especialidad"></asp:Label> 
+                <asp:Label ID="lblEspecialidad" runat="server" Text="Especialidad"></asp:Label> 
             </div>
             <div>
-            <asp:DropDownList ID="ddlEspecialidades" runat="server" AutoPostBack="true" ></asp:DropDownList>
+                <asp:DropDownList ID="ddlEspecialidades" runat="server" AutoPostBack="true" ></asp:DropDownList>
             </div>
         </div>
         <div class="card-footer">
-            <asp:Button ID="btnContinuarAHorariosMedicos" runat="server" Text="Continuar" OnClick="btnContinuarAHorariosMedicos_Click" />
+            <div class="text-center p-2">
+                <asp:Button ID="btnContinuarAHorariosMedicos" runat="server" Text="Continuar" OnClick="btnContinuarAHorariosMedicos_Click" />
+            </div>
         </div>
+
     </div>
     </form>
 </body>
