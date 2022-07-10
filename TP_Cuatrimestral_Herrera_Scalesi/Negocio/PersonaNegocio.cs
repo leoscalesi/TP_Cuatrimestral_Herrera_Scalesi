@@ -227,5 +227,46 @@ namespace Negocio
                 accesoaDatos.cerrarConexion();
             }
         }
+
+        public Persona buscaPersonaId(int idPersona)
+        {
+
+            AccesoaDatos accesoaDatos = new AccesoaDatos();
+            List<Persona> personaList = new List<Persona>();
+
+            try
+            {
+
+                accesoaDatos.setearConsulta("select nombre, apellido, id from personas where id = " + idPersona);
+                accesoaDatos.ejecutarLectura();
+
+
+                if (accesoaDatos.Lector.Read())
+                {
+                    Persona persona = new Persona();
+
+                    persona.Nombre = (string)accesoaDatos.Lector["nombre"];
+                    persona.Apellido = (string)accesoaDatos.Lector["apellido"];
+                    persona.Id = (int)accesoaDatos.Lector["id"];
+                   
+                    return persona;
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+            finally
+            {
+                accesoaDatos.cerrarConexion();
+            }
+
+            return null;
+
+
+        }
     }
 }

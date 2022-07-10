@@ -11,7 +11,7 @@ namespace Negocio
     public class MedicoNegocio
     {
 
-        public Medico buscarMedico(int id)
+        public Medico buscarMedico(int idMedico)
         {
 
             AccesoaDatos datos = new AccesoaDatos();
@@ -19,14 +19,15 @@ namespace Negocio
             try
             {
 
-                datos.setearConsulta("select nro_matricula from medicos where id_persona = " + id);
+                datos.setearConsulta("select nro_matricula,id_persona,id from medicos where id = " + idMedico);
                 datos.ejecutarLectura();
 
                 Medico medico = new Medico();
                 if (datos.Lector.Read())
                 {
-                    medico.NumMatricula = (short)datos.Lector["nro_matricula"];
-
+                    medico.NumMatricula = (int)datos.Lector["nro_matricula"];
+                    medico.IdPersona = (int)datos.Lector["id_persona"];
+                    medico.Id = (int)datos.Lector["id"];
                 }
 
 
@@ -45,6 +46,7 @@ namespace Negocio
             }
 
         }
+
 
         public bool agregarMedico(Medico medico, List<int> IdEspecialidad)
         {
@@ -202,6 +204,80 @@ namespace Negocio
             {
                 datos.cerrarConexion();
             }
+        }
+
+        public List<int> buscaIdMedicosEspecialidad(int idEspecialidad)
+        {
+            AccesoaDatos accesoaDatos = new AccesoaDatos();
+            List<int> lista = new List<int>();
+
+            try
+            {
+                accesoaDatos.setearConsulta("select id_medico from medicos_x_especialidad where id_especialidad = " + idEspecialidad);
+                accesoaDatos.ejecutarLectura();
+
+                while (accesoaDatos.Lector.Read())
+                {
+
+                    int aux;
+                    aux = (int)accesoaDatos.Lector["id_medico"];
+
+
+                    lista.Add(aux);
+
+                }
+
+
+                return lista;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+            finally
+            {
+                accesoaDatos.cerrarConexion();
+            }
+
+
+        }
+
+        public Medico buscarMedicoIdPersona(int idPersona)
+        {
+
+            AccesoaDatos datos = new AccesoaDatos();
+
+            try
+            {
+
+                datos.setearConsulta("select nro_matricula,id_persona,id from medicos where id_Persona = " + idPersona);
+                datos.ejecutarLectura();
+
+                Medico medico = new Medico();
+                if (datos.Lector.Read())
+                {
+                    medico.NumMatricula = (int)datos.Lector["nro_matricula"];
+                    medico.IdPersona = (int)datos.Lector["id_persona"];
+                    medico.Id = (int)datos.Lector["id"];
+                }
+
+
+                return medico;
+            }
+
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
         }
     }
 }

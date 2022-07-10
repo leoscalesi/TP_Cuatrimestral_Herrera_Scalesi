@@ -177,7 +177,47 @@ namespace Negocio
             }
         }
 
-        
+        public List<Agenda> listarIdMedicoIdEspecialidad(int idEspecialidad, int idMedico)
+        {
+            List<Agenda> lista = new List<Agenda>();
+            AccesoaDatos datos = new AccesoaDatos();
+
+            try
+            {
+
+                datos.setearConsulta("select dia_inicio,hora_inicio from agendas where id_medico = " + idMedico + " and id_especialidad = " + idEspecialidad);
+                datos.ejecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+
+                    Agenda aux = new Agenda();
+
+                    aux.HoraInicio = (int)datos.Lector["hora_inicio"];
+                    //aux.HoraFin = (int)datos.Lector["hora_fin"];
+                    aux.DiaInicio = (int)datos.Lector["dia_inicio"];
+
+
+                    lista.Add(aux);
+
+                }
+
+                return lista;
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+        }
+
+
 
 
     }

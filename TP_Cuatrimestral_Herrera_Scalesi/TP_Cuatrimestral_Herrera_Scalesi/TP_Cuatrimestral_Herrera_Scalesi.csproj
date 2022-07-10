@@ -84,6 +84,8 @@
     <Content Include="RECEPCIONISTAFormularioPrincipal.aspx" />
     <Content Include="RECEPCIONISTAListadoMedicos.aspx" />
     <Content Include="RECEPCIONISTAListadoPacientes.aspx" />
+    <Content Include="RECEPCIONISTAListadoSugerencias.aspx" />
+    <Content Include="RECEPCIONISTAListadoSugerenciasDiaHorario.aspx" />
     <Content Include="VerRoles.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -200,6 +202,20 @@
     </Compile>
     <Compile Include="RECEPCIONISTAListadoPacientes.aspx.designer.cs">
       <DependentUpon>RECEPCIONISTAListadoPacientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RECEPCIONISTAListadoSugerencias.aspx.cs">
+      <DependentUpon>RECEPCIONISTAListadoSugerencias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RECEPCIONISTAListadoSugerencias.aspx.designer.cs">
+      <DependentUpon>RECEPCIONISTAListadoSugerencias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RECEPCIONISTAListadoSugerenciasDiaHorario.aspx.cs">
+      <DependentUpon>RECEPCIONISTAListadoSugerenciasDiaHorario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RECEPCIONISTAListadoSugerenciasDiaHorario.aspx.designer.cs">
+      <DependentUpon>RECEPCIONISTAListadoSugerenciasDiaHorario.aspx</DependentUpon>
     </Compile>
     <Compile Include="VerRoles.aspx.cs">
       <DependentUpon>VerRoles.aspx</DependentUpon>

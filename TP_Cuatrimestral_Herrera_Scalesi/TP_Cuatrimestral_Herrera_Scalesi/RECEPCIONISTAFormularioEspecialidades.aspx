@@ -22,7 +22,7 @@
             </div>
         </div>
         <div class="card-footer">
-            <asp:Button ID="btnContinuarAHorariosMedicos" runat="server" Text="Continuar" />
+            <asp:Button ID="btnContinuarAHorariosMedicos" runat="server" Text="Continuar" OnClick="btnContinuarAHorariosMedicos_Click" />
         </div>
     </div>
     </form>

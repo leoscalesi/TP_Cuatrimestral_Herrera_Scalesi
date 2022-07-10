@@ -42,5 +42,13 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
             }
 
         }
+
+        protected void btnContinuarAHorariosMedicos_Click(object sender, EventArgs e)
+        {
+            //HAGO EL REQUEST DEL ID
+            int id = int.Parse(Request.QueryString["id"].ToString());
+            string especialidad = ddlEspecialidades.SelectedItem.ToString();
+            Response.Redirect("RECEPCIONISTAListadoSugerencias.aspx?especialidad=" + especialidad + "&id=" + id, false);
+        }
     }
 }
