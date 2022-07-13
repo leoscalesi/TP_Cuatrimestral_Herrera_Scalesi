@@ -79,5 +79,10 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
             }
 
         }
+
+        protected void btnRecPassword_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("CambiarContraseña.aspx", false);
+        }
     }
 }

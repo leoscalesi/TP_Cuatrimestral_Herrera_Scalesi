@@ -268,5 +268,39 @@ namespace Negocio
 
 
         }
+
+        public Persona validaUsuario(string usuario, List<Persona> lista)
+        {
+            foreach (Persona persona in lista)
+            {
+                if (persona.Email == usuario)
+                {
+                    return persona;
+                }
+            }
+
+            return null;
+        }
+        public bool modificarContraseña(string usuario, string cont)
+        {
+            AccesoaDatos accesoaDatos = new AccesoaDatos();
+
+            try
+            {
+                accesoaDatos.setearConsulta("update PERSONAS set clave = '" + cont + "' where email = '" + usuario + "'");
+                accesoaDatos.ejecutarLectura();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                accesoaDatos.cerrarConexion();
+            }
+        }
     }
 }

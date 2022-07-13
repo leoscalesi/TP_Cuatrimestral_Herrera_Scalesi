@@ -45,7 +45,7 @@
               </div>
               <div>
                   <br />
-                  <asp:Button ID="btnRecPassword" cssclass="btn btn-outline-dark" runat="server" Text="Si olvidó su contraseña contáctese con el administrador" />
+                  <asp:Button ID="btnRecPassword" cssclass="btn btn-outline-dark" runat="server" Text="Modificar Contraseña" OnClick="btnRecPassword_Click" />
               </div>
          </div>
      </div>

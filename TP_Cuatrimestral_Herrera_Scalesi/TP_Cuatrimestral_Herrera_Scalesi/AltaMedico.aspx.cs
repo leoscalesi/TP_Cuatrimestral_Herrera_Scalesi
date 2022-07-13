@@ -36,9 +36,9 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
                     {
                         int id = int.Parse(Request.QueryString["id"].ToString());
                         List<Medico> temporal = (List<Medico>)Session["listaMedicos"];
-                        Medico seleccionado = temporal.Find(x => x.Id == id);
-
-                        lblId.Text = seleccionado.Id.ToString();
+                        Medico seleccionado = temporal.Find(x => x.IdPersona == id);
+                        //usamos id persona para los medicos en los listados
+                        lblId.Text = seleccionado.IdPersona.ToString();
                         txtNombre.Text = seleccionado.Nombre;
                         txtApellido.Text = seleccionado.Apellido;
                         txtDni.Text = seleccionado.Dni.ToString();

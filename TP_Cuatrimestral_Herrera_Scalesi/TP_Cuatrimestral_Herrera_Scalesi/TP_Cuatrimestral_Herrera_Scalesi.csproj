@@ -72,6 +72,7 @@
     <Content Include="Agenda.aspx" />
     <Content Include="AgendaListadoMedicos.aspx" />
     <Content Include="AltaMedico.aspx" />
+    <Content Include="CambiarContraseña.aspx" />
     <Content Include="Error.aspx" />
     <Content Include="estilos\estilos.css" />
     <Content Include="GuardadoExitoso.aspx" />
@@ -125,6 +126,13 @@
     </Compile>
     <Compile Include="AltaMedico.aspx.designer.cs">
       <DependentUpon>AltaMedico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CambiarContraseña.aspx.cs">
+      <DependentUpon>CambiarContraseña.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CambiarContraseña.aspx.designer.cs">
+      <DependentUpon>CambiarContraseña.aspx</DependentUpon>
     </Compile>
     <Compile Include="Error.aspx.cs">
       <DependentUpon>Error.aspx</DependentUpon>
