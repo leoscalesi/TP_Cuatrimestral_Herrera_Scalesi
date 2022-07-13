@@ -88,22 +88,38 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
                         List<Turno> listadoTurnos = new List<Turno>();
                         TurnoNegocio turnoNegocio = new TurnoNegocio();
 
-                        listadoTurnos = turnoNegocio.listar();
-
-                        //RECORRO EL LISTADO Y 
-                        //BUSCO QUE COINCIDAN PACIENTE Y MEDICO
+                        //listadoTurnos = turnoNegocio.listar();
 
                         //HAGO METODO PARA TRAERME MEDICO Y ESPECIALIDAD
                         //Y PARA ESA FECHA Y ESA HORA, SI VIENE REGISTRO
                         //ESTA TOMADO SI NO SE PUEDE DAR EL TURNO (bool)
 
+                        bool encontroTurnoMedico = turnoNegocio.buscarTurnoMedico(idEspecialidad, idMedico, fechaSeleccionada, hora);
+
                         //BUSCO PACIENTE SI EN ESA FECHA Y HORA TIENE
                         //ALGO SIN IMPORTAR ESPECIALIDAD (bool)
+
+                        PacienteNegocio pacienteNegocio = new PacienteNegocio();
+                        bool encontroTurnoPaciente = turnoNegocio.buscarTurnoPaciente(fechaSeleccionada, hora,idPaciente);
+                        
+                        //SI NO ENCONTRO DE AMBOS SE PUEDE TOMAR EL TURNO
+                        
+                        if (!encontroTurnoMedico && !encontroTurnoPaciente)
+                        {
+                            //PUEDO TOMAR EL TURNO
+
+
+                        }
+                        
+                        
+                        
+                       
 
                         //SI LOS DOS SON true O false RECIEN AHI PUEDE TOMAR 
                         //EL TURNO
 
                         //CAMBIAR
+                        /*
                         foreach (var turno in listadoTurnos)
                         {
                             //EL TURNO DEPENDE DE SI EL MEDICO LO TOMO
@@ -122,7 +138,7 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
                                 //REDIRECCIONO AL FORMULARIO DE CARGAR OBSERVACIONES
                             }
                         }
-
+                        */
 
 
                     }

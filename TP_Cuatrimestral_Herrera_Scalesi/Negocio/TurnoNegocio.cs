@@ -61,8 +61,78 @@ namespace Negocio
 
         }
 
+        public bool buscarTurnoMedico(int idEspecialidad,int idMedico,DateTime fecha, int hora)
+        {
 
+            AccesoaDatos datos = new AccesoaDatos();
 
+            try
+            {
+
+                datos.setearConsulta("select * from Turnos where id_especialidad= " + idEspecialidad + " and id_medico= " + idMedico + " and fecha_turno= " + fecha + " and hora_turno =" + hora );
+                datos.ejecutarLectura();
+
+                if(datos.Lector.Read())
+                {
+
+                    return true;
+
+                }
+                else
+                {
+                    return false;
+                }
+                
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+            
+        }
+
+        public bool buscarTurnoPaciente(DateTime fecha, int hora,int idPaciente)
+        {
+
+            AccesoaDatos datos = new AccesoaDatos();
+
+            try
+            {
+
+                datos.setearConsulta("select * from Turnos where fecha_turno =" + fecha + "and hora_turno =" + hora + " and id_paciente =" + idPaciente);
+                datos.ejecutarLectura();
+
+                if (datos.Lector.Read())
+                {
+
+                    return true;
+
+                }
+                else
+                {
+                    return false;
+                }
+
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+        }
     }
 }
 
