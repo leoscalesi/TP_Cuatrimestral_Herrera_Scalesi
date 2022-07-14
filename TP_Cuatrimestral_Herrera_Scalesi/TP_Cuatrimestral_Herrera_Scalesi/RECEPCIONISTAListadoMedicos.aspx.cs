@@ -19,10 +19,11 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
             {
                 Response.Redirect("Error.aspx", false);
             }
-
+            MedicoNegocio medicoNegocio = new MedicoNegocio();
+            
             if (Session["listaMedicos"] == null)
             {
-                MedicoNegocio medicoNegocio = new MedicoNegocio();
+                
                 Session.Add("listaMedicos", medicoNegocio.listar());
             }
             if (!IsPostBack)

@@ -25,7 +25,9 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
                 if (Request.QueryString["id"] != null)
                 {
                     int id = int.Parse(Request.QueryString["id"].ToString());
-                    List<Paciente> temporal = (List<Paciente>)Session["listaPacientes"];
+                    PacienteNegocio pacienteNegocio = new PacienteNegocio();
+                    //List<Paciente> temporal = (List<Paciente>)Session["listaPacientes"];
+                    List<Paciente> temporal = pacienteNegocio.listar();
                     Paciente seleccionado = temporal.Find(x => x.Id == id);
 
                     lblId.Text = seleccionado.Id.ToString();

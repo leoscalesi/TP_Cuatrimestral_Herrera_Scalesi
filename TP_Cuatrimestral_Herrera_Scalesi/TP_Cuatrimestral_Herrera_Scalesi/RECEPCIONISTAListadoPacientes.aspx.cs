@@ -19,19 +19,9 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
                 Response.Redirect("Error.aspx", false);
             }
 
-            if (Session["listaPacientes"] == null)
-            {
-                PacienteNegocio pacienteNegocio = new PacienteNegocio();
-                Session.Add("listaPacientes", pacienteNegocio.listar());
-                //dgvListadoPacientes.DataSource = pacienteNegocio.listar();
-                //dgvListadoPacientes.DataBind();
-                // listaPacientes = pacienteNegocio.listar();
-            }
-            if (!IsPostBack)
-            {
-                dgvListadoPacientes.DataSource = Session["listaPacientes"];
-                dgvListadoPacientes.DataBind();
-            }
+            PacienteNegocio pacienteNegocio = new PacienteNegocio();
+            dgvListadoPacientes.DataSource = pacienteNegocio.listar();
+            dgvListadoPacientes.DataBind();
         }
 
         protected void dgvListadoPacientes_SelectedIndexChanged(object sender, EventArgs e)
@@ -45,24 +35,12 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
             Panel1.Visible = true;
             var id = dgvListadoPacientes.Rows[e.RowIndex].Cells[0].Text;
             id2 = id;
-            /*Persona persona = new Persona();
-            PersonaNegocio personaNegocio = new PersonaNegocio();
-
-            //preguntar si desea eliminar
-
-            if (personaNegocio.eliminar(id))
-            {
-                //mostrar un "eliminado con exito"
-                PacienteNegocio pacienteNegocio = new PacienteNegocio();
-                Session.Add("listaPacientes", pacienteNegocio.listar());
-                dgvListadoPacientes.DataSource = Session["listaPacientes"];
-                dgvListadoPacientes.DataBind();
-            }*/
         }
 
         protected void btbFiltro_Click(object sender, EventArgs e)
         {
-            List<Paciente> listaFiltrada = (List<Paciente>)Session["listaPacientes"];
+            PacienteNegocio pacienteNegocio = new PacienteNegocio();
+            List<Paciente> listaFiltrada = pacienteNegocio.listar();
             if (txtFiltro.Text != "")
             {
                 listaFiltrada = listaFiltrada.FindAll(x => x.Nombre.ToUpper().Contains(txtFiltro.Text.ToUpper()) || x.Apellido.ToUpper().Contains(txtFiltro.Text.ToUpper()));
@@ -81,14 +59,13 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
         protected void btnPanelAceptar_Click(object sender, EventArgs e)
         {
             PersonaNegocio personaNegocio = new PersonaNegocio();
-            ///si toco aceptar deberia eliminar
+            ///if - aceptar - eliminar
 
             if (personaNegocio.eliminar(id2))
             {
-                //mostrar un "eliminado con exito"
                 PacienteNegocio pacienteNegocio = new PacienteNegocio();
-                Session.Add("listaPacientes", pacienteNegocio.listar());
-                dgvListadoPacientes.DataSource = Session["listaPacientes"];
+                //Session.Add("listaPacientes", pacienteNegocio.listar());
+                dgvListadoPacientes.DataSource = pacienteNegocio.listar();
                 dgvListadoPacientes.DataBind();
                 Panel1.Visible = false;
             }
@@ -96,7 +73,7 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
 
         protected void btnPanelCancelar_Click(object sender, EventArgs e)
         {
-            //si cancelo
+            //cancelar
             Panel1.Visible = false;
         }
     }

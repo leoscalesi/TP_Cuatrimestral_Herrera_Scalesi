@@ -153,7 +153,6 @@ namespace Negocio
             {
                 //ARREGLAR LO DE LA FECHA DE NACIMIENTO
 
-                //accesoaDatos.setearConsulta("update PERSONAS set nombre = '" + persona.Nombre + "', apellido = '" + persona.Apellido + "', dni = '" + persona.Dni + "', cuit = '" + persona.Cuit + "', telefono = '" + persona.Telefono + "', direccion = '" + persona.Direccion + "', email = '" + persona.Email + "', clave = '" + persona.Clave + "', estado= '" + persona.Estado + "' where id = " + persona.Id + " ");
                 accesoaDatos.setearConsulta("update MEDICOS set id_especialidad = '" + medico.Especialidad.Id + "', nro_matricula = '" + medico.NumMatricula + "' where id_persona ='" + medico.IdPersona + "'");
                 accesoaDatos.ejecutarAccion();
 
