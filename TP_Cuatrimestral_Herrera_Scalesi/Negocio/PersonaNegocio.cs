@@ -79,12 +79,9 @@ namespace Negocio
 
             try
             {
-                //ARREGLAR LO DE LA FECHA DE NACIMIENTO
+                
 
-                accesoaDatos.setearConsulta("insert into PERSONAS (nombre,apellido,dni,cuit,telefono,direccion,email,clave,estado, id_rol) values('" + persona.Nombre + "','" + persona.Apellido + "','" + persona.Dni + "', '" + persona.Cuit + "', '" + persona.Telefono + "' , '" + persona.Direccion + "', '" + persona.Email + "', '" + persona.Clave + "', '" + persona.Estado + "', '" + persona.Rol.Id + "'" + ")");
-                //accesoaDatos.setearParametro("@IdMarca", articulo.Marca.Id);
-                //accesoaDatos.setearParametro("@IdCategoria", articulo.Categoria.Id);
-
+                accesoaDatos.setearConsulta("insert into PERSONAS (nombre,apellido,dni,cuit,telefono,email,clave,estado, id_rol) values('" + persona.Nombre + "','" + persona.Apellido + "','" + persona.Dni + "', '" + persona.Cuit + "', '" + persona.Telefono + "' , '"  + persona.Email + "', '" + persona.Clave + "', '" + persona.Estado + "', '" + persona.Rol.Id + "'" + ")");
                 accesoaDatos.ejecutarAccion();
 
                 return true;
@@ -113,7 +110,7 @@ namespace Negocio
             {
                 //ARREGLAR LO DE LA FECHA DE NACIMIENTO
                 
-                accesoaDatos.setearConsulta("update PERSONAS set nombre = '" + persona.Nombre + "', apellido = '" + persona.Apellido + "', dni = '" + persona.Dni + "', cuit = '" + persona.Cuit + "', telefono = '" + persona.Telefono + "', direccion = '" + persona.Direccion + "', email = '" + persona.Email + "', clave = '" + persona.Clave +  "' where id = " + persona.Id +" ");
+                accesoaDatos.setearConsulta("update PERSONAS set nombre = '" + persona.Nombre + "', apellido = '" + persona.Apellido + "', dni = '" + persona.Dni + "', cuit = '" + persona.Cuit + "', telefono = '" + persona.Telefono + "', email = '" + persona.Email + "', clave = '" + persona.Clave +  "' where id = " + persona.Id +" ");
                 accesoaDatos.ejecutarAccion();
 
                 return true;

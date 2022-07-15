@@ -44,9 +44,9 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
                         txtDni.Text = seleccionado.Dni.ToString();
                         txtCuit.Text = seleccionado.Cuit;
                         txtTelefono.Text = seleccionado.Telefono;
-                        //fecha nacimiento
+                        
                         txtNroMatricula.Text = seleccionado.NumMatricula.ToString();
-                        txtDireccion.Text = seleccionado.Direccion;
+                        
                         txtEmail.Text = seleccionado.Email;
                         txtClave.Text = seleccionado.Clave;
 
@@ -71,7 +71,7 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
             if (Request.QueryString["id"] != null)
             {
                 Rol rol = new Rol();
-                rol.Id = 4;
+                //rol.Id = 4;
 
                 persona.Rol = rol;
                 persona.Id = int.Parse(lblId.Text);
@@ -80,9 +80,6 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
                 persona.Dni = short.Parse(txtDni.Text);
                 persona.Cuit = txtCuit.Text;
                 persona.Telefono = txtTelefono.Text;
-                //persona.FechaNac = DateTime.Parse(txtFechaNacimiento.Text);
-                //persona.FechaNac = DateTime.Now.Date.ToString("yyyy-mm-dd");
-                persona.Direccion = txtDireccion.Text;
                 persona.Email = txtEmail.Text;
                 persona.Clave = txtClave.Text;
                 persona.Estado = true;
@@ -91,9 +88,11 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
                 Medico medico = new Medico();
 
                 medico.NumMatricula = short.Parse(txtNroMatricula.Text);
+                /*
                 Especialidad especialidad = new Especialidad();
                 especialidad.Id = ddlEspecialidades.SelectedIndex + 1;
                 medico.Especialidad = especialidad;
+                */
                 int id = persona.Id;
 
                 PersonaNegocio personaNegocio = new PersonaNegocio();
@@ -108,7 +107,7 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
                         txtDni.Text = "";
                         txtCuit.Text = "";
                         txtTelefono.Text = "";
-                        txtDireccion.Text = "";
+                        
                         txtEmail.Text = "";
                         txtClave.Text = "";
                     }
@@ -127,13 +126,6 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
                 persona.Dni = short.Parse(txtDni.Text);
                 persona.Cuit = txtCuit.Text;
                 persona.Telefono = txtTelefono.Text;
-
-                //persona.FechaNac = DateTime.Parse(txtFechaNacimiento.Text);
-
-                //persona.FechaNac = DateTime.Now.Date.ToString("yyyy-mm-dd");
-
-
-                persona.Direccion = txtDireccion.Text;
                 persona.Email = txtEmail.Text;
                 persona.Clave = txtClave.Text;
                 persona.Estado = true;
@@ -146,12 +138,12 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
                 //AHORA TENGO QUE QUEDARME CON LA ESPECIALIDAD
                 //ELEGIDA DEL ddl Y CARGARLA (NECESITO EL id DE LA ESP)
 
-
+                /*
                 Especialidad especialidad = new Especialidad();
                 especialidad.Id = ddlEspecialidades.SelectedIndex + 1;
 
                 medico.Especialidad = especialidad;
-
+                */
 
                 //Puedo llamar al metodo agregar de PersonaNegocio
 

@@ -270,6 +270,10 @@
             <div style="padding:10px">
                 <asp:Button ID="btnVolver" CssClass=" btn btn-danger" runat="server" Text="Volver" OnClick="btnVolver_Click" />
             </div>
+            <div style="padding:10px">
+                <asp:Button ID="btnGuardar" CssClass=" btn btn-success" runat="server" Text="Guardar" OnClick="btnGuardar_Click" />
+            </div>
+
         </div>
     
     </div>

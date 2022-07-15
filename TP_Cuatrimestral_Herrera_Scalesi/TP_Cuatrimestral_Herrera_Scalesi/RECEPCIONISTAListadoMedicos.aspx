@@ -35,7 +35,7 @@
                         <asp:BoundField HeaderText="Apellido" DataField="Apellido"/>
                         <asp:BoundField HeaderText="DNI" DataField="Dni"/>
                         <asp:BoundField HeaderText="Matricula" DataField="NumMatricula"/>
-                        <asp:BoundField HeaderText="Especialidad" DataField="Especialidad.Id"/>
+                        
                         <asp:BoundField HeaderText="Telefono" DataField="Telefono"/>
                        
                         <asp:BoundField HeaderText="Email" DataField="Email"/>

@@ -218,7 +218,30 @@ namespace Negocio
         }
 
 
+        public bool guardar(int dia,int idMedico,int idEspecialidad,int horaInicio,int horaFin)
+        {
+            AccesoaDatos accesoaDatos = new AccesoaDatos();
 
+            try
+            {
+                accesoaDatos.setearConsulta("insert into AGENDAS (dia_inicio,id_medico,id_especialidad,hora_inicio,hora_fin) values('" + dia + "','" + idMedico + "','" + idEspecialidad + "', '" + horaInicio + "', '" + horaFin + "'" + ")");
+                accesoaDatos.ejecutarAccion();
+
+                return true;
+            }
+            
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+            finally
+            {
+                accesoaDatos.cerrarConexion();
+            }
+
+        }
 
     }
 }

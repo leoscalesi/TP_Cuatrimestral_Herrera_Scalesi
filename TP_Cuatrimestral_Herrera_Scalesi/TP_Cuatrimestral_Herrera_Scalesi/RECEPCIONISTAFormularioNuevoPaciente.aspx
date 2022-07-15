@@ -46,15 +46,7 @@
                             <label for="txtTelefono" class="form-label">Telefono</label>
                             <asp:TextBox ID="txtTelefono" runat="server" CssClass="form-control"></asp:TextBox>
                         </div>
-                        <div class="mb-3">
-                            <label for="txtFechaNacimiento" class="form-label">Fecha de nacimiento</label>
-                            <asp:TextBox ID="txtFechaNacimiento" TextMode="Date" runat="server" CssClass="form-control"></asp:TextBox>
-                        </div>
                         
-                        <div class="mb-3">
-                            <label for="txtDireccion" class="form-label">Direccion</label>
-                            <asp:TextBox ID="txtDireccion" runat="server" CssClass="form-control"></asp:TextBox>
-                        </div>
                         <div class="mb-3">
                             <label for="txtEmail" class="form-label">Email</label>
                             <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control"></asp:TextBox>

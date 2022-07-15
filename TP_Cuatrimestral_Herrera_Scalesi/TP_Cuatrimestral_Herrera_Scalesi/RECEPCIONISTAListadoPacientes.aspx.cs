@@ -19,9 +19,12 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
                 Response.Redirect("Error.aspx", false);
             }
 
-            PacienteNegocio pacienteNegocio = new PacienteNegocio();
-            dgvListadoPacientes.DataSource = pacienteNegocio.listar();
-            dgvListadoPacientes.DataBind();
+            if (!IsPostBack)
+            {
+                PacienteNegocio pacienteNegocio = new PacienteNegocio();
+                dgvListadoPacientes.DataSource = pacienteNegocio.listar();
+                dgvListadoPacientes.DataBind();
+            }
         }
 
         protected void dgvListadoPacientes_SelectedIndexChanged(object sender, EventArgs e)

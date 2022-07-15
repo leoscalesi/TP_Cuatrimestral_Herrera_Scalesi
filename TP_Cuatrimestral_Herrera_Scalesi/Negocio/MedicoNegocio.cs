@@ -151,9 +151,9 @@ namespace Negocio
 
             try
             {
-                //ARREGLAR LO DE LA FECHA DE NACIMIENTO
+                
 
-                accesoaDatos.setearConsulta("update MEDICOS set id_especialidad = '" + medico.Especialidad.Id + "', nro_matricula = '" + medico.NumMatricula + "' where id_persona ='" + medico.IdPersona + "'");
+                accesoaDatos.setearConsulta("update MEDICOS set nro_matricula = '" + medico.NumMatricula + "' where id_persona ='" + medico.IdPersona + "'");
                 accesoaDatos.ejecutarAccion();
 
                 return true;

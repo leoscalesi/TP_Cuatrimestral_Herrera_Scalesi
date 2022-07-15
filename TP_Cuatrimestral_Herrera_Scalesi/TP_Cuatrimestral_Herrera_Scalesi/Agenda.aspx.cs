@@ -286,6 +286,43 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
             }
         }
 
+        protected void btnGuardar_Click(object sender, EventArgs e)
+        {
+            //RECUPERAR DIA,HORA_INICIO,DIA_INICIO,ID_MEDICO,
+            //IDESPECIALIDAD PARA GUARDAR EN AGENDA EN BD
+            int dia = ddlDiaInicio.SelectedIndex;
+            int idMedico = int.Parse(Request.QueryString["id"].ToString());
+            int horaInicio = int.Parse(ddlHoraInicio.SelectedItem.ToString());
+            int horaFin = int.Parse(ddlHoraFin.SelectedItem.ToString());
+            string especialidad = ddlEspecialidades.SelectedItem.ToString();
+            int idEspecialidad = 0;
+       
+
+            List<Especialidad> especialidades = new List<Especialidad>();
+            EspecialidadNegocio especialidadNegocio = new EspecialidadNegocio();
+            especialidades = especialidadNegocio.listar();
+
+            //BUSCO idEspecialidad
+            foreach (var item in especialidades)
+            {
+                if(especialidad == item.Nombre)
+                {
+                    idEspecialidad = item.Id;
+                }
+            }
+        
+            //PUEDO GUARDAR LA AGENDA EN BD
+
+            AgendaNegocio agendaNegocio = new AgendaNegocio();
+
+            if (agendaNegocio.guardar(dia,idMedico,idEspecialidad,horaInicio,horaFin))
+            {
+                //AL FORM SE GUARDO CORRECTAMENTE
+                Response.Redirect("GuardadoExitoso.aspx",false);
+            }
+
+        
+        }
     }
 
 }

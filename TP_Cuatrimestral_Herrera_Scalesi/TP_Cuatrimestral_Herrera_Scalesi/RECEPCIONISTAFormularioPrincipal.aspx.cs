@@ -14,7 +14,7 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["nombre"] == null || Session["apellido"] == null || (int)Session["id"] == 2)
+            if (Session["nombre"] == null || Session["apellido"] == null || (int)Session["id"] == 2 || (int)Session["id"] == 3)
             {
                Response.Redirect("Error.aspx", false);
             }
