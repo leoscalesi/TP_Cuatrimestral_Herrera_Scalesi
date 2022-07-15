@@ -31,9 +31,10 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
 
             AgendaNegocio agendaNegocio = new AgendaNegocio();
             
+            /*
             grvAgenda.DataSource = agendaNegocio.listarIdMedicoIdEspecialidad(idEspecialidad, medico.Id);
             grvAgenda.DataBind();
-
+            */
         }
     }
 }

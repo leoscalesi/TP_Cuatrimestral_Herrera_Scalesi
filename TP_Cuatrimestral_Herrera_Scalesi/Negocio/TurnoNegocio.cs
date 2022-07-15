@@ -61,27 +61,27 @@ namespace Negocio
 
         }
 
-        public bool buscarTurnoMedico(int idEspecialidad,int idMedico,DateTime fecha, int hora)
+        public List<int> buscarHorariosTurnoMedico(int idEspecialidad,int idMedico,DateTime fecha)
         {
 
             AccesoaDatos datos = new AccesoaDatos();
+            List<int> lista = new List<int>();
 
             try
             {
 
-                datos.setearConsulta("select * from Turnos where id_especialidad= " + idEspecialidad + " and id_medico= " + idMedico + " and fecha_turno= " + fecha + " and hora_turno =" + hora );
+                datos.setearConsulta("select hora_turno from Turnos where id_especialidad= " + idEspecialidad + " and id_medico= " + idMedico + " and fecha_turno= " + fecha + " and activo = 1");
                 datos.ejecutarLectura();
 
-                if(datos.Lector.Read())
+                while(datos.Lector.Read())
                 {
 
-                    return true;
+                    int hora = (int)datos.Lector["hora_turno"];
 
+                    lista.Add(hora);
                 }
-                else
-                {
-                    return false;
-                }
+
+                return lista;
                 
             }
 
@@ -132,6 +132,35 @@ namespace Negocio
                 datos.cerrarConexion();
             }
 
+        }
+    
+        
+        public bool guardar(int idPaciente,int idEspecialidad,int idMedico,int hora, DateTime fechaSeleccionada, string observacion)
+        {
+            AccesoaDatos datos = new AccesoaDatos();
+            int idEstado = 1;
+            bool activo = true;
+
+            try
+            {
+
+                datos.setearConsulta("insert into Turnos (id_paciente,id_especialidad,id_medico,hora_turno,fecha_turno,observaciones_paciente,id_estado,activo) values('" + idPaciente + "','" + idEspecialidad + "','" + idMedico + "','" + hora + "','" + fechaSeleccionada + "','" + observacion + "','" + idEstado + "','" + activo + "'" + ")");
+                datos.ejecutarAccion();
+
+                return true;
+
+
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            finally
+            {
+                datos.cerrarConexion();
+            }
         }
     }
 }

@@ -82,6 +82,7 @@
     <Content Include="RECEPBrindarTurnosListadoMedicos.aspx" />
     <Content Include="RECEPCIONISTABrindarTurnos.aspx" />
     <Content Include="RECEPCIONISTACalendarioTurnos.aspx" />
+    <Content Include="RECEPCIONISTAFormularioCargarObservaciones.aspx" />
     <Content Include="RECEPCIONISTAFormularioEspecialidades.aspx" />
     <Content Include="RECEPCIONISTAFormularioNuevoPaciente.aspx" />
     <Content Include="RECEPCIONISTAFormularioPrincipal.aspx" />
@@ -191,6 +192,13 @@
     </Compile>
     <Compile Include="RECEPCIONISTACalendarioTurnos.aspx.designer.cs">
       <DependentUpon>RECEPCIONISTACalendarioTurnos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RECEPCIONISTAFormularioCargarObservaciones.aspx.cs">
+      <DependentUpon>RECEPCIONISTAFormularioCargarObservaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RECEPCIONISTAFormularioCargarObservaciones.aspx.designer.cs">
+      <DependentUpon>RECEPCIONISTAFormularioCargarObservaciones.aspx</DependentUpon>
     </Compile>
     <Compile Include="RECEPCIONISTAFormularioEspecialidades.aspx.cs">
       <DependentUpon>RECEPCIONISTAFormularioEspecialidades.aspx</DependentUpon>

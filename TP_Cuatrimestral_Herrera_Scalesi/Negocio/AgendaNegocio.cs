@@ -177,28 +177,27 @@ namespace Negocio
             }
         }
 
-        public List<Agenda> listarIdMedicoIdEspecialidad(int idEspecialidad, int idMedico)
+        public List<int> listarHorasAgendaDia(int idEspecialidad, int idMedico,int numdia)
         {
-            List<Agenda> lista = new List<Agenda>();
+            List<int> lista = new List<int>();
             AccesoaDatos datos = new AccesoaDatos();
 
             try
             {
 
-                datos.setearConsulta("select dia_inicio,hora_inicio from agendas where id_medico = " + idMedico + " and id_especialidad = " + idEspecialidad);
+                datos.setearConsulta("select dia_inicio,hora_inicio from agendas where id_medico = " + idMedico + " and id_especialidad = " + idEspecialidad + " and dia_inicio = " + numdia);
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
                 {
 
-                    Agenda aux = new Agenda();
+                    int hora = 0;
 
-                    aux.HoraInicio = (int)datos.Lector["hora_inicio"];
-                    //aux.HoraFin = (int)datos.Lector["hora_fin"];
-                    aux.DiaInicio = (int)datos.Lector["dia_inicio"];
+                    hora = (int)datos.Lector["hora_inicio"];
+                    
 
 
-                    lista.Add(aux);
+                    lista.Add(hora);
 
                 }
 

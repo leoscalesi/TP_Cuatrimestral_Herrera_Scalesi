@@ -13,7 +13,7 @@
            <asp:Calendar ID="calCalendario" runat="server" SelectedDate="2022-07-14" ></asp:Calendar>
         </div>
         <div>
-            <asp:DropDownList ID="ddlHorarios" runat="server"></asp:DropDownList>
+            <asp:DropDownList ID="ddlHorarios" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlHorarios_SelectedIndexChanged"></asp:DropDownList>
         </div>
         <div>
             <asp:Button ID="btnCargarObservaciones" runat="server" Text="Cargar Observaciones" OnClick="btnCargarObservaciones_Click" />
