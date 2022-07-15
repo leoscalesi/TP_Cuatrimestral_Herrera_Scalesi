@@ -25,7 +25,7 @@
                 <asp:Button ID="btnFiltro" runat="server" Text="Buscar" OnClick="btnFiltro_Click" />
                 <br />
                 <br />
-                <asp:GridView ID="dgvListadoMedicos" AutoGenerateColumns="false" CssClass="table table-hover d-sm-table-cell alig-middle text-center" runat="server">
+                <asp:GridView ID="dgvListadoMedicos" AutoGenerateColumns="false" CssClass="table table-hover d-sm-table-cell alig-middle text-center" runat="server" OnSelectedIndexChanged="dgvListadoMedicos_SelectedIndexChanged">
                     <Columns>
                         <asp:BoundField HeaderText="ID" DataField="Id"/>
                         <asp:BoundField HeaderText="Nombre" DataField="Nombre" />

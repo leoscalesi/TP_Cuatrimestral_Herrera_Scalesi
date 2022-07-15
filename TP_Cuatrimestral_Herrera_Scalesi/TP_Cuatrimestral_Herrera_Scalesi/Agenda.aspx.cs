@@ -64,67 +64,67 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
                 //CARGO LA TABLA (AGENDA)
                 foreach (var item in lunes)
                 {
-                    if (item == 10) lbl10Lunes.Text = "OCUPADO";
-                    if (item == 11) lbl11Lunes.Text = "OCUPADO";
-                    if (item == 12) lbl12Lunes.Text = "OCUPADO";
-                    if (item == 13) lbl13Lunes.Text = "OCUPADO";
-                    if (item == 14) lbl14Lunes.Text = "OCUPADO";
-                    if (item == 15) lbl15Lunes.Text = "OCUPADO";
+                    if (item == 10) lbl10Lunes.Text = "TRABAJA";
+                    if (item == 11) lbl11Lunes.Text = "TRABAJA";
+                    if (item == 12) lbl12Lunes.Text = "TRABAJA";
+                    if (item == 13) lbl13Lunes.Text = "TRABAJA";
+                    if (item == 14) lbl14Lunes.Text = "TRABAJA";
+                    if (item == 15) lbl15Lunes.Text = "TRABAJA";
 
                 }
 
                 foreach (var item in martes)
                 {
-                    if (item == 10) lbl10Martes.Text = "OCUPADO";
-                    if (item == 11) lbl11Martes.Text = "OCUPADO";
-                    if (item == 12) lbl12Martes.Text = "OCUPADO";
-                    if (item == 13) lbl13Martes.Text = "OCUPADO";
-                    if (item == 14) lbl14Martes.Text = "OCUPADO";
-                    if (item == 15) lbl15Martes.Text = "OCUPADO";
+                    if (item == 10) lbl10Martes.Text = "TRABAJA";
+                    if (item == 11) lbl11Martes.Text = "TRABAJA";
+                    if (item == 12) lbl12Martes.Text = "TRABAJA";
+                    if (item == 13) lbl13Martes.Text = "TRABAJA";
+                    if (item == 14) lbl14Martes.Text = "TRABAJA";
+                    if (item == 15) lbl15Martes.Text = "TRABAJA";
 
                 }
 
                 foreach (var item in miercoles)
                 {
-                    if (item == 10) lbl10Miercoles.Text = "OCUPADO";
-                    if (item == 11) lbl11Miercoles.Text = "OCUPADO";
-                    if (item == 12) lbl12Miercoles.Text = "OCUPADO";
-                    if (item == 13) lbl13Miercoles.Text = "OCUPADO";
-                    if (item == 14) lbl14Miercoles.Text = "OCUPADO";
-                    if (item == 15) lbl15Miercoles.Text = "OCUPADO";
+                    if (item == 10) lbl10Miercoles.Text = "TRABAJA";
+                    if (item == 11) lbl11Miercoles.Text = "TRABAJA";
+                    if (item == 12) lbl12Miercoles.Text = "TRABAJA";
+                    if (item == 13) lbl13Miercoles.Text = "TRABAJA";
+                    if (item == 14) lbl14Miercoles.Text = "TRABAJA";
+                    if (item == 15) lbl15Miercoles.Text = "TRABAJA";
 
                 }
 
                 foreach (var item in jueves)
                 {
-                    if (item == 10) lbl10Jueves.Text = "OCUPADO";
-                    if (item == 11) lbl11Jueves.Text = "OCUPADO";
-                    if (item == 12) lbl12Jueves.Text = "OCUPADO";
-                    if (item == 13) lbl13Jueves.Text = "OCUPADO";
-                    if (item == 14) lbl14Jueves.Text = "OCUPADO";
-                    if (item == 15) lbl15Jueves.Text = "OCUPADO";
+                    if (item == 10) lbl10Jueves.Text = "TRABAJA";
+                    if (item == 11) lbl11Jueves.Text = "TRABAJA";
+                    if (item == 12) lbl12Jueves.Text = "TRABAJA";
+                    if (item == 13) lbl13Jueves.Text = "TRABAJA";
+                    if (item == 14) lbl14Jueves.Text = "TRABAJA";
+                    if (item == 15) lbl15Jueves.Text = "TRABAJA";
 
                 }
 
                 foreach (var item in viernes)
                 {
-                    if (item == 10) lbl10Viernes.Text = "OCUPADO";
-                    if (item == 11) lbl11Viernes.Text = "OCUPADO";
-                    if (item == 12) lbl12Viernes.Text = "OCUPADO";
-                    if (item == 13) lbl13Viernes.Text = "OCUPADO";
-                    if (item == 14) lbl14Viernes.Text = "OCUPADO";
-                    if (item == 15) lbl15Viernes.Text = "OCUPADO";
+                    if (item == 10) lbl10Viernes.Text = "TRABAJA";
+                    if (item == 11) lbl11Viernes.Text = "TRABAJA";
+                    if (item == 12) lbl12Viernes.Text = "TRABAJA";
+                    if (item == 13) lbl13Viernes.Text = "TRABAJA";
+                    if (item == 14) lbl14Viernes.Text = "TRABAJA";
+                    if (item == 15) lbl15Viernes.Text = "TRABAJA";
 
                 }
 
                 foreach (var item in sabado)
                 {
-                    if (item == 10) lbl10Sabado.Text = "OCUPADO";
-                    if (item == 11) lbl11Sabado.Text = "OCUPADO";
-                    if (item == 12) lbl12Sabado.Text = "OCUPADO";
-                    if (item == 13) lbl13Sabado.Text = "OCUPADO";
-                    if (item == 14) lbl14Sabado.Text = "OCUPADO";
-                    if (item == 15) lbl15Sabado.Text = "OCUPADO";
+                    if (item == 10) lbl10Sabado.Text = "TRABAJA";
+                    if (item == 11) lbl11Sabado.Text = "TRABAJA";
+                    if (item == 12) lbl12Sabado.Text = "TRABAJA";
+                    if (item == 13) lbl13Sabado.Text = "TRABAJA";
+                    if (item == 14) lbl14Sabado.Text = "TRABAJA";
+                    if (item == 15) lbl15Sabado.Text = "TRABAJA";
 
                 }
 

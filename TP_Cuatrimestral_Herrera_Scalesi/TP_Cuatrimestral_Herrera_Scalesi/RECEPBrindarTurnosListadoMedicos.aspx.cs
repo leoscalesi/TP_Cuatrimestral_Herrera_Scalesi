@@ -88,5 +88,35 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
             string especialidad = Request.QueryString["especialidad"].ToString();
             Response.Redirect("RECEPCIONISTAListadoSugerencias.aspx?id=" + idPaciente + "&especialidad=" + especialidad, false);
         }
+
+        protected void dgvListadoMedicos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //RECUPERO IDPACIENTE,ESPECIALIDAD,
+            //Y VOY AL CALENDARIO
+
+            EspecialidadNegocio especialidadNegocio = new EspecialidadNegocio();
+            string especialidad = Request.QueryString["especialidad"].ToString();
+            List<Especialidad> especialidades = new List<Especialidad>();
+            especialidades = especialidadNegocio.listar();
+
+            //Id DE PACIENTE
+            int id = int.Parse(Request.QueryString["id"].ToString());
+
+            //TOMO EL idPersona, QUE EN EL CALENDARIO LO PASO A MEDICO
+            
+            var idPersona = dgvListadoMedicos.SelectedRow.Cells[0].Text;
+
+            int idEspecialidad = 0;
+            foreach (var item in especialidades)
+            {
+                if (item.Nombre == especialidad)
+                {
+                    idEspecialidad = item.Id;
+                }
+            }
+
+            Response.Redirect("RECEPCIONISTACalendarioTurnos.aspx?idPaciente=" + id + "&idEspecialidad=" + idEspecialidad + "&idPersona=" + idPersona,false);
+
+        }
     }
 }

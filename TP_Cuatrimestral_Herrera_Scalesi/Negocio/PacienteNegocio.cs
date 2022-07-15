@@ -19,7 +19,7 @@ namespace Negocio
             try
             {
 
-                datos.setearConsulta("select id, nombre,apellido, dni, cuit, telefono, direccion, email, clave, estado from personas where id_rol=4 and estado = 1");
+                datos.setearConsulta("select id, nombre,apellido, dni, cuit, telefono, email, clave, estado from personas where id_rol=4 and estado = 1");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
@@ -34,8 +34,7 @@ namespace Negocio
                     aux.Dni = (short)datos.Lector["dni"]; // modificar en db a int
                     aux.Cuit = (string)datos.Lector["cuit"];
                     aux.Telefono = (string)datos.Lector["telefono"].ToString();
-                    //aux.FechaNac = (DateTime)datos.Lector["fecha_nacimiento"];
-                    aux.Direccion = (string)datos.Lector["direccion"].ToString();
+                    
                     aux.Email = (string)datos.Lector["email"];
                     aux.Clave = (string)datos.Lector["clave"];
                     aux.Estado = (bool)datos.Lector["estado"];
