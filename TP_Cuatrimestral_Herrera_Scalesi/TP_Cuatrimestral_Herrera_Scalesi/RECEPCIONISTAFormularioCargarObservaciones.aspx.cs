@@ -25,10 +25,13 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
            int idEspecialidad = int.Parse(Request.QueryString["idEspecialidad"].ToString());
            int idMedico = int.Parse(Request.QueryString["idMedico"].ToString());
            int hora = int.Parse(Request.QueryString["hora"].ToString());
-           DateTime fechaSeleccionada = DateTime.Parse(Request.QueryString["fechaSeleccionada"].ToString());
+            //DateTime fechaSeleccionada = DateTime.Parse(Request.QueryString["fechaSeleccionada"].ToString());
+            string fecha = Request.QueryString["fecha"].ToString();
+
 
            TurnoNegocio turnoNegocio = new TurnoNegocio();
-           if(turnoNegocio.guardar(idPaciente, idEspecialidad, idMedico, hora, fechaSeleccionada, observacion))
+           
+           if(turnoNegocio.guardar(idPaciente, idEspecialidad, idMedico, hora, fecha, observacion))
            {
                 Response.Redirect("GuardadoExitoso.aspx",false);
            }

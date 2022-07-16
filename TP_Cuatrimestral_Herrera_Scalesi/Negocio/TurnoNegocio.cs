@@ -61,11 +61,13 @@ namespace Negocio
 
         }
 
-        public List<int> buscarHorariosTurnoMedico(int idEspecialidad,int idMedico,DateTime fecha)
+        public List<int> buscarHorariosTurnoMedico(int idEspecialidad,int idMedico,string fecha)
         {
 
             AccesoaDatos datos = new AccesoaDatos();
             List<int> lista = new List<int>();
+
+            
 
             try
             {
@@ -135,7 +137,7 @@ namespace Negocio
         }
     
         
-        public bool guardar(int idPaciente,int idEspecialidad,int idMedico,int hora, DateTime fechaSeleccionada, string observacion)
+        public bool guardar(int idPaciente,int idEspecialidad,int idMedico,int hora, string fecha, string observacion)
         {
             AccesoaDatos datos = new AccesoaDatos();
             int idEstado = 1;
@@ -144,7 +146,7 @@ namespace Negocio
             try
             {
 
-                datos.setearConsulta("insert into Turnos (id_paciente,id_especialidad,id_medico,hora_turno,fecha_turno,observaciones_paciente,id_estado,activo) values('" + idPaciente + "','" + idEspecialidad + "','" + idMedico + "','" + hora + "','" + fechaSeleccionada + "','" + observacion + "','" + idEstado + "','" + activo + "'" + ")");
+                datos.setearConsulta("insert into Turnos (id_paciente,id_especialidad,id_medico,hora_turno,fecha_turno,observaciones_paciente,id_estado,activo) values('" + idPaciente + "','" + idEspecialidad + "','" + idMedico + "','" + hora + "','" + fecha + "','" + observacion + "','" + idEstado + "','" + activo + "'" + ")");
                 datos.ejecutarAccion();
 
                 return true;

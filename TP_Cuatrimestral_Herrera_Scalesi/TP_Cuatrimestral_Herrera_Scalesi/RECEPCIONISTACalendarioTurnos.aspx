@@ -10,7 +10,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
-           <asp:Calendar ID="calCalendario" runat="server" SelectedDate="2022-07-14" ></asp:Calendar>
+           <asp:Calendar ID="calCalendario" runat="server" SelectedDate="2022-07-16" OnSelectionChanged="calCalendario_SelectionChanged" ></asp:Calendar>
         </div>
         <div>
             <asp:DropDownList ID="ddlHorarios" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlHorarios_SelectedIndexChanged"></asp:DropDownList>

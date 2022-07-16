@@ -185,19 +185,21 @@ namespace Negocio
             try
             {
 
-                datos.setearConsulta("select dia_inicio,hora_inicio from agendas where id_medico = " + idMedico + " and id_especialidad = " + idEspecialidad + " and dia_inicio = " + numdia);
+                datos.setearConsulta("select hora_inicio,hora_fin from agendas where id_medico = " + idMedico + " and id_especialidad = " + idEspecialidad + " and dia_inicio = " + numdia);
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
                 {
 
-                    int hora = 0;
+                    int horaInicio = 0;
+                    int horaFin = 0;
 
-                    hora = (int)datos.Lector["hora_inicio"];
-                    
+                    horaInicio = (int)datos.Lector["hora_inicio"];
+                    horaFin = (int)datos.Lector["hora_fin"];
 
 
-                    lista.Add(hora);
+                    lista.Add(horaInicio);
+                    lista.Add(horaFin);
 
                 }
 
@@ -242,5 +244,31 @@ namespace Negocio
 
         }
 
+        public void cargaIntervaloHorarios (List<int> horasAgenda,List<int> horasAgendaCompleta)
+        {
+            //ME QUEDA CON EL MIN Y MAX DE horasAgenda
+
+            int min = horasAgenda.Min();
+            int max = horasAgenda.Max();
+
+            int dif = max - min;
+
+            int hora = min;
+            
+            for (int i = 0; i<= dif; i++)
+            {
+                if (i == 0)
+                {
+                    horasAgendaCompleta.Add(hora);
+                }
+                else
+                {
+                    hora++;
+                    horasAgendaCompleta.Add(hora);
+
+                }
+            }
+        
+        }
     }
 }

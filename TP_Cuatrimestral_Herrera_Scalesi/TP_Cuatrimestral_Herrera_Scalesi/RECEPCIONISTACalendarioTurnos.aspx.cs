@@ -13,126 +13,7 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //CARGAR EL ddl
-            if (!IsPostBack)
-            {
-
-                ddlHorarios.Items.Add("10");
-                ddlHorarios.Items.Add("11");
-                ddlHorarios.Items.Add("12");
-                ddlHorarios.Items.Add("13");
-                ddlHorarios.Items.Add("14");
-                ddlHorarios.Items.Add("15");
-
-                //RECUPERO idPersona,idMedico,idEspecialidad
-
-                int idPaciente = int.Parse(Request.QueryString["idPaciente"].ToString());
-                int idEspecialidad = int.Parse(Request.QueryString["idEspecialidad"].ToString());
-                int idPersona = int.Parse(Request.QueryString["idPersona"].ToString());
-
-                //BUSCO A QUE IDMEDICO CORRESPONDE ESE IDPERSONA
-
-                MedicoNegocio medicoNegocio = new MedicoNegocio();
-                int idMedico = medicoNegocio.buscaMedicoId(idPersona);
-
-                //TOMO EL HORARIO SELECCIONADO EN EL ddl
-
-
-                /*
-                string horaSeleccionada = ddlHorarios.SelectedItem.ToString();
-                int hora = int.Parse(horaSeleccionada);
-                */
-
-
-                //EN EL ddl SOLO DEBEN FIGURAR LOS HORARIOS DISPONIBLES
-                //PARA ESE MEDICO
-
-                //ME TRAIGO LA AGENDA DE ESE MEDICO PARA ESE DIA Y ESA
-                //ESPECIALIDAD.
-
-
-                //TOMO LA FECHA SELECCIONADA EN EL CALENDARIO
-
-                DateTime fechaSeleccionada = calCalendario.SelectedDate;
-
-                //EXTRAIGO EL DIA DE ESA FECHA PARA PODER VER EN AGENDA SI 
-                //ESE DIA TRABAJA ESE MEDICO
-
-                DayOfWeek dia = fechaSeleccionada.DayOfWeek;
-
-                //PASO ESE DIA A ENTERO YA QUE EN BD LOS TENGO COMO ENTEROS
-                //A LOS DIAS
-
-                int numdia = 0;
-
-                if (dia == DayOfWeek.Monday) numdia = 1;
-                if (dia == DayOfWeek.Tuesday) numdia = 2;
-                if (dia == DayOfWeek.Wednesday) numdia = 3;
-                if (dia == DayOfWeek.Thursday) numdia = 4;
-                if (dia == DayOfWeek.Friday) numdia = 5;
-                if (dia == DayOfWeek.Saturday) numdia = 6;
-
-                //ME TRAIGO LA AGENDA PARA ESE MEDICO Y ESA ESPECIALIDAD
-                AgendaNegocio agendaNegocio = new AgendaNegocio();
-                //List<Dominio.Agenda> listaAgendas = new List<Dominio.Agenda>();
-
-                List<int> horasAgenda = new List<int>();
-                horasAgenda = agendaNegocio.listarHorasAgendaDia(idEspecialidad, idMedico, numdia);
-
-                //RECORRO LA AGENDA PARA VER SI TRABAJA ESE DIA Y ESE
-                //HORARIO
-                //SI TRABAJA BUSCO LOS TURNOS
-
-                //SI HAY REGISTROS PARA ESE DIA SIGNIFICA QUE ESE DIA
-                //TRABAJA, Y YA TENGO EN QUE HORARIOS
-
-                if (horasAgenda.Count > 0)
-                {
-
-                    //BUSCO LOS HORARIOS QUE YA ESTAN RESERVADOS LOS
-                    //TURNOS PARA ESA FECHA
-                    List<int> listadoHoraTurnos = new List<int>();
-                    TurnoNegocio turnoNegocio = new TurnoNegocio();
-                    listadoHoraTurnos = turnoNegocio.buscarHorariosTurnoMedico(idEspecialidad, idMedico, fechaSeleccionada);
-
-
-                    //ENTONCES TENGO EL LISTADO DE LOS HORARIO QUE TRABAJA
-                    //QUE ES horasAgenda
-
-                    // Y EL LISTADO DE LOS HORARIOS RESERVADOS PARA ESA FECHA
-                    // QUE ES listadoHoraTurnos
-
-                    //AHORA DEBO RECORRER AMBOS LISTADOS Y VER QUE 
-                    //DONDE NO COINCIDA HORA DE AGENDA Y HORA DE TURNO
-                    //ENTONCES ESE HORARIO NO ESTA OCUPADO Y SE PUEDE CARGAR
-                    //EN EL ddlHorariosDisponibles PARA ESE MEDICO
-
-                    foreach (var horas_agenda in horasAgenda)
-                    {
-
-
-                        foreach (var horas_turno in listadoHoraTurnos)
-                        {
-
-                            if (horas_agenda == horas_turno)
-                            {
-                                //NO ESTA DISPONIBLE ESE HORARIO
-                            }
-                            else
-                            {
-                                ddlHorarios.Items.Add(horas_agenda.ToString());
-                            }
-                        }
-                    }
-
-                }
-
-                else
-                {
-                    //ESE DIA NO TRABAJA
-                }
-
-
+            
 
 
 
@@ -208,7 +89,7 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
 
 
 
-            }
+            
         }
 
         protected void btnCargarObservaciones_Click(object sender, EventArgs e)
@@ -223,9 +104,11 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
             MedicoNegocio medicoNegocio = new MedicoNegocio();
             int idMedico = medicoNegocio.buscaMedicoId(idPersona);
             DateTime fechaSeleccionada = calCalendario.SelectedDate;
+            string fecha = fechaSeleccionada.ToString("yyyy-MM-dd");
+
             int hora = int.Parse(ddlHorarios.SelectedItem.ToString());
 
-            Response.Redirect("RECEPCIONISTAFormularioCargarObservaciones.aspx?idPaciente =" + idPaciente + "&idEspecialidad=" + idEspecialidad + "&idMedico=" + idMedico + "&fechaSeleccionada=" + fechaSeleccionada + "&hora=" + hora,false);
+            Response.Redirect("RECEPCIONISTAFormularioCargarObservaciones.aspx?idPaciente=" + idPaciente + "&idEspecialidad=" + idEspecialidad + "&idMedico=" + idMedico + "&fecha=" + fecha + "&hora=" + hora,false);
 
         }
 
@@ -234,6 +117,117 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
             int hora = int.Parse(ddlHorarios.SelectedItem.ToString());
 
             //CUALQUIER HORARIO QUE FIGURE SERA DISPONIBLE ENEL ddlHorarios
+
+
+        }
+
+        protected void calCalendario_SelectionChanged(object sender, EventArgs e)
+        {
+           
+            //RECUPERO idPersona,idMedico,idEspecialidad
+
+            int idPaciente = int.Parse(Request.QueryString["idPaciente"].ToString());
+            int idEspecialidad = int.Parse(Request.QueryString["idEspecialidad"].ToString());
+            int idPersona = int.Parse(Request.QueryString["idPersona"].ToString());
+
+            //BUSCO A QUE IDMEDICO CORRESPONDE ESE IDPERSONA
+
+            MedicoNegocio medicoNegocio = new MedicoNegocio();
+            int idMedico = medicoNegocio.buscaMedicoId(idPersona);
+
+            DateTime fechaSeleccionada = calCalendario.SelectedDate.Date;
+
+            string fecha = fechaSeleccionada.ToString("yyyy-MM-dd");
+            
+            
+            //EXTRAIGO EL DIA DE ESA FECHA PARA PODER VER EN AGENDA SI 
+            //ESE DIA TRABAJA ESE MEDICO
+
+            DayOfWeek dia = fechaSeleccionada.DayOfWeek;
+
+            //PASO ESE DIA A ENTERO YA QUE EN BD LOS TENGO COMO ENTEROS
+            //A LOS DIAS
+
+            int numdia = 0;
+
+            if (dia == DayOfWeek.Monday) numdia = 1;
+            if (dia == DayOfWeek.Tuesday) numdia = 2;
+            if (dia == DayOfWeek.Wednesday) numdia = 3;
+            if (dia == DayOfWeek.Thursday) numdia = 4;
+            if (dia == DayOfWeek.Friday) numdia = 5;
+            if (dia == DayOfWeek.Saturday) numdia = 6;
+
+            //ME TRAIGO LA AGENDA PARA ESE MEDICO Y ESA ESPECIALIDAD
+            AgendaNegocio agendaNegocio = new AgendaNegocio();
+            //List<Dominio.Agenda> listaAgendas = new List<Dominio.Agenda>();
+
+            List<int> horasAgenda = new List<int>();
+            //TAMBIEN ME TRAIGO LA HORA FIN
+            horasAgenda = agendaNegocio.listarHorasAgendaDia(idEspecialidad, idMedico, numdia);
+
+            //ELIMINA LOS HORARIOS REPETIDOS
+            
+            horasAgenda = horasAgenda.Distinct().ToList();
+
+            List<int> horasAgendaCompleta = new List<int>();
+
+            agendaNegocio.cargaIntervaloHorarios(horasAgenda, horasAgendaCompleta);
+
+            //A PARTIR DE ACA DEBO TRABAJAR CON horasAgendaCompleta
+
+            
+            if (horasAgendaCompleta.Count > 0)
+            {
+
+                //BUSCO LOS HORARIOS QUE YA ESTAN RESERVADOS LOS
+                //TURNOS PARA ESA FECHA
+                List<int> listadoHoraTurnos = new List<int>();
+                TurnoNegocio turnoNegocio = new TurnoNegocio();
+                 listadoHoraTurnos = turnoNegocio.buscarHorariosTurnoMedico(idEspecialidad, idMedico, fecha);
+
+                if (listadoHoraTurnos.Count > 0)
+                {
+
+                    foreach (var horas_agenda in horasAgendaCompleta)
+                    {
+
+                        foreach (var horas_turno in listadoHoraTurnos)
+                        {
+
+                            if (horas_agenda != horas_turno)
+                            {
+                                ddlHorarios.Items.Add(horas_agenda.ToString());
+                            }
+                            else
+                            {
+                                //NO DISPONIBLE
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    //NO TIENE NADA ASIGNADO
+                    //CARGO EN EL ddl TODOS LOS HORARIOS DE LA
+                    //LISTA AGENDA
+
+
+                    foreach (var item in horasAgendaCompleta)
+                    {
+                        
+                        ddlHorarios.Items.Add(item.ToString());
+                    }
+                
+                
+                }
+            
+            }
+
+            else
+            {
+                //ESE DIA NO TRABAJA
+            }
+
 
 
         }
