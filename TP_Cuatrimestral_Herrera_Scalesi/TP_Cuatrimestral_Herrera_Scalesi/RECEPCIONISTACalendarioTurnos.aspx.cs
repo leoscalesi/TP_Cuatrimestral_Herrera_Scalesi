@@ -30,10 +30,19 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
             DateTime fechaSeleccionada = calCalendario.SelectedDate;
             string fecha = fechaSeleccionada.ToString("yyyy-MM-dd");
 
-            int hora = int.Parse(ddlHorarios.SelectedItem.ToString());
+            //int hora = int.Parse(ddlHorarios.SelectedItem.ToString());
 
-            Response.Redirect("RECEPCIONISTAFormularioCargarObservaciones.aspx?idPaciente=" + idPaciente + "&idEspecialidad=" + idEspecialidad + "&idMedico=" + idMedico + "&fecha=" + fecha + "&hora=" + hora,false);
+            if (fechaSeleccionada < DateTime.Now.Date)
+            {
+                //FECHA INVALIDA
 
+
+            }
+            else
+            {
+                int hora = int.Parse(ddlHorarios.SelectedItem.ToString());
+                Response.Redirect("RECEPCIONISTAFormularioCargarObservaciones.aspx?idPaciente=" + idPaciente + "&idEspecialidad=" + idEspecialidad + "&idMedico=" + idMedico + "&fecha=" + fecha + "&hora=" + hora, false);
+            }
         }
 
         protected void ddlHorarios_SelectedIndexChanged(object sender, EventArgs e)
@@ -47,7 +56,7 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
 
         protected void calCalendario_SelectionChanged(object sender, EventArgs e)
         {
-           
+
             //RECUPERO idPersona,idMedico,idEspecialidad
 
             int idPaciente = int.Parse(Request.QueryString["idPaciente"].ToString());
@@ -63,7 +72,7 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
 
             string fecha = fechaSeleccionada.ToString("yyyy-MM-dd");
             
-            
+           
             //EXTRAIGO EL DIA DE ESA FECHA PARA PODER VER EN AGENDA SI 
             //ESE DIA TRABAJA ESE MEDICO
 

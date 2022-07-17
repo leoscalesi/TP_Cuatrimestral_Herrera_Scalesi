@@ -17,7 +17,7 @@
             <div class ="card-body">
                 
                 <div>
-                  <asp:Calendar ID="calCalendario" runat="server" SelectedDate="2022-07-16" OnSelectionChanged="calCalendario_SelectionChanged" ></asp:Calendar>
+                  <asp:Calendar ID="calCalendario" runat="server" SelectedDate="2022-07-16" OnSelectionChanged="calCalendario_SelectionChanged" BorderColor="#660033" CellPadding="10" CellSpacing="5" CssClass="accordion-item" ></asp:Calendar>
                 </div>
             
             </div>
