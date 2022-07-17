@@ -23,7 +23,24 @@
   
             <div class="card-body">
                  <div>
-                    <asp:GridView ID="dgvListadoTurnos" runat="server"></asp:GridView>
+                    <asp:GridView ID="dgvListadoTurnos" runat="server" AutoGenerateColumns="False">
+
+                      <columns>
+                        
+                        <asp:BoundField HeaderText="Observaciones Medico" DataField="ObservacionesMedico"/>
+                        <asp:BoundField HeaderText="Observaciones Paciente" DataField="ObservacionesPaciente"/>
+                        <asp:BoundField HeaderText="Hora" DataField="HoraTurno"/>
+                        <asp:BoundField HeaderText="Fecha Turno" DataField="FechaTurno"/>
+                        
+ 
+                        
+                        <asp:CommandField ShowSelectButton="true" SelectText="Seleccionar" ControlStyle-CssClass="btn btn-info" HeaderText="Modificar" />
+                        <asp:CommandField ShowDeleteButton="true" ButtonType="Button" ControlStyle-CssClass="btn btn-danger" HeaderText="Eliminar" />
+                     
+                      </columns>
+
+
+                    </asp:GridView>
                  </div>
     
                  <div>

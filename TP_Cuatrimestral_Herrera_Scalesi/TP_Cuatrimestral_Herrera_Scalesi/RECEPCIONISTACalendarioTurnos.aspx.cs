@@ -13,83 +13,7 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-
-
-
-
-
-                /*
-                foreach (var item in listaAgendas)
-                {
-                    //TRABAJA ESE DIA?
-                    if (item.DiaInicio == numdia)
-                    {
-
-                            //ME TRAIGO EL LISTADO DE TURNOS
-
-                            List<int> listadoHoraTurnos = new List<int>();
-                            TurnoNegocio turnoNegocio = new TurnoNegocio();
-                            //listadoTurnos = turnoNegocio.listar();
-
-                            //HAGO METODO PARA TRAERME TURNOS DE ESE MEDICO Y ESPECIALIDAD
-                            //Y PARA ESA FECHA. PUEDEN SER VARIOS. AHI DEBO MATCHEAR
-                            //CON AGENDA PARA VER DE LOS HORARIOS QUE TRABAJA
-                            //CUALES TIENE AUN DISPONIBLES.
-
-                            listadoHoraTurnos = turnoNegocio.buscarHorariosTurnoMedico(idEspecialidad, idMedico, fechaSeleccionada);
-
-                            //COMPARO CON LA AGENDA DE ESE MEDICO
-
-                        //BUSCO PACIENTE SI EN ESA FECHA Y HORA TIENE
-                        //ALGO SIN IMPORTAR ESPECIALIDAD (bool)
-
-                           PacienteNegocio pacienteNegocio = new PacienteNegocio();
-                            bool encontroTurnoPaciente = turnoNegocio.buscarTurnoPaciente(fechaSeleccionada, hora,idPaciente);
-
-                            //SI NO ENCONTRO DE AMBOS SE PUEDE TOMAR EL TURNO
-
-                            if (!encontroTurnoMedico && !encontroTurnoPaciente)
-                            {
-                                //PUEDO TOMAR EL TURNO
-
-
-                            }
-
-
-
-
-
-                            //SI LOS DOS SON true O false RECIEN AHI PUEDE TOMAR 
-                            //EL TURNO
-
-                            //CAMBIAR
-                            /*
-                            foreach (var turno in listadoTurnos)
-                            {
-                                //EL TURNO DEPENDE DE SI EL MEDICO LO TOMO
-                                if (turno.Medico.Id == idMedico)
-                                {
-                                    //SI COINCIDEN FECHA HORA NO PODRA TOMAR EL TURNO
-
-                                    if (turno.FechaTurno == fechaSeleccionada && turno.HoraTurno == hora)
-                                    {
-                                        //NO PUEDE TOMAR EL TURNO
-                                    }
-                                }
-                                else
-                                {
-                                    //PUEDE TOMAR EL TURNO
-                                    //REDIRECCIONO AL FORMULARIO DE CARGAR OBSERVACIONES
-                                }
-                            }
-                            */
-
-
-
-
-
-            
+        
         }
 
         protected void btnCargarObservaciones_Click(object sender, EventArgs e)
@@ -171,64 +95,64 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
 
             List<int> horasAgendaCompleta = new List<int>();
 
-            agendaNegocio.cargaIntervaloHorarios(horasAgenda, horasAgendaCompleta);
 
-            //A PARTIR DE ACA DEBO TRABAJAR CON horasAgendaCompleta
+            if (horasAgenda.Count > 0) {
+                   agendaNegocio.cargaIntervaloHorarios(horasAgenda, horasAgendaCompleta);
 
-            
-            if (horasAgendaCompleta.Count > 0)
-            {
+                //A PARTIR DE ACA DEBO TRABAJAR CON horasAgendaCompleta
 
-                //BUSCO LOS HORARIOS QUE YA ESTAN RESERVADOS LOS
-                //TURNOS PARA ESA FECHA
-                List<int> listadoHoraTurnos = new List<int>();
-                TurnoNegocio turnoNegocio = new TurnoNegocio();
-                 listadoHoraTurnos = turnoNegocio.buscarHorariosTurnoMedico(idEspecialidad, idMedico, fecha);
 
-                if (listadoHoraTurnos.Count > 0)
-                {
 
-                    foreach (var horas_agenda in horasAgendaCompleta)
+                    //BUSCO LOS HORARIOS QUE YA ESTAN RESERVADOS LOS
+                    //TURNOS PARA ESA FECHA
+                    List<int> listadoHoraTurnos = new List<int>();
+                    TurnoNegocio turnoNegocio = new TurnoNegocio();
+                    listadoHoraTurnos = turnoNegocio.buscarHorariosTurnoMedico(idEspecialidad, idMedico, fecha);
+
+                    if (listadoHoraTurnos.Count > 0)
                     {
 
-                        foreach (var horas_turno in listadoHoraTurnos)
+                        foreach (var horas_agenda in horasAgendaCompleta)
                         {
 
-                            if (horas_agenda != horas_turno)
+                            foreach (var horas_turno in listadoHoraTurnos)
                             {
-                                ddlHorarios.Items.Add(horas_agenda.ToString());
-                            }
-                            else
-                            {
-                                //NO DISPONIBLE
+
+                                if (horas_agenda != horas_turno)
+                                {
+                                    ddlHorarios.Items.Add(horas_agenda.ToString());
+                                }
+                                else
+                                {
+                                    //NO DISPONIBLE
+                                }
                             }
                         }
                     }
-                }
-                else
-                {
-                    //NO TIENE NADA ASIGNADO
-                    //CARGO EN EL ddl TODOS LOS HORARIOS DE LA
-                    //LISTA AGENDA
-
-
-                    foreach (var item in horasAgendaCompleta)
+                    else
                     {
-                        
-                        ddlHorarios.Items.Add(item.ToString());
+                        //NO TIENE NADA ASIGNADO
+                        //CARGO EN EL ddl TODOS LOS HORARIOS DE LA
+                        //LISTA AGENDA
+
+
+                        foreach (var item in horasAgendaCompleta)
+                        {
+
+                            ddlHorarios.Items.Add(item.ToString());
+                        }
+
+
                     }
-                
-                
-                }
-            
+
             }
 
             else
             {
-                //ESE DIA NO TRABAJA
+                    //ESE DIA NO TRABAJA
             }
 
-
+           
 
         }
     }

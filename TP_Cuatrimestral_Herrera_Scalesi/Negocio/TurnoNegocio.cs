@@ -72,7 +72,7 @@ namespace Negocio
             try
             {
 
-                datos.setearConsulta("select hora_turno from Turnos where id_especialidad= " + idEspecialidad + " and id_medico= " + idMedico + " and fecha_turno= " + fecha + " and activo = 1");
+                datos.setearConsulta("select hora_turno from Turnos where id_especialidad= " + idEspecialidad + " and id_medico= " + idMedico + " and fecha_turno= " + "'" + fecha + "'" + " and activo = 1");
                 datos.ejecutarLectura();
 
                 while(datos.Lector.Read())
@@ -164,6 +164,56 @@ namespace Negocio
                 datos.cerrarConexion();
             }
         }
+    
+        public List<Turno> listarTurnosMedico (int idMedico)
+        {
+            AccesoaDatos datos = new AccesoaDatos();
+            List<Turno> turnos = new List<Turno>();
+            AccesoaDatos datos1 = new AccesoaDatos();
+
+            try
+            {
+
+                datos.setearConsulta("select hora_turno, observaciones_medico, observaciones_paciente from turnos where id_medico = " + idMedico);
+                datos.ejecutarLectura();
+                //PUEDO HACER DOS CONSULTAS?
+                datos1.setearConsulta("select nombre,apellido from personas  where id in (select id_paciente from turnos where id_medico =" + idMedico + ")");
+                datos1.ejecutarLectura();
+
+                while (datos.Lector.Read() && datos1.Lector.Read())
+                {
+
+                    Turno aux = new Turno();
+
+                    //aux.FechaTurno = (string)datos.Lector["fecha_turno"].ToString();
+                    //aux.FechaTurno = (DateTime)datos.Lector["fecha_turno"];
+
+                    aux.HoraTurno = (int)datos.Lector["hora_turno"];
+                    aux.ObservacionesMedico = (string)datos.Lector["observaciones_medico"].ToString();
+                    aux.ObservacionesPaciente = (string)datos.Lector["observaciones_paciente"].ToString();
+                    aux.Persona = new Persona(); 
+                    aux.Persona.Nombre = (string)datos1.Lector["nombre"].ToString();
+                    aux.Persona.Apellido = (string)datos1.Lector["apellido"].ToString();
+                    
+                    turnos.Add(aux);
+
+                }
+
+                return turnos;
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+        }
+
     }
 }
 

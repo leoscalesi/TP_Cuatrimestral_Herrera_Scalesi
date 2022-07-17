@@ -51,13 +51,20 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
 
                     case 2:
 
+                        /*
                         Medico medico = new Medico();
                         MedicoNegocio medicoNegocio = new MedicoNegocio();
 
-                        medico = medicoNegocio.buscarMedico(persona.Id);
+                        medico = medicoNegocio.buscaMedicoId(persona.Id);
+                        */
 
+                        MedicoNegocio medicoNegocio = new MedicoNegocio();
+                        int idMedico = medicoNegocio.buscaMedicoId(persona.Id);
+                        
+                        
                         Session.Add("nombre", persona.Nombre);
                         Session.Add("apellido", persona.Apellido);
+                        Session.Add("idMedico", idMedico);
                         Response.Redirect("MedicoListadoTurnos.aspx", false);
                         break;
 

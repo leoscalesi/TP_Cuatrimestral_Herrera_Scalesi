@@ -14,7 +14,7 @@
         
     <div class="card">
 
-        <div class="card-header" style="text-align:center">
+        <div class="card-header">
             <h2>Listado de pacientes</h2>
             <div>
                 <img src="img/paciente.png" cssclass="img-fluid" width="70" alt="img paciente" />

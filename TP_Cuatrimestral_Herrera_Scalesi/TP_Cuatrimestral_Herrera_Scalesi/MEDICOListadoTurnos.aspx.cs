@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Dominio;
+using Negocio;
 
 namespace TP_Cuatrimestral_Herrera_Scalesi
 {
@@ -11,24 +13,31 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
     {
         public string nombre { get; set; }
         public string apellido { get; set; }
+        
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            /*
-            nombre = Session["nombre"].ToString();
-            apellido = Session["apellido"].ToString();
-
-            lblHolaMedico.Text += nombre + " " + apellido;
-            */
-            if (Session["nombre"] == null || Session["apellido"] == null || (int)Session["id"] == 1)
+           
+            
+            if (Session["nombre"] == null || Session["apellido"] == null )
             {
                 Response.Redirect("Error.aspx", false);
             }
-            else
+            if(!IsPostBack)
             {
                 nombre = Session["nombre"].ToString();
                 apellido = Session["apellido"].ToString();
                 lblHolaMedico.Text += nombre + " " + apellido;
+                string idMedico = Session["idMedico"].ToString();
+                int id = int.Parse(idMedico);
+                
+                List<Turno>listadoTurnos = new List<Turno>();
+                TurnoNegocio turnoNegocio = new TurnoNegocio();
+                listadoTurnos = turnoNegocio.listarTurnosMedico(id);
+
+                dgvListadoTurnos.DataSource = listadoTurnos;
+                dgvListadoTurnos.DataBind();
+                
             }
         }
 
