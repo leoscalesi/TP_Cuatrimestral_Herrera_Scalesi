@@ -177,10 +177,16 @@ namespace Negocio
                 datos.setearConsulta("select id,hora_turno, observaciones_medico, observaciones_paciente from turnos where id_medico = " + idMedico);
                 datos.ejecutarLectura();
                 //PUEDO HACER DOS CONSULTAS?
-                datos1.setearConsulta("select nombre,apellido from personas  where id in (select id_paciente from turnos where id_medico =" + idMedico + ")");
+                datos1.setearConsulta("select nombre,apellido from personas  where id in (select id_paciente from turnos where id_medico = " + idMedico + ")");
                 datos1.ejecutarLectura();
 
-                while (datos.Lector.Read() && datos1.Lector.Read())
+                
+                
+                //GUARDAR LO QUE SE CONTO EN EL LECTOR Y HACER UN for
+                
+                
+                
+                while (datos.Lector.Read() || datos1.Lector.Read())
                 {
 
                     Turno aux = new Turno();
@@ -191,14 +197,16 @@ namespace Negocio
                     aux.HoraTurno = (int)datos.Lector["hora_turno"];
                     aux.ObservacionesMedico = (string)datos.Lector["observaciones_medico"].ToString();
                     aux.ObservacionesPaciente = (string)datos.Lector["observaciones_paciente"].ToString();
+                    /*
                     aux.Persona = new Persona(); 
                     aux.Persona.Nombre = (string)datos1.Lector["nombre"].ToString();
                     aux.Persona.Apellido = (string)datos1.Lector["apellido"].ToString();
-                    
+                    */
                     turnos.Add(aux);
 
                 }
 
+                
                 return turnos;
             }
 
