@@ -28,15 +28,10 @@
             </div>
             <div class="card-body">
                 <div class="container">
+                    
                     <div class="row">
                         <div class="col" style="padding-top:10px;">
-                            <asp:Button ID="btnCargarAgenda" CssClass=" btn" runat="server" Text="Cargar Agenda" style="background-color:indianred;" OnClick="btnCargarAgenda_Click" />
-                            <asp:Button ID="btnAgenda" CssClass=" btn"  runat="server" Text="Agenda Medica" style="background-color:indianred;" OnClick="btnAgenda_Click" />
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col" style="padding-top:10px;">
-                            <asp:Button ID="btnListaTurnos" CssClass=" btn" runat="server" Text="Lista de Turnos" style="background-color: lightblue;" />
+                            <asp:Button ID="btnCargarAgenda" CssClass=" btn" runat="server" Text="Cargar Agenda" style="background-color:lightblue;" OnClick="btnCargarAgenda_Click" />
                             <asp:Button ID="btnBrindarTurnos" CssClass=" btn" runat="server" Text=" Brindar Turnos " style="background-color: lightblue;" OnClick="btnBrindarTurnos_Click"/>
                         </div>
 

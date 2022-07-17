@@ -57,6 +57,7 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
         protected void calCalendario_SelectionChanged(object sender, EventArgs e)
         {
 
+            ddlHorarios.Items.Clear();  
             //RECUPERO idPersona,idMedico,idEspecialidad
 
             int idPaciente = int.Parse(Request.QueryString["idPaciente"].ToString());

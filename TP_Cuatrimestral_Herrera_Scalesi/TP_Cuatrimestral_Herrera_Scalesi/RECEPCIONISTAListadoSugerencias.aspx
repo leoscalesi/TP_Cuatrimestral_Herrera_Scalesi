@@ -35,7 +35,7 @@
 
             <div class="card-footer">
                 <div class="text-center p-2">
-                    <asp:Button ID="btnListadoMedicos" CssClass="btn btn-success" runat="server" Text="Todos los Medicos" OnClick="btnListadoMedicos_Click" />
+                    <asp:Button ID="btnListadoMedicos" CssClass="btn btn-success" runat="server" Text="Carga Manual" OnClick="btnListadoMedicos_Click" />
                 </div>
             </div>
         </div>

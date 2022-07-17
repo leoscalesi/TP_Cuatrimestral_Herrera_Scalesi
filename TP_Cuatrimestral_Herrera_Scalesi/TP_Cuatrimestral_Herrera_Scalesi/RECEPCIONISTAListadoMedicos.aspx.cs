@@ -26,12 +26,11 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
                 
                 Session.Add("listaMedicos", medicoNegocio.listar());
             }
-            if (!IsPostBack)
-            {
+            
 
-                dgvListadoMedicos.DataSource = Session["listaMedicos"];
-                dgvListadoMedicos.DataBind();
-            }
+            dgvListadoMedicos.DataSource = Session["listaMedicos"];
+            dgvListadoMedicos.DataBind();
+            
         }
 
         protected void dgvListadoMedicos_RowDeleting(object sender, GridViewDeleteEventArgs e)

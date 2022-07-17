@@ -15,12 +15,12 @@
        <div class="card" id="estiloModificarDiagnostico">
            
             <div class="card-header">
-               <asp:Label ID="lblTituloDiagnostico" runat="server" Text="Ingrese aqui el diagnostico:"></asp:Label>
+                <h2>Carga de Diagnostico</h2>
            </div>
            
             <div class="card-body">
                <div>
-                   <asp:TextBox ID="txtDiagnostico" runat="server" TextMode="MultiLine"></asp:TextBox>
+                   <asp:TextBox ID="txtDiagnostico" runat="server" TextMode="MultiLine" Height="100px" Width="300px"></asp:TextBox>
                </div>
     
                <div>

@@ -16,8 +16,10 @@
          <div class="card">
   
             <div class="card-header">
-                <div>
-                   <asp:Label ID="lblHolaMedico" runat="server" Text="Hola "></asp:Label>
+                <div >
+                    <h2>
+                    <asp:Label ID="lblHolaMedico" runat="server" Text="Hola "></asp:Label>
+                    </h2>
                 </div>
             </div>
   
@@ -35,7 +37,7 @@
                         
  
                         
-                        <asp:CommandField ShowSelectButton="true" SelectText="Seleccionar" ControlStyle-CssClass="btn btn-info" HeaderText="Modificar" />
+                        <asp:CommandField ShowSelectButton="true" SelectText="Seleccionar" ControlStyle-CssClass="btn btn-info" HeaderText="Agregar Diagnostico" />
                         <asp:CommandField ShowDeleteButton="true" ButtonType="Button" ControlStyle-CssClass="btn btn-danger" HeaderText="Eliminar" />
                      
                       </columns>
@@ -44,9 +46,7 @@
                     </asp:GridView>
                  </div>
     
-                 <div>
-                    <asp:Button ID="btnModAgrDiagnostico" runat="server" Text="Agregar/Modificar Diagnostico" style="background-color:lightgreen;" OnClick="btnModAgrDiagnostico_Click" />
-                 </div>
+                 
             </div>
   
             <div class="card-footer">

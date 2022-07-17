@@ -21,7 +21,7 @@ namespace AccesoDatos
 
         public AccesoaDatos()
         {
-            conexion = new SqlConnection("server=(local)\\SQLEXPRESS ; database=Roles; integrated security= true");
+            conexion = new SqlConnection("server=(local)\\SQLEXPRESS ; database=TP_CUATRIMESTRAL; integrated security= true");
             comando = new SqlCommand();
         }
 

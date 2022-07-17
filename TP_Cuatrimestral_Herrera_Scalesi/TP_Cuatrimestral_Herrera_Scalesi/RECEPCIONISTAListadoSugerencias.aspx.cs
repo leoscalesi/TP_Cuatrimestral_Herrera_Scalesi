@@ -57,6 +57,7 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
             PersonaNegocio personaNegocio = new PersonaNegocio();
             List<Persona> personas = new List<Persona>();
             
+            /*LISTA TODOS LOS MEDICOS
             for (int i = 0; i < medicos.Count; i++)
             {
                 Persona persona = new Persona();
@@ -65,7 +66,17 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
                 personas.Add(persona);
                 
             }
+            */
+            //LISTA DOS MEDICOS
+            for (int i = 0; i < 2; i++)
+            {
+                Persona persona = new Persona();
+                int idPersona = medicos[i].IdPersona;
+                persona = personaNegocio.buscaPersonaId(idPersona);
+                personas.Add(persona);
 
+            }
+            
             grvSugerencias.DataSource = personas;
             grvSugerencias.DataBind();
         }

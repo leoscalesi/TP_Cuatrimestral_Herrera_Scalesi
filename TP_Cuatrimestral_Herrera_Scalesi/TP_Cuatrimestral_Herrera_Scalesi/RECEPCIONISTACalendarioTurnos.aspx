@@ -9,11 +9,19 @@
     <link rel="stylesheet" href="estilos/estilos.css"/>
     <title></title>
 </head>
-<body>
+<body >
     <form id="form1" runat="server">
         
-        <div class="card" id="estiloCalendario">
+        <div class="card" >
         
+
+            <div class ="card-header">
+                
+                <div>
+                    <h2>Seleccione la fecha del turno</h2>
+                </div>
+            
+            </div>
             <div class ="card-body">
                 
                 <div>
@@ -28,7 +36,7 @@
                 
                    <asp:DropDownList ID="ddlHorarios" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlHorarios_SelectedIndexChanged"></asp:DropDownList>
                    
-                   <asp:Button ID="btnCargarObservaciones" runat="server" Text="Observaciones" OnClick="btnCargarObservaciones_Click" />
+                   <asp:Button ID="btnCargarObservaciones" CssClass="btn btn-info" runat="server" Text="Observaciones" OnClick="btnCargarObservaciones_Click" />
 
                </div>
                <div>

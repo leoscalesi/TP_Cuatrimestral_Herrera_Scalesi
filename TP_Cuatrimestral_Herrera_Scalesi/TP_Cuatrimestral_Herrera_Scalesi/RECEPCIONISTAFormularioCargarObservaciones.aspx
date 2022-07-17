@@ -10,13 +10,13 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:Label ID="lblObservaciones" runat="server" Text="Carga de Observaciones"></asp:Label>
+            <h2>Carga de Observaciones</h2>
         </div>
         <div>
-            <asp:TextBox ID="txtObservaciones" runat="server" TextMode="MultiLine"></asp:TextBox>
+            <asp:TextBox ID="txtObservaciones" runat="server" TextMode="MultiLine" Height="100px" Width="300px"></asp:TextBox>
         </div>
         <div>
-            <asp:Button ID="btnGuardar" runat="server" Text="Guardar" OnClick="btnGuardar_Click" />
+            <asp:Button ID="btnGuardar" runat="server" CssClass="btn btn-success" Text="Guardar" OnClick="btnGuardar_Click" />
         </div>
     </form>
 </body>
