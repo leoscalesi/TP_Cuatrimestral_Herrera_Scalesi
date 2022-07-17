@@ -174,7 +174,7 @@ namespace Negocio
             try
             {
 
-                datos.setearConsulta("select hora_turno, observaciones_medico, observaciones_paciente from turnos where id_medico = " + idMedico);
+                datos.setearConsulta("select id,hora_turno, observaciones_medico, observaciones_paciente from turnos where id_medico = " + idMedico);
                 datos.ejecutarLectura();
                 //PUEDO HACER DOS CONSULTAS?
                 datos1.setearConsulta("select nombre,apellido from personas  where id in (select id_paciente from turnos where id_medico =" + idMedico + ")");
@@ -187,7 +187,7 @@ namespace Negocio
 
                     //aux.FechaTurno = (string)datos.Lector["fecha_turno"].ToString();
                     //aux.FechaTurno = (DateTime)datos.Lector["fecha_turno"];
-
+                    aux.Id = (int)datos.Lector["id"];
                     aux.HoraTurno = (int)datos.Lector["hora_turno"];
                     aux.ObservacionesMedico = (string)datos.Lector["observaciones_medico"].ToString();
                     aux.ObservacionesPaciente = (string)datos.Lector["observaciones_paciente"].ToString();
@@ -214,6 +214,32 @@ namespace Negocio
 
         }
 
+        public bool cargarObservacion(int idTurno,string observacion)
+        {
+            AccesoaDatos accesoaDatos = new AccesoaDatos();
+
+
+            try
+            {
+                accesoaDatos.setearConsulta("update TURNOS set observaciones_medico = '" + observacion + "' where id = " + idTurno + " ");
+                accesoaDatos.ejecutarAccion();
+
+                return true;
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+            finally
+            {
+                accesoaDatos.cerrarConexion();
+            }
+
+
+        }
     }
 }
 

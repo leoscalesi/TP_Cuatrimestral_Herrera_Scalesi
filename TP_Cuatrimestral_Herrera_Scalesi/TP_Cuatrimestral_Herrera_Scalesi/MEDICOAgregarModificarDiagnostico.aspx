@@ -24,7 +24,7 @@
                </div>
     
                <div>
-                   <asp:Button ID="btnGuardar" runat="server" Text="Guardar" style="background-color:lightgreen;"/>
+                   <asp:Button ID="btnGuardar" runat="server" Text="Guardar" style="background-color:lightgreen;" OnClick="btnGuardar_Click"/>
                </div>
            </div>
            

@@ -35,6 +35,7 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
                 TurnoNegocio turnoNegocio = new TurnoNegocio();
                 listadoTurnos = turnoNegocio.listarTurnosMedico(id);
 
+                
                 dgvListadoTurnos.DataSource = listadoTurnos;
                 dgvListadoTurnos.DataBind();
                 
@@ -44,6 +45,20 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
         protected void btnModAgrDiagnostico_Click(object sender, EventArgs e)
         {
             Response.Redirect("MEDICOAgregarModificarDiagnostico.aspx", false);
+        }
+
+        protected void dgvListadoTurnos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //var id = dgvListadoPacientes.SelectedRow.Cells[0].Text;
+
+            var idTurno = dgvListadoTurnos.SelectedRow.Cells[0].Text;
+            Session.Add("idTurno",idTurno);
+            Response.Redirect("MEDICOAgregarModificarDiagnostico.aspx", false);
+        }
+
+        protected void btnSalir_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("LOGIN.aspx",false);
         }
     }
 }

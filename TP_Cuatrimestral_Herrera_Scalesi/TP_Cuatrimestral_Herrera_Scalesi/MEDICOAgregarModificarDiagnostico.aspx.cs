@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Dominio;
+using Negocio;
 
 namespace TP_Cuatrimestral_Herrera_Scalesi
 {
@@ -11,7 +13,7 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["nombre"] == null || Session["apellido"] == null || (int)Session["id"] == 1)
+            if (Session["nombre"] == null || Session["apellido"] == null || Session["idMedico"] == null)
             {
                 Response.Redirect("Error.aspx", false);
             }
@@ -20,6 +22,22 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
         protected void btnVolverATurnos_Click(object sender, EventArgs e)
         {
             Response.Redirect("MEDICOListadoTurnos.aspx",false);
+        }
+
+        protected void btnGuardar_Click(object sender, EventArgs e)
+        {
+
+            string idTurno = Session["idTurno"].ToString();
+            int id = int.Parse(idTurno);
+
+
+            string observacion = txtDiagnostico.Text;   
+            TurnoNegocio turnoNegocio = new TurnoNegocio();
+            
+            if (turnoNegocio.cargarObservacion(id,observacion))
+            {
+                Response.Redirect("GuardadoExitosoMedico.aspx", false);
+            }
         }
     }
 }

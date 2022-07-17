@@ -23,10 +23,11 @@
   
             <div class="card-body">
                  <div>
-                    <asp:GridView ID="dgvListadoTurnos" runat="server" AutoGenerateColumns="False">
+                    <asp:GridView ID="dgvListadoTurnos" runat="server" AutoGenerateColumns="False" OnSelectedIndexChanged="dgvListadoTurnos_SelectedIndexChanged">
 
                       <columns>
                         
+                        <asp:BoundField HeaderText="Id Turno" DataField="Id"/>
                         <asp:BoundField HeaderText="Observaciones Medico" DataField="ObservacionesMedico"/>
                         <asp:BoundField HeaderText="Observaciones Paciente" DataField="ObservacionesPaciente"/>
                         <asp:BoundField HeaderText="Hora" DataField="HoraTurno"/>
@@ -49,7 +50,7 @@
             </div>
   
             <div class="card-footer">
-                <asp:Button ID="btnSalir" runat="server" Text="Salir" style="background-color: lightcoral;" />
+                <asp:Button ID="btnSalir" runat="server" Text="Salir" style="background-color: lightcoral;" OnClick="btnSalir_Click" />
             </div>
        
         </div>
