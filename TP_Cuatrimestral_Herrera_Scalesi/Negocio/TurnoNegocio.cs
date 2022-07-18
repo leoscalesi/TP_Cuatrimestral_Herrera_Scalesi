@@ -169,39 +169,31 @@ namespace Negocio
         {
             AccesoaDatos datos = new AccesoaDatos();
             List<Turno> turnos = new List<Turno>();
-            AccesoaDatos datos1 = new AccesoaDatos();
+            
 
             try
             {
 
-                datos.setearConsulta("select id,hora_turno, observaciones_medico, observaciones_paciente from turnos where id_medico = " + idMedico);
+                datos.setearConsulta("select p.nombre,p.apellido,t.hora_turno,t.observaciones_medico,t.observaciones_paciente from personas as p inner join turnos as t on t.id_paciente = p.id where p.id in (select id_paciente from turnos where id_medico = " + idMedico + ")");
                 datos.ejecutarLectura();
-                //PUEDO HACER DOS CONSULTAS?
-                datos1.setearConsulta("select nombre,apellido from personas  where id in (select id_paciente from turnos where id_medico = " + idMedico + ")");
-                datos1.ejecutarLectura();
+                
 
-                
-                
-                //GUARDAR LO QUE SE CONTO EN EL LECTOR Y HACER UN for
-                
-                
-                
-                while (datos.Lector.Read() || datos1.Lector.Read())
+                while (datos.Lector.Read())
                 {
 
                     Turno aux = new Turno();
 
                     //aux.FechaTurno = (string)datos.Lector["fecha_turno"].ToString();
                     //aux.FechaTurno = (DateTime)datos.Lector["fecha_turno"];
-                    aux.Id = (int)datos.Lector["id"];
+                    //aux.Id = (int)datos.Lector["id"];
                     aux.HoraTurno = (int)datos.Lector["hora_turno"];
                     aux.ObservacionesMedico = (string)datos.Lector["observaciones_medico"].ToString();
                     aux.ObservacionesPaciente = (string)datos.Lector["observaciones_paciente"].ToString();
-                    /*
+                    
                     aux.Persona = new Persona(); 
-                    aux.Persona.Nombre = (string)datos1.Lector["nombre"].ToString();
-                    aux.Persona.Apellido = (string)datos1.Lector["apellido"].ToString();
-                    */
+                    aux.Persona.Nombre = (string)datos.Lector["nombre"].ToString();
+                    aux.Persona.Apellido = (string)datos.Lector["apellido"].ToString();
+                    
                     turnos.Add(aux);
 
                 }

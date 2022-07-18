@@ -29,13 +29,13 @@
 
                       <columns>
                         
-                        <asp:BoundField HeaderText="Id Turno" DataField="Id"/>
+                        
                         <asp:BoundField HeaderText="Observaciones Medico" DataField="ObservacionesMedico"/>
                         <asp:BoundField HeaderText="Observaciones Paciente" DataField="ObservacionesPaciente"/>
                         <asp:BoundField HeaderText="Hora" DataField="HoraTurno"/>
                         <asp:BoundField HeaderText="Fecha Turno" DataField="FechaTurno"/>
-                        
- 
+                        <asp:BoundField HeaderText="Nombre" DataField="Persona.Nombre"/>
+                        <asp:BoundField HeaderText="Apellido" DataField="Persona.Apellido"/>
                         
                         <asp:CommandField ShowSelectButton="true" SelectText="Seleccionar" ControlStyle-CssClass="btn btn-info" HeaderText="Agregar Diagnostico" />
                         <asp:CommandField ShowDeleteButton="true" ButtonType="Button" ControlStyle-CssClass="btn btn-danger" HeaderText="Eliminar" />

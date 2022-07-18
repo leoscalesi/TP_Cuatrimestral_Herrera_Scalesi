@@ -130,7 +130,13 @@ namespace TP_Cuatrimestral_Herrera_Scalesi
 
                                 if (horas_agenda != horas_turno)
                                 {
-                                    ddlHorarios.Items.Add(horas_agenda.ToString());
+
+                                //VALIDO ACA AL PACIENTE?
+                                //BUSCO PACIENTE SI EN ESA FECHA Y HORA TIENE
+                                //ALGO SIN IMPORTAR ESPECIALIDAD  bool?
+                                ddlHorarios.Items.Add(horas_agenda.ToString());
+                                    
+                            
                                 }
                                 else
                                 {
